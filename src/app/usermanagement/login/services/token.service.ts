@@ -23,6 +23,7 @@ export class TokenService {
   getDecodeToken() {
     if (this.jwtToken) return jwt_decode(this.jwtToken);
   }
+  
 
   getExpiryTime() {
     this.decodeToken();

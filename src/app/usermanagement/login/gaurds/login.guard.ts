@@ -25,3 +25,20 @@ export class LoginGuard implements CanActivate {
   }
   
 }
+
+/*=====================Activation of Login gaurd in routing============================
+{
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: '',
+    loadChildren: () => import('./master-layout/master-layout.module').then(m => m.MasterLayoutModule),
+    canActivate: [ LoginGuard ]
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];
+*/

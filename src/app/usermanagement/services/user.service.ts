@@ -7,7 +7,12 @@ import { environment} from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-
+ 
+  //get returns only data
+  //post required a body to go along with the request
+  //this service gets the users via api restful api requests 
+  //made to add new users that just registred 
+  //made to fetch users by id
   constructor(private http: HttpClient) { }
 
   authenticate(value:any): Observable<any>{
