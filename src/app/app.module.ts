@@ -10,6 +10,8 @@ import { UsermanagementComponent } from './usermanagement/usermanagement.compone
 import { LoginComponent } from './usermanagement/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { UsermanagmentModule } from './usermanagement/usermanagment.module';
+//import { LoginComponent } from './usermanagement/login/login.component';
 
 
 
@@ -18,14 +20,15 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
     AppComponent,
     NavbarComponent,
     UsermanagementComponent,
-    LoginComponent,
+    //LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MdbCollapseModule
+    MdbCollapseModule,
+    UsermanagmentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

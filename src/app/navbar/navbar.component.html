@@ -21,13 +21,16 @@
     <div class="collapse navbar-collapse" id="navbarText" mdbCollapse #inlineNav="mdbCollapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Contact us</a>
+          <a class="nav-link text-light" href="/Contact">CONTACT US</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">About</a>
+          <a class="nav-link text-light" href="/about">ABOUT</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Log in</a>
+        <li class="nav-item" id="fbutton">
+          <Button class="btn btn-outline-primary" (click)="goToLogin()">
+          <a class="nav-link text-light" href="#" >Log in</a>     
+          </Button>
+
         </li>
       </ul>
     </div>

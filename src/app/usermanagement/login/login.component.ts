@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { contants } from 'src/app/global-functions/contants';
+import { contants } from 'app/global-functions/contants';
+//import { contants } from 'src/app/global-functions/contants';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 

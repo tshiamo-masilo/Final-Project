@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { contants} from 'src/app/global-functions/contants'
+import { contants } from 'app/global-functions/contants';
 import jwt_decode from 'jwt-decode';
 
 @Injectable({
