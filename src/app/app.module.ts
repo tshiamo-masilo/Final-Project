@@ -11,6 +11,8 @@ import { LoginComponent } from './usermanagement/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { UsermanagmentModule } from './usermanagement/usermanagment.module';
+import { RegisterComponent } from './register/register.component';
+import { ApplicationFormComponent } from './application-form/application-form.component';
 //import { LoginComponent } from './usermanagement/login/login.component';
 
 
@@ -20,6 +22,8 @@ import { UsermanagmentModule } from './usermanagement/usermanagment.module';
     AppComponent,
     NavbarComponent,
     UsermanagementComponent,
+    RegisterComponent,
+    ApplicationFormComponent,
     //LoginComponent
   ],
   imports: [

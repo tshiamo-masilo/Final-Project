@@ -1,0 +1,36 @@
+.card-body p-5{
+    color: #D9D9D9;
+
+}
+
+#login-bg{
+    color: #000000;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+}
+.button{
+    width: 537px;
+    height: 85px;
+    color: #ffffff;
+    border-radius: 30px;
+    margin-left: 2%;
+}
+.line2{
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+}
+
+#border{
+    background-color:#D9D9D9;
+    font-size: small;
+}
+
+.p{
+    margin:100%;
+}
+
+
