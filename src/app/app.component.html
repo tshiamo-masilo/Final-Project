@@ -1,11 +1,64 @@
-<section>
-    
-    <app-navbar></app-navbar>
+<!-- 
+<app-navbar></app-navbar>
+<app-homepage></app-homepage> -->
 
-    <app-register></app-register>
-    
-    <app-application-form></app-application-form>
-</section>
+<!-- <app-navbar></app-navbar> -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="./homepage">homepage</a>
+        <a class="nav-item nav-link" routerLink="./contact">contact</a>
+    </div>
+</nav> -->
 
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar">
+  <div class="container-fluid">
+    <!-- LOGO NAVBAR -->
+    <a class="navbar-brand text-light" routerLink="/">
+      <img
+        src="https://i.ibb.co/JBYdFRY/Logo-Navbar.png"
+        class="me-2"
+        height="60"
+        alt=""
+        loading="lazy"
+        
+      />
+      <small>STUDENT LOG</small>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="inlineNav.toggle()"
+      data-toggle="collapse"
+      data-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon" style="color: white"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbarText"
+      mdbCollapse
+      #inlineNav="mdbCollapse"
+    >
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="./contact">CONTACT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="./about">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="./usermanagement/login">LOG IN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>
