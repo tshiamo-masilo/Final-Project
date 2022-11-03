@@ -15,7 +15,7 @@ public class AdminController {
     private AdminService adminService;
 
 
-    @PostMapping("/saveAdmin")
+    @PostMapping("/save")
     public Admin saveAdmin(@RequestBody Admin admin){
         return adminService.savePerson(admin) ;
     }
