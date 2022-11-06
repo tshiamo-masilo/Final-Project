@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name="RegisterDetails")
+@Table(name="UserTbl")
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserCredentials {

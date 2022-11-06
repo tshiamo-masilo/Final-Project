@@ -8,14 +8,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Students_Details")
+@Table(name="StudentTbl")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
     @Id
     @GeneratedValue()
-    @Column()
+    @Column(name ="StudentIdCol")
     private Long StudentId;
+   // @JoinColumns()
     private String School_id;
     private String Student_id;
     private String Class_id;
@@ -24,4 +25,9 @@ public class Student {
     private String Name;
     private String surname;
     private String Phone_Number;
+
+    //table joins
+    @OneToOne
+    @JoinColumn(name ="ApplicationIdCol")
+    private StudentApplication application;
 }
