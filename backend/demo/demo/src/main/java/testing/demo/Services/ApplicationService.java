@@ -1,9 +1,11 @@
 package testing.demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import testing.demo.Repository.StudentApplicationRepo;
 import testing.demo.model.StudentApplication;
 
+@Service
 public class ApplicationService {
 
     @Autowired

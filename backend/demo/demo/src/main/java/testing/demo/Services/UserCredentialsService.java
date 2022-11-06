@@ -20,14 +20,14 @@ public class UserCredentialsService {
        return repo.save(userCredentials)  ;
     }
 
-    public UserCredentials findPersonById(int id){
+    public UserCredentials findPersonById(Long id){
        return repo.findById(id).orElse(null);
     }
     public List<UserCredentials> getAllUser(){
         return  repo.findAll();
     }
 
-    public String deleteById(int id){
+    public String deleteById(Long id){
         repo.deleteById(id);
         return "A person with  Id  " +id +" is deleted!!";
     }
