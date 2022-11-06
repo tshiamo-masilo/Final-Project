@@ -15,5 +15,6 @@ public class ApplicationService {
         //check if application is updating or new
         //then set the status enum
         return appRepo.save(studentApplication);
+        //gfjj
     }
 }
