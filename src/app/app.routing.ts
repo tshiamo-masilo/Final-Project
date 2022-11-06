@@ -1,11 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
-
+import { UserModule } from './user/user.module';
 
 
 import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
+import {LoginComponent} from './user/login';
+import {SignupComponent} from './user/signup';
+import {ForgotComponent} from './user/forgot';
+
 
 
 // import { DashboardModule } from './dashboard';
@@ -20,6 +24,9 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    { path: 'forgot', component: ForgotComponent },
     
     // { path: 'admin', component: AdminComponent },
     // { path: 'learner', component: LearnerComponent },

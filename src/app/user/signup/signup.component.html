@@ -1,126 +1,58 @@
-<div
-  class="mask d-flex align-items-center h-100 gradient-custom-3"
-  ngClass="Border"
->
-  <div class="container h-100">
-    <div style="position: relative; left: 60px; top: 10px">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 70px" id="border">
-            <div class="card-body p-5" id="login-bg">
-              <h2 class="text-uppercase text-center mb-5">Sign Up</h2>
-              <hr class="line" />
+<section class="login-section">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <form>
+              <h3>SIGN UP</h3>
 
-              <form>
-                <!--Questions-->
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg"
-                    >First Name</label
-                  >
-                  <input
-                    type="text"
-                    id="form3Example1cg"
-                    class="form-control form-control-lg"
-                    placeholder="First Name"
-                  />
-                </div>
+              <hr class="my-4 mb-4" />
+              <!--<form action="weblink" method="post">   post method-->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="firstname">First Name</label>
+                <input type="fname" id="firstname" class="form-control form-control-lg" />
+              </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg"
-                    >Surname</label
-                  >
-                  <input
-                    type="text"
-                    id="form3Example1cg"
-                    class="form-control form-control-lg"
-                    placeholder="Surname"
-                  />
-                </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="lastname">Last Name</label>
+                <input type="lname" id="lastname" class="form-control form-control-lg" />
+              </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3cg">Email</label>
-                  <input
-                    type="email"
-                    id="form3Example3cg"
-                    class="form-control form-control-lg"
-                    placeholder="Example@email.co.za"
-                  />
-                </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typeEmailX-2">Email</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg"
+                  placeholder="example@email.com" /><br>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3cg"
-                    >Security Question</label
-                  >
-                  <input
-                    type="email"
-                    id="form3Example3cg"
-                    class="form-control form-control-lg"
-                    placeholder="What is the name of your favorite pet?"
-                  />
-                </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="security">Security Question</label>
+                    <input type="security" id="security" class="form-control form-control-lg" placeholder="What is your favourite pet?" />
+                  </div>
 
-                <!--Passwords-->
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example4cdg"
-                    >Password</label
-                  >
-                  <input
-                    type="password"
-                    id="form3Example4cdg"
-                    class="form-control form-control-lg"
-                    placeholder="Password"
-                  />
-                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typePasswordX-2">Password</label>
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example4cdg"
-                    >Confirm Password</label
-                  >
-                  <input
-                    type="password"
-                    id="form3Example4cdg"
-                    class="form-control form-control-lg"
-                    placeholder=" Confirm Password"
-                  />
-                </div>
-                <!--Sign Up button-->
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                SIGNUP
+              </button>
+              <br><br>
+              <a routerlink="../signup" id="links">Forgot password?</a><br><br>
+              <div class="header__center">OR</div>
 
-                <div class="d-flex justify-content-center">
-                  <button
-                    type="button"
-                    class="btn btn-secondary btn-lg"
-                    ngClass="button"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-                <hr class="line2" />
-                <!--Social media icon-->
-                <div class="social-container">
-                  <ul
-                    class="social-icons d-flex gap-4 justify-content-center"
-                    style="list-style: none"
-                  >
-                    <li>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-                <p class="text-center text-muted mt-5 mb-0">
-                  Already a user?
-                  <a href="#!" class="fw-bold text-body"><u>Login here</u></a>
-                </p>
-              </form>
-            </div>
+              <div class="social-links">
+                <i class="fa fa-twitter" style="font-size:36px"></i>
+                <i class="fa fa-envelope" style="font-size:36px"></i>
+                <i class="fa fa-linkedin-square" style="font-size:36px"></i>
+              </div>
+              <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" routerlink="./login">LOGIN</a>
+            </form>
+            <!--</form> -->
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

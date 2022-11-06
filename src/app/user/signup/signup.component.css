@@ -1,52 +1,51 @@
-.card-body p-5 {
-    color: #D9D9D9;
-
+.form-label{
+    float: left;
 }
 
-#login-bg {
-    color: #000000;
+.btn-primary{
+    background-color: #AFADAC;
+    border: none;
+    box-shadow: 2px 2px #888888;
+    width: 300px;
+    margin: auto;
+    border-radius: 15px;
+    color: white;
 }
 
-.line {
-    width: 100%;
+
+.header__center {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+}
+
+.header__center::before,
+.header__center::after {
+    content: "";
+    display: block;
     height: 1px;
-    background-color: #000000;
+    background-color: currentColor;
 }
 
-.button {
-    width: 30%;
-    align-self: center;
-    color: #ffffff;
-    border-radius: 30px;
-    margin-left: 2%;
+.card{
+    background-color: #d9d9d9;
+    float: right;
+    display: block;
 }
 
-.line2 {
-    width: 100%;
-    height: 1px;
-    background-color: #000000;
+.fa{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-#border {
-    background-color: #D9D9D9;
-    font-size: small;
+#links{
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
 }
 
-.p {
-    margin: 100%;
-}
-
-input[type="text"] {
-    font-size: 15px;
-}
-
-input[type="email"] {
-    font-size: 15px;
-}
-
-input[type="password"] {
-    font-size: 15px;
-}
-.social-container{
-    align-self: center;
+#links:hover{
+    color: grey;
 }
