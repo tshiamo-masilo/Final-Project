@@ -55,7 +55,7 @@ public class AdminController {
     }
 
     @GetMapping("/getAdmin/{id}")
-    public Admin findAdminById(@PathVariable int id){
+    public Admin findAdminById(@PathVariable Long id){
 
         return adminService.findPersonById(id);
     }
@@ -73,7 +73,7 @@ public class AdminController {
 
 
     @DeleteMapping("/deleteAdmin/{id}")
-    public String deleteAdminById(@PathVariable int id){
+    public String deleteAdminById(@PathVariable Long id){
         return adminService.deleteById(id);
     }
 }

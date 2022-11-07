@@ -18,14 +18,14 @@ public class AdminService {
         return repo.save(admin)  ;
     }
 
-    public Admin findPersonById(int id){
+    public Admin findPersonById(Long id){
         return repo.findById(id).orElse(null);
     }
     public List<Admin> getAllUser(){
         return  repo.findAll();
     }
 
-    public String deleteById(int id){
+    public String deleteById(Long id){
         repo.deleteById(id);
         return "A person with  Id  " +id +" is deleted!!";
     }
