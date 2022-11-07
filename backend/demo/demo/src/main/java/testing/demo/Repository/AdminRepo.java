@@ -5,6 +5,6 @@ import testing.demo.model.Admin;
 
 import java.util.Optional;
 
-public interface AdminRepo extends JpaRepository<Admin,Integer> {
+public interface AdminRepo extends JpaRepository<Admin, Long> {
     Optional<Object> findById(Admin admin);
 }
