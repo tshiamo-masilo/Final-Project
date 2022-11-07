@@ -6,7 +6,7 @@ import testing.demo.model.Student;
 
 import java.util.Optional;
 
-public interface StudentRepo extends JpaRepository<Student,Integer> {
+public interface StudentRepo extends JpaRepository<Student,Long> {
 
 
 }
