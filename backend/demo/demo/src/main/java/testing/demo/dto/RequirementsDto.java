@@ -1,19 +1,12 @@
-package testing.demo.model;
+package testing.demo.dto;
 
-import lombok.*;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@Data
-@Entity
-@Table(name="Requirements")
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
-public class Requirements {
-    @Id
-    @GeneratedValue()
-    @Column()
-    private int id;
+public class RequirementsDto {
     private String StreamId;
     private String RequirementsId;
     private String Maths;

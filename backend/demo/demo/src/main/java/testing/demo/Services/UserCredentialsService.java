@@ -20,7 +20,7 @@ public class UserCredentialsService {
        return repo.save(userCredentials)  ;
     }
 
-    public UserCredentials findPersonById(Long id){
+    public UserCredentials findPersonById(long id){
        return repo.findById(id).orElse(null);
     }
     public List<UserCredentials> getAllUser(){

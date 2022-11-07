@@ -3,11 +3,8 @@ package testing.demo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//import javax.persistence.ConstructorResult;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Data
 @Entity

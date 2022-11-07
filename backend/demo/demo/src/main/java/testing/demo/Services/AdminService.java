@@ -3,9 +3,7 @@ package testing.demo.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import testing.demo.Repository.AdminRepo;
-import testing.demo.Repository.UserCredentialRepo;
 import testing.demo.model.Admin;
-import testing.demo.model.UserCredentials;
 
 import java.util.List;
 
