@@ -1,0 +1,28 @@
+.body{
+    height: inherit;
+    width: inherit;
+}
+.container{
+    margin-top: 15px;
+   
+}
+.card{
+    height: 80vh;
+    padding: 20px;
+    background-color: rgba(50, 50, 50, 0.65);
+    color: white;
+}
+.col1{
+    padding-top: 10%;
+    padding-left: 2%;
+}
+.col2{
+    padding-top: -50%;
+}
+.head{
+    align-self: center;
+    font-size: 80px;
+}
+img{
+   margin-top: -30%;
+}
