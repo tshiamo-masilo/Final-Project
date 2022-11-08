@@ -14,23 +14,22 @@ import java.util.stream.Collectors;
 
 public class SchoolMapper {
 
-    public List<SchoolDto> entityToDto(List<School> student) {
+    public List<SchoolDto> entityToDto(List<School> dto) {
 
-        return	student.stream().map(x -> entityToDto(x)).collect(Collectors.toList());
+        return	dto.stream().map(x -> entityToDto(x)).collect(Collectors.toList());
 
     }
-    public Student dtoToEntity(Student dto)
+    public School dtoToEntity(SchoolDto dto)
     {
 //      st.setId(dto.getId());
 //		st.setName(dto.getName());
 //		st.setPassword(dto.getPassword());
 //		st.setUsername(dto.getUsername());
-        Student st = new Student();
         ModelMapper mapper = new ModelMapper();
-        Student map = mapper.map(dto, Student.class);
+        School map = mapper.map(dto, School.class);
         return map;
     }
-    public List<Student> dtoToEntity(List<Student> dto)
+    public List<School> dtoToEntity(List<SchoolDto> dto)
     {
         return dto.stream().map(x -> dtoToEntity(x)).collect(Collectors.toList());
     }
