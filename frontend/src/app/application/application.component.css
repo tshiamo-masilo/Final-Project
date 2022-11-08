@@ -1,0 +1,32 @@
+body{
+    height: 100vh;
+    font-weight:600;
+    
+    
+    
+    }
+    
+    input{
+        border-radius: 5px;
+        width: 80%;
+        color: black;
+        border: none;
+        margin-top: 3%;
+        margin-left: 12px;
+        text-align: center;
+        text-decoration: none;
+    }
+    INPUT:hover{
+        background-color: antiquewhite;
+        border: none;
+        border-color: black;    
+        color:rgb(0, 0, 0);
+    }
+    .heading{
+        font-size: medium;
+        margin-top: 12px;
+        margin-left: 10px;
+        font-weight: bolder;
+    
+    }
+    
