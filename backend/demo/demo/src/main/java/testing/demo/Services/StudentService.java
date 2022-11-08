@@ -14,13 +14,13 @@ public class StudentService {
     public Student saveStudent(Student student){
         return studentRepo.save(student);
     }
-   public Student getStudentById(int id){
+   public Student getStudentById(Long id){
         return studentRepo.findById(id).orElse(null);
    }
    public List<Student> getAllStudents(){
         return studentRepo.findAll();
    }
-   public String deleteStudentById(int id){
+   public String deleteStudentById(Long id){
         studentRepo.deleteById(id);
         return "Record Deleted";
    }
