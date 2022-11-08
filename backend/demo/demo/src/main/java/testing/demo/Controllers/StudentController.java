@@ -17,7 +17,7 @@ public class StudentController {
     return studentService.saveStudent(student);
     }
     @GetMapping("/get/{id}")
-    public Student getStudentById(int id){
+    public Student getStudentById(Long id){
     return studentService.getStudentById(id);
     }
     @GetMapping("/getAllStudents")
@@ -25,7 +25,7 @@ public class StudentController {
     return studentService.getAllStudents();
     }
     @DeleteMapping("/delete/{id}")
-    public String deleteStudentById(int id){
+    public String deleteStudentById(Long id){
     return studentService.deleteStudentById(id);
     }
     @DeleteMapping("/deleteAllStudents")

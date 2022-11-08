@@ -2,6 +2,7 @@ package testing.demo.mapper;
 
 import org.modelmapper.*;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import testing.demo.dto.StudentApplicationDto;
 import testing.demo.dto.StudentDto;
 import testing.demo.model.Student;
@@ -27,7 +28,7 @@ public class StudentApplicationMapper {
 //		st.setName(dto.getName());
 //		st.setPassword(dto.getPassword());
 //		st.setUsername(dto.getUsername());
-        StudentApplication st = new StudentApplication();
+       // StudentApplication st = new StudentApplication();
         ModelMapper mapper = new ModelMapper();
         StudentApplication map = mapper.map(dto, StudentApplication.class);
         return map;
@@ -52,36 +53,3 @@ public class StudentApplicationMapper {
 
 
 }
-/*
-
-@Autowired StudentRepository studentRepository;
-	@Autowired StudentConverter converter;
-
-	@GetMapping("/findAll")
-	public List<StudentDto> findAll() {
-		List<Student> findAll = studentRepository.findAll();
-		return converter.entityToDto(findAll);
-	}
-
-	@GetMapping("/find/{ID}")
-	public StudentDto findById(@PathVariable(value = "ID") Long id) {
-		Student orElse = studentRepository.findById(id).orElse(null);
-		return converter.entityToDto(orElse);
-
-	}
-
-
-	@PostMapping("/save")
-	public StudentDto save(@RequestBody StudentDto dto) {
-
-		Student student = converter.dtoToEntity(dto);
-		student=  studentRepository.save(student);
-		return converter.entityToDto(student);
-	}
-
-}
-
-        ========================================================
-
-
- */
