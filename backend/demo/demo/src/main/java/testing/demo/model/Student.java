@@ -1,31 +1,31 @@
 package testing.demo.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Students_Details")
-
-public class Student{
+@Table(name = "Students_Details")
+public class Student {
     @Id
     @GeneratedValue()
     @Column()
-    private  int id;
+    private int id;
     private String School_id;
     private String Student_id;
     private String Class_id;
-    private  String grade;
+    private String grade;
     private String Stream_id;
     private String Name;
     private String surname;
     private String Phone_Number;
 
-    public Student(){}
+    public Student() {
+    }
 
-    public Student(String school_id, String student_id, String class_id, String grade, String stream_id, String name, String surname, String phone_Number) {
+    public Student(String school_id, String student_id, String class_id, String grade, String stream_id, String name,
+            String surname, String phone_Number) {
         School_id = school_id;
         Student_id = student_id;
         Class_id = class_id;

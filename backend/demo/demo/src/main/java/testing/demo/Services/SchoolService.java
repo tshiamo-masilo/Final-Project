@@ -12,19 +12,20 @@ public class SchoolService {
     @Autowired
     private SchoolRepo repo;
 
-    public School saveSchool(School school){
-        return repo.save(school)  ;
+    public School saveSchool(School school) {
+        return repo.save(school);
     }
 
-    public School findSchoolById(int id){
+    public School findSchoolById(Long id) {
         return repo.findById(id).orElse(null);
     }
-    public List<School> getAllSchools(){
-        return  repo.findAll();
+
+    public List<School> getAllSchools() {
+        return repo.findAll();
     }
 
-    public String deleteSchoolById(int id){
+    public String deleteSchoolById(Long id) {
         repo.deleteById(id);
-        return "A School with  Id  " +id +" is deleted!!";
+        return "A School with  Id  " + id + " is deleted!!";
     }
 }
