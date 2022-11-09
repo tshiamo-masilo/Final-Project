@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+.head{
+    text-align: center;
+font-size: 70px;
+}
+.card{
+    margin-top: 10%;
+    background-color:  rgba(50, 50, 50, 0.65);
+    color: white;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 12px;
+    min-height: 300px;
+}
+.rows::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+img{
+    align-self: center;
+    margin-right: 50%;
+    margin-top: -20%;
+    width: 100%;
+    height: 450px;
+}
+
+@media screen and (max-width: 768px){
+    .column {
+        width: 100%;
+    }
+    img{
+        align-self: center;
+        margin-right: 50%;
+        margin-top: -20%;
+        width: 80%;
+    }
+}
