@@ -21,10 +21,7 @@ public class SchoolMapper {
     }
     public School dtoToEntity(SchoolDto dto)
     {
-//      st.setId(dto.getId());
-//		st.setName(dto.getName());
-//		st.setPassword(dto.getPassword());
-//		st.setUsername(dto.getUsername());
+
         ModelMapper mapper = new ModelMapper();
         School map = mapper.map(dto, School.class);
         return map;
