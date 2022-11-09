@@ -1,9 +1,11 @@
 package testing.demo.dto;
 
+import lombok.*;
 
-import lombok.Builder;
-
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentDto {
     private Long StudentId;
     // @JoinColumns()
@@ -16,5 +18,5 @@ public class StudentDto {
     private String surname;
     private String Phone_Number;
 }
-//================DTO documentation==================
-//https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
+// ================DTO documentation==================
+// https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
