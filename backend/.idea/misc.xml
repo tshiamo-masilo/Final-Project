@@ -7,7 +7,12 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK" />
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+>>>>>>> f1847e2589910d3ac8d026a705ad5e1a6e7a81bc
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>
