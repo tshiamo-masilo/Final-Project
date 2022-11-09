@@ -30,4 +30,7 @@ public class Student {
     @OneToOne
     @JoinColumn(name ="ApplicationIdCol")
     private StudentApplication application;
+    @OneToOne
+    @JoinColumn(name="userId")
+    private UserCredentials userCredentials;
 }

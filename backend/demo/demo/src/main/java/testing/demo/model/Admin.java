@@ -26,4 +26,7 @@ public class Admin{
     private String Phone_Number;
     private String Password;
     private String Employee_no;
+    @OneToOne
+    @JoinColumn(name ="userId")
+    private UserCredentials userCredentials;
 }

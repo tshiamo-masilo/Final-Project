@@ -17,7 +17,7 @@ public class UserCredentials {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = true, unique = true)
+    @Column(name ="userId",nullable = false, updatable = true, unique = true)
     private Long UserId;
     private String Name;
     private String Surname;
