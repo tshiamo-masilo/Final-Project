@@ -45,3 +45,6 @@ border-radius: 10px;
   .btn-outline-dark{
     background-color: white;
   }
+  .container{
+    background-attachment: fixed;
+  }
