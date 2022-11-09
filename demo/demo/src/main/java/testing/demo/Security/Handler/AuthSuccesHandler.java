@@ -56,8 +56,5 @@ public class AuthSuccesHandler extends SimpleUrlAuthenticationSuccessHandler {
         response.addHeader("Authorization", "Bearer " + token);
         response.addHeader("Content-Type", "application/json");
         response.getWriter().write(objectMapper.writeValueAsString(TokenResponse.of(token, null)));
-
-        log.info("Authentication success");
-
     }
 }
