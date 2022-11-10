@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import testing.demo.Repository.StudentApplicationRepo;
 import testing.demo.dto.StudentApplicationDto;
 import testing.demo.mapper.StudentApplicationMapper;
+import testing.demo.model.Status;
 import testing.demo.model.StudentApplication;
 
 import java.util.List;
@@ -42,6 +43,9 @@ public class ApplicationService {
         studentApplication = Objmapper.dtoToEntity(dto);
         appRepo.save(studentApplication);
         return Objmapper.entityToDto(studentApplication);
+    }
+    public List<StudentApplicationDto> getStudentsByStatus(Status status){
+        return  Objmapper.entityToDto(appRepo.findByStatus(status));//dto object
     }
 }
 
