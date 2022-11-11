@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Requirements")
+@Table(name="streams")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stream {
