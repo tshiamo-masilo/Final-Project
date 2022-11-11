@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
-
+import { UserModule } from './user/user.module';
 
 
 import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
-import { ApplicationComponent } from './application';
+
 
 // import { DashboardModule } from './dashboard';
 // import { AdminComponent } from './dashboard/admin';
@@ -21,12 +21,7 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
-   
-    
-    
-    // { path: 'admin', component: AdminComponent },
-    // { path: 'learner', component: LearnerComponent },
-    
+
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }

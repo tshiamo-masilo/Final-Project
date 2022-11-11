@@ -30,7 +30,6 @@ import { SignupComponent } from './user/signup/signup.component';
 
 
 @NgModule({
-
   imports: [
     BrowserModule,
     MatToolbarModule,
