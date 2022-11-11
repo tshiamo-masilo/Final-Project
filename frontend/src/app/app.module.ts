@@ -25,13 +25,11 @@ import { SchoolComponent } from './school/school.component';
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
 
 @NgModule({
-
   imports: [
     BrowserModule,
     MatToolbarModule,
@@ -50,7 +48,6 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-    AdminDashboardComponent,
     
   ],
   bootstrap: [AppComponent]
