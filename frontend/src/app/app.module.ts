@@ -25,7 +25,7 @@ import { SchoolComponent } from './school/school.component';
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
-import { StreamsComponent } from './streams/streams.component';
+
 
 
 
@@ -49,7 +49,6 @@ import { StreamsComponent } from './streams/streams.component';
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-    StreamsComponent,
     
   ],
   bootstrap: [AppComponent]
