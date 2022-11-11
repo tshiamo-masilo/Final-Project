@@ -1,7 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
-
-
 import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
@@ -9,14 +7,6 @@ import { AccountComponent } from './account';
 import {LoginComponent} from './user/login';
 import {SignupComponent} from './user/signup';
 import {ForgotComponent} from './user/forgot';
-
-
-// import { DashboardModule } from './dashboard';
-// import { AdminComponent } from './dashboard/admin';
-// import { LearnerComponent } from './dashboard/learner';
-
-
-
 
 const routes: Routes = [
     
@@ -27,9 +17,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
-    
-
-    // otherwise redirect to home
+   // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
 ];
 
