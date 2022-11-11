@@ -31,15 +31,18 @@
 
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="typePasswordX-2">Password</label>
-                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-
+                <label class="form-label" for="typePassword2">Password</label>
+                <input type="password" id="typePassword2" class="form-control form-control-lg" />
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typePassword3">Confirm Password</label>
+                <input type="password" id="typePassword3" class="form-control form-control-lg" />
+                <span id='message'></span>
               </div>
               <button class="btn btn-primary btn-lg btn-block" type="submit">
                 SIGNUP
               </button>
               <br><br>
-              <a routerlink="../signup" id="links">Forgot password?</a><br><br>
               <div class="header__center">OR</div>
 
               <div class="social-links">
@@ -47,7 +50,7 @@
                 <i class="fa fa-envelope" style="font-size:36px"></i>
                 <i class="fa fa-linkedin-square" style="font-size:36px"></i>
               </div>
-              <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" routerlink="./login">LOGIN</a>
+              <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" href="login">LOGIN</a>
             </form>
             <!--</form> -->
           </div>
@@ -56,3 +59,12 @@
     </div>
   </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+   $('#typePassword2, #typePassword3').on('keyup', function () {
+    if ($('#typePassword2').val() == $('#typePassword3').val()) {
+      $('#message').html('Matching').css('color', 'green');
+    } else 
+      $('#message').html('Not Matching').css('color', 'red');
+  });
+</script>
