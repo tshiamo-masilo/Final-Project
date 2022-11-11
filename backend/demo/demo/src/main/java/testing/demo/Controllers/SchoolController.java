@@ -13,28 +13,26 @@ public class SchoolController {
     @Autowired
     private SchoolService schoolService;
 
-
     @PostMapping("/saveSchool")
-    public School saveSchool(@RequestBody School school){
+    public School saveSchool(@RequestBody School school) {
 
-        return schoolService.saveSchool(school) ;
+        return schoolService.saveSchool(school);
     }
 
     @GetMapping("/getSchool/{id}")
-    public School findSchoolById(@PathVariable int id){
+    public School findSchoolById(@PathVariable Long id) {
 
         return schoolService.findSchoolById(id);
     }
 
     @GetMapping("/getAllSchool")
-    public List<School> findAllSchool(){
+    public List<School> findAllSchool() {
 
         return schoolService.getAllSchools();
     }
 
-
     @DeleteMapping("/deleteSchool/{id}")
-    public String deleteSchoolById(@PathVariable int id){
+    public String deleteSchoolById(@PathVariable Long id) {
 
         return schoolService.deleteSchoolById(id);
     }
