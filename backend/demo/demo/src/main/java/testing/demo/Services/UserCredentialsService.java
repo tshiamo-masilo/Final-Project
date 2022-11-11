@@ -18,9 +18,9 @@ public class UserCredentialsService {
 
     public UserCredentials savePerson(UserCredentials userCredentials){
        return repo.save(userCredentials)  ;
-    }
+        }
 
-    public UserCredentials findPersonById(int id){
+        public UserCredentials findPersonById(int id){
        return repo.findById(id).orElse(null);
     }
     public List<UserCredentials> getAllUser(){

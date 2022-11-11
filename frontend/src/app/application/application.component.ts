@@ -13,3 +13,11 @@ export class ApplicationComponent implements OnInit {
   }
 
 }
+
+@Component({
+  selector: 'app-application',
+  templateUrl:'./application.component.html',
+})
+export class AppApplication {
+  value = 'option2';
+}

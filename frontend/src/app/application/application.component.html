@@ -1,21 +1,23 @@
-<h1 style="text-align: center;font-size: 40px;">Application Form</h1>
-<hr style="height: 20px; width: 100%; ">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://material.angular.io/components/select/overview#select-value-binding">
 
-
-
+  <h1>Application Form</h1>
 
 <div class="container">
   <form action="">
-    <u>
-      <h3 class="heading">1.Personal information</h3>
-    </u>
+ 
+      <h3 class="heading">1. Personal information</h3>
+    <hr >
     <div class="row">
       <div class="col-6">
         <label for="fname">Full name:</label>
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="name" name="name" />
       </div>
     </div>
     <div class="row">
@@ -24,7 +26,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="number" name="number" />
       </div>
     </div>
     <div class="row">
@@ -33,7 +35,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="date" name="date" />
       </div>
     </div>
 
@@ -43,17 +45,17 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Nationality" name="Nationality" />
       </div>
     </div>
 
     <div class="row">
       <div class="col-6">
-        <label for="fname">Nationality:</label>
+        <label for="fname">Gender:</label>
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Gender" name="Gender" />
       </div>
     </div>
 
@@ -63,7 +65,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Address" name="Address" />
       </div>
     </div>
 
@@ -73,7 +75,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Language" name="Language" />
       </div>
     </div>
 
@@ -83,13 +85,13 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="tel"  id="number" name="Phone" maxlength="10" pattern="[0-9]{1}[0-9]{9}">  
       </div>
     </div>
 
-    <u>
-      <h3 class="heading">2.Gaurdian information</h3>
-    </u>
+ 
+      <h3 class="heading">2. Gaurdian information</h3>
+      <hr>
 
     <div class="row">
       <div class="col-6">
@@ -97,7 +99,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="name" name="name" />
       </div>
     </div>
 
@@ -107,7 +109,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Language" name="Language" />
       </div>
     </div>
 
@@ -117,7 +119,7 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="name" name="name" />
       </div>
     </div>
 
@@ -127,29 +129,28 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Number" name="number" />
       </div>
     </div>
 
-    <u>
-      <h3 class="heading">3.Academic Records</h3>
-    </u>
+    
+      <h3 class="heading">3. Academic Records</h3>
+      <hr >
 
     <div class="row">
       <div class="col-6">
         <label for="fname">Previous school name:</label>
       </div>
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="Schoolname" name="Scoolname" />
       </div>
 
       <div class="col-6">
         <label for="fname">If a returning leaner tick the box:</label>
+
       </div>
 
-      <div class="col-6">
-        <input type="text" id="fname" name="fname" />
-      </div>
+     
     </div>
 
     <div class="row">
@@ -158,14 +159,62 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="fname" name="fname" />
+        <input type="text" id="grade" name="grade" />
       </div>
     </div>
 
     <div class="row">
       <div class="col-6">
         <label for="fname">Please upload your Documents/Report here:</label>
+        
+       
       </div>
+      <section>
+           <div class="drag">
+            <h3>Upload your file</h3>
+            <div class="drag-area">
+              <div class="icon">
+                <i class="fas fa-images"></i>
+              </div>
+              <span class="header">Drag and Drop</span>
+              <span class="header">or <span class="button">browse</span></span>
+              <input type="file" hidden>
+              <span class="support">Supports:JPEG, JPG, PNG</span>
+                   </div>
+            </div>
+      <script src="script.js"></script>
+     
+      </section>
+      <div class="col-6">
+        <label for="fname">Streams offered</label>
+      </div>
+      
+      <select name="Dropdown-menu" id="Select">
+       
+        <option value="option1">Science Stream </option>
+        <option value="option2">General Stream</option>
+        <option value="option3">Commerce Stream</option>
+        select [(value)]="selected">
+        <p>Chosen Stream: (value)</p>
+      </select>
+
+      
+
+      <div class="col-6">
+        <label for="fname">Subject</label>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="fname">Requirements</label>
+          </div>
+
+      </div>
+
+</div>
+   
     </div>
   </form>
 </div>
+
+
+
