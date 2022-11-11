@@ -1,11 +1,4 @@
-body{
-    height: 100vh;
-    font-weight:600;
-    
-    
-    
-    }
-    
+
     input{
         border-radius: 5px;
         width: 80%;
@@ -27,6 +20,9 @@ body{
         margin-top: 12px;
         margin-left: 10px;
         font-weight: bolder;
-    
     }
+    .label{
+        font-weight: bold;
+    }
+
     

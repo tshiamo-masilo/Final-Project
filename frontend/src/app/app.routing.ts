@@ -6,7 +6,7 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
-
+import { ApplicationComponent } from './application';
 
 // import { DashboardModule } from './dashboard';
 // import { AdminComponent } from './dashboard/admin';
@@ -16,10 +16,13 @@ import { AccountComponent } from './account';
 
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: ApplicationComponent },
+    { path: 'homce', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
+   
+    
     
     // { path: 'admin', component: AdminComponent },
     // { path: 'learner', component: LearnerComponent },
