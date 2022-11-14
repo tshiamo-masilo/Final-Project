@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <!-- ICON -->
-<div class="image" id="icon" style="display: block"></div>
+<div class="image w3-animate-top" id="icon" style="display: block"></div>
 <!-- /ICON -->
 
 <!-- SEARCH BAR -->
@@ -7,9 +9,10 @@
   <form method="get" action="">
     <div class="tb">
       <div class="td">
-        <input type="text" placeholder="Search Schools" required />
+        <input type="text" name="search" id="searchbar" placeholder="Search Schools..." onkeyup="search_schools()"
+          onclick="myFunction()" />
       </div>
-      <div onclick="myFunction()" class="td" id="s-cover">
+      <div class="td" id="s-cover">
         <button aria-label="Aria Name" type="submit">
           <div id="s-circle"></div>
           <span></span>
@@ -21,68 +24,50 @@
 </div>
 <!-- /SEARCH BAR -->
 
+
+
 <!-- FILTER BAR -->
 <div id="filter" style="display: none">
   <div class="dropdown show" id="filterbuttons">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink2"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
+    <a class="btn btn-secondary dropdown-toggle w3-animate-top" href="#" role="button" id="dropdownMenuLink2"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Province
     </a>
 
-    <div
-      class="dropdown-menu"
-      aria-labelledby="dropdownMenuLink"
-      id="dropdownmenu"
-    >
+    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink" id="dropdownmenu">
       <a class="dropdown-item" href="#">Gauteng</a>
+      <hr style="color:black;">
       <a class="dropdown-item" href="#">Eastern Cape</a>
+      <hr>
       <a class="dropdown-item" href="#">Kwa-Zulu Natal</a>
+      <hr>
       <a class="dropdown-item" href="#">Limpopo</a>
+      <hr>
       <a class="dropdown-item" href="#">Free State</a>
     </div>
   </div>
 
-  <div class="dropdown show" id="filterbuttons">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
+  <div class="dropdown show " id="filterbuttons">
+    <a class="btn btn-secondary dropdown-toggle w3-animate-top" href="#" role="button" id="dropdownMenuLink"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       City/Town
     </a>
 
-    <div
-      class="dropdown-menu"
-      aria-labelledby="dropdownMenuLink"
-      id="dropdownmenu"
-    >
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
       <a class="dropdown-item" href="#">Johannesburg</a>
+      <hr>
       <a class="dropdown-item" href="#">Pretoria</a>
+      <hr>
       <a class="dropdown-item" href="#">City of Tshwane</a>
+      <hr>
       <a class="dropdown-item" href="#">Soweto </a>
+      <hr>
       <a class="dropdown-item" href="#">Alberton</a>
     </div>
   </div>
   <div class="dropdown show" id="filtergeo">
-    <a
-      class="btn btn-secondary"
-      href="#"
-      role="button"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
+    <a class="btn btn-secondary w3-animate-top" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false" onclick="getLocation()">
       Check My <br />
       Location
     </a>
@@ -91,17 +76,20 @@
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
-<div id="sections" style="display: none;" >
-  <div class="col">
-    <div class="card" *ngFor="let school of schools">
-      <div class="card-body">
-        <h5 class="card-title">{{ school.Institution_Name }}</h5>
-            <p class="card-text">
-              {{ school.Sector }}<br>
-              {{ school.Phase }}<br>
-              {{ school.StreetAddress }}<br>
-            </p>
-        <a class="btn btn-primary">Apply</a>
+<div id="sections" style="display: none;" class=" w3-animate-bottom">
+  <div class="row">
+    <div class="card schools" *ngFor="let school of schools">
+      <div class="card-body ">
+        <h5 class="card-title ">{{ school.Institution_Name }}</h5>
+        <hr><br>
+        <p class="card-text ">
+          {{ school.Sector }}
+          {{ school.Phase }}<br>
+          Address: {{ school.StreetAddress }}<br>
+          Mobile No: {{ school.cellno }}<br>
+          National Emis No: {{ school.NatEmis }}<br>
+          <a class="btn btn-primary">Apply</a>
+        </p>
       </div>
     </div>
   </div>
