@@ -9,6 +9,7 @@ import { AccountComponent } from './account';
 import {LoginComponent} from './user/login';
 import {SignupComponent} from './user/signup';
 import {ForgotComponent} from './user/forgot';
+// import {StreamsComponent} from './streams';
 
 
 // import { DashboardModule } from './dashboard';
