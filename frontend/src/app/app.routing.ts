@@ -6,6 +6,9 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
+import {LoginComponent} from './user/login';
+import {SignupComponent} from './user/signup';
+import {ForgotComponent} from './user/forgot';
 
 
 // import { DashboardModule } from './dashboard';
@@ -16,12 +19,15 @@ import { AccountComponent } from './account';
 
 
 const routes: Routes = [
-    { path: 'home', component: ApplicationComponent },
-    { path: 'homce', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
-
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    { path: 'forgot', component: ForgotComponent },
+    // { path: 'streams', component: StreamsComponent },
+    
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }

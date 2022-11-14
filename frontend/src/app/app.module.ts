@@ -12,6 +12,7 @@ import {AppComponent } from './app.component';
 
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -30,15 +31,6 @@ import { SignupComponent } from './user/signup/signup.component';
 
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MdbCollapseModule,
-    appRoutingModule,
-
-  ],
-
   declarations: [
     AppComponent,
     ApplicationComponent,
@@ -47,8 +39,16 @@ import { SignupComponent } from './user/signup/signup.component';
     ContactComponent,
     AccountComponent,
     ApplicationComponent,
-    SchoolComponent,
-    
+    SchoolComponent,  
+    // StreamsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MdbCollapseModule,
+    appRoutingModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
   
