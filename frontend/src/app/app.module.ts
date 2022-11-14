@@ -31,7 +31,6 @@ import {DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.co
 
 
 @NgModule({
-
   imports: [
     BrowserModule,
     MatToolbarModule,
