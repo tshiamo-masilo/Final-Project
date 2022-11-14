@@ -6,6 +6,8 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
+import { SignupComponent } from './user/signup';
+import { LoginComponent } from './user/login';
 
 
 // import { DashboardModule } from './dashboard';
@@ -16,13 +18,12 @@ import { AccountComponent } from './account';
 
 
 const routes: Routes = [
-    { path: 'home', component: ApplicationComponent },
-    { path: 'homce', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
-
-
+    { path: 'signUp', component: SignupComponent },
+    { path: 'signIn', component: LoginComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
 ];

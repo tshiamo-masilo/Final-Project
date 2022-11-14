@@ -33,4 +33,17 @@ public class UserDetailService implements UserDetailsService {
                 true,
                 user.getAuthorities());
     }
+
+    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
+        var user = userService.getUserByEmail(email);
+
+        return new User(
+                user.getUsername(),
+                user.getPassword(),
+                user.isEnabled(),
+                true,
+                true,
+                true,
+                user.getAuthorities());
+    }
 }

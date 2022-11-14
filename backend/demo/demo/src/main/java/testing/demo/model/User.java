@@ -23,6 +23,8 @@ public class User implements UserDetails {
     private Long id;
 
     private String name;
+    
+    private String surname;
 
     @Builder.Default
     private String uuid = UUID.randomUUID().toString();

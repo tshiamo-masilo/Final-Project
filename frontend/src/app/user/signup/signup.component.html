@@ -4,42 +4,42 @@
       <div class="col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <form>
+            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
               <h3>SIGN UP</h3>
 
               <hr class="my-4 mb-4" />
-              <!--<form action="weblink" method="post">   post method-->
+            
               <div class="form-outline mb-4">
                 <label class="form-label" for="firstname">First Name</label>
-                <input type="fname" id="firstname" class="form-control form-control-lg" />
+                <input formControlName="name" type="fname" id="firstname" class="form-control form-control-lg" />
               </div>
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="lastname">Last Name</label>
-                <input type="lname" id="lastname" class="form-control form-control-lg" />
+                <input formControlName="surname" type="lname" id="lastname" class="form-control form-control-lg" />
               </div>
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="typeEmailX-2">Email</label>
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg"
+                <input formControlName="email" id="typeEmailX-2" class="form-control form-control-lg"
                   placeholder="example@email.com" /><br>
+              </div>
 
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="security">Security Question</label>
-                    <input type="security" id="security" class="form-control form-control-lg" placeholder="What is your favourite pet?" />
-                  </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="username">Username</label>
+                <input formControlName="username" type="text" id="username" class="form-control form-control-lg" placeholder="username" />
+              </div>
 
+              <div class="form-outline mb-4">
+                <label class="form-label" for="password">Password</label>
+                <input formControlName="password" type="password" id="password" class="form-control form-control-lg" />
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="typePassword2">Password</label>
-                <input type="password" id="typePassword2" class="form-control form-control-lg" />
-              </div>
-              <div class="form-outline mb-4">
-                <label class="form-label" for="typePassword3">Confirm Password</label>
-                <input type="password" id="typePassword3" class="form-control form-control-lg" />
+                <label class="form-label" for="confirmPassword">Confirm Password</label>
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" class="form-control form-control-lg" />
                 <span id='message'></span>
               </div>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">
+              <button type="submit" class="btn btn-primary btn-lg btn-block" >
                 SIGNUP
               </button>
               <br><br>
@@ -52,7 +52,7 @@
               </div>
               <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" href="login">LOGIN</a>
             </form>
-            <!--</form> -->
+       
           </div>
         </div>
       </div>
