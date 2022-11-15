@@ -27,6 +27,7 @@ import { SchoolComponent } from './school/school.component';
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { StreamsComponent } from './streams/streams.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,6 +43,7 @@ import { StreamsComponent } from './streams/streams.component';
     ApplicationComponent,
     SchoolComponent,  
     StreamsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { StreamsComponent } from './streams/streams.component';
     MdbCollapseModule,
     appRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent]
   

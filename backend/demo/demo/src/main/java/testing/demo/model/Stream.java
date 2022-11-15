@@ -13,16 +13,20 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Stream {
     @Id
-    @GeneratedValue()
-    @Column()
-    private int id;
-    private String StreamId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String StreamName;
-    private String SchoolId;
-    private String Subject1;
-    private String Subject2;
-    private String Subject3;
-    private String Subject4;
+    // We're not doing this
 
+    //    private String Subject1;
+    //    private String Subject2;
+    //    private String Subject3;
+    //    private String Subject4;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subject_id")
+    private Subject subject;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "school_id")
+    private School school;
 }

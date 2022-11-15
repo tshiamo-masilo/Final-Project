@@ -5,7 +5,7 @@
                 <h3>Stream</h3>
                 <div class="row">
                     <div class="copl-6">
-                        <input type="text" placeholder="School Name" required>
+                        <input type="text" placeholder="School Name"formControlName="" required>
                     </div>
                 </div>
                 <hr>
@@ -41,13 +41,13 @@
             </form>
         </div>
         <div class="col">
-            <form >
+            <form [formGroup]="reqform" >
                 <h3>Requirements</h3>
                 <div class="requirements">
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #maths (change)="onSelectedMaths(maths.value)">
+                                <option>Select Level of Maths Required</option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>
@@ -61,8 +61,8 @@
                     <hr>
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #naturalScience (change)="onSelectedNaturalScience(naturalScience.value)">
+                                <option>Select Level of NaturalScience Required </option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>
@@ -76,8 +76,8 @@
                     <hr>
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #technology (change)="onSelectedTechnology(technology.value)">
+                                <option>Select Level of Technology Required </option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>
@@ -91,8 +91,8 @@
                     <hr>
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #ems (change)="onSelectedEms(ems.value)">
+                                <option>Select Level of E.M.S Required</option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>
@@ -105,8 +105,8 @@
                     </div>       <hr>
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #arts (change)="onSelectedArts(arts.value)">
+                                <option>Select Level of Arts and Calture Required </option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>
@@ -120,8 +120,8 @@
                     <hr>
                     <div class="row">
                         <div class="copl-6">
-                            <select>
-                                <option>Select Level </option>
+                            <select #socialScience (change)="onSelectedSocialScience(socialScience.value)">
+                                <option>Select Level ofSocial ScRequired </option>
                                 <option>1  (0-29%)</option>
                                 <option>2  (30-39%)</option>
                                 <option>3  (40-49%)</option>

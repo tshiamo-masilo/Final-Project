@@ -12,14 +12,13 @@ import javax.persistence.*;
 public class Requirements {
     @Id
     @GeneratedValue()
-    @Column()
+    @Column(name="requirementsId")
     private int id;
-    private String StreamId;
-    private String RequirementsId;
-    private String Maths;
-    private String NaturalScience;
-    private String Technology;
-    private String EconomicManagementScience;
-    private String ArtAndCulture;
-    private String SocialScience;
+    private String streamId;
+    private String maths;
+    private String naturalScience;
+    private String technology;
+    private String ems;
+    private String Arts;
+    private String socialScience;
 }

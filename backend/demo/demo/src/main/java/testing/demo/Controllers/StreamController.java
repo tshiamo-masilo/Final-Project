@@ -19,7 +19,7 @@ public class StreamController {
         return new ResponseEntity<>(repository.saveStream(requirements), HttpStatus.CREATED);
     }
     @GetMapping("/get/{id}")
-    public ResponseEntity<Stream> getStreamById(@PathVariable int id){
+    public ResponseEntity<Stream> getStreamById(@PathVariable Long id){
         return ResponseEntity.ok(repository.getStreamById(id));
     }
     @GetMapping("/getAll")
@@ -27,7 +27,7 @@ public class StreamController {
         return ResponseEntity.ok(repository.getAllStreams());
     }
     @DeleteMapping("/delete/{id}")
-    public  ResponseEntity<String> deleteRequirementById(@PathVariable int id){
+    public  ResponseEntity<String> deleteRequirementById(@PathVariable Long id){
         return  ResponseEntity.ok(repository.deleteStreamById(id));
     }
     @DeleteMapping("/deleteAll")

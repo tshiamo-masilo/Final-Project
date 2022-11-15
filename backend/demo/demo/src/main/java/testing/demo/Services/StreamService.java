@@ -1,5 +1,6 @@
 package testing.demo.Services;
 
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -26,10 +27,10 @@ public class StreamService {
 //        return streamsRepo.
 //    }
 
-    public Stream getStreamById(int id){
-        return streamsRepo.findById(id);
+    public Stream getStreamById(Long id){
+        return streamsRepo.findById(id).get();
     }
-    public String deleteStreamById(int id){
+    public String deleteStreamById(Long id){
         streamsRepo.deleteById(id);
         return "Stream with Id:"+id+" is deleted";
     }
@@ -38,14 +39,10 @@ public class StreamService {
         return "All Stream are deleted";
     }
     public Stream updateStream(Stream stream){
-        Stream existing = streamsRepo.findById(stream.getId());
+        Stream existing = streamsRepo.findById(stream.getId()).get();
         existing.setStreamName(stream.getStreamName());
-        existing.setStreamId(stream.getStreamId());
-        existing.setSchoolId(stream.getSchoolId());
-        existing.setSubject1(stream.getSubject1());
-        existing.setSubject2(stream.getSubject2());
-        existing.setSubject3(stream.getSubject3());
-        existing.setSubject4(stream.getSubject4());
+        existing.setSubject(stream.getSubject());
+        existing.setSchool(stream.getSchool());
         return existing;
     }
 }

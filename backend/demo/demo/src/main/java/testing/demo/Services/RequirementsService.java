@@ -35,13 +35,12 @@ public class RequirementsService {
     }
     public Requirements updateRequirements(Requirements requirements){
         Requirements existing = requirementsRepo.findById(requirements.getId());
-        existing.setRequirementsId(requirements.getRequirementsId());
         existing.setStreamId(requirements.getStreamId());
         existing.setMaths(requirements.getMaths());
         existing.setNaturalScience(requirements.getNaturalScience());
         existing.setTechnology(requirements.getTechnology());
-        existing.setEconomicManagementScience(requirements.getEconomicManagementScience());
-        existing.setArtAndCulture(requirements.getArtAndCulture());
+        existing.setEms(requirements.getEms());
+        existing.setArts(requirements.getArts());
         existing.setSocialScience(requirements.getSocialScience());
         return existing;
     }
