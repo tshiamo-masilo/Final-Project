@@ -26,6 +26,7 @@ import { SchoolComponent } from './school/school.component';
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import {DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.component';
+import { StudentComponent } from './src/dashboard/student/student.component';
 
 
 
@@ -51,6 +52,7 @@ import {DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.co
     ApplicationComponent,
     SchoolComponent,
     DashboardComponent,
+    StudentComponent,
     
   ],
   bootstrap: [AppComponent]
