@@ -9,7 +9,7 @@ import { AccountComponent } from './account';
 import {LoginComponent} from './user/login';
 import {SignupComponent} from './user/signup';
 import {ForgotComponent} from './user/forgot';
-// import {StreamsComponent} from './streams';
+import {StreamsComponent} from './streams';
 
 
 // import { DashboardModule } from './dashboard';
@@ -27,7 +27,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
-    // { path: 'streams', component: StreamsComponent },
+    { path: 'streams', component: StreamsComponent },
     
 
     // otherwise redirect to home

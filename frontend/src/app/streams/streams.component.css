@@ -1,0 +1,59 @@
+.container {
+    background-color: rgb(63, 63, 63, 0.5);
+    height: 80vh;
+    margin-top: 15px;
+    color:WHITE;
+
+}
+
+hr {
+    opacity: 100%;
+    border: 0.1px solid white;
+    margin-bottom:20% ;
+    margin: auto;
+}
+
+::placeholder {
+    color: white;
+}
+
+input {
+    margin-bottom:5% ;
+    margin-top:5% ;
+    background-color: rgb(63, 63, 63, 0.0);
+    border: none;
+    width: 92%;
+    height: 38px;
+    border-radius: 5px;
+    color: white;
+}
+
+select {
+    margin-bottom:5% ;
+    margin-top:5% ;
+    background-color: rgb(63, 63, 63, 0.0);
+    border: none;
+    width: 92%;
+    height: 38px;
+    border-radius: 5px;
+    color: white;
+}
+
+option {
+    background-color: gray
+}
+
+input:hover {
+    background-color: darkgray;
+    color: aliceblue;
+}
+
+.button button {
+    background-color: skyblue;
+    align-self: left;
+}
+
+.headings {
+    color: whitesmoke;
+    align-items: center;
+}
