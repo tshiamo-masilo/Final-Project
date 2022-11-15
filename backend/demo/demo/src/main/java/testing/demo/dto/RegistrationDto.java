@@ -1,7 +1,7 @@
 package testing.demo.dto;
 
-import javax.persistence.*;
-import java.util.UUID;
+
+
 
 
 import lombok.*;

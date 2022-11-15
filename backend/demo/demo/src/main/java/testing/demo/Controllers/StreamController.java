@@ -14,6 +14,7 @@ import java.util.List;
 public class StreamController {
     @Autowired
     private StreamService repository;
+    
     @PostMapping("/save")
     public ResponseEntity<Stream> saveStream(Stream requirements){
         return new ResponseEntity<>(repository.saveStream(requirements), HttpStatus.CREATED);

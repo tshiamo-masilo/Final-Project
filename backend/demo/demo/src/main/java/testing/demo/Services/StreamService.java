@@ -1,7 +1,6 @@
 package testing.demo.Services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
+
 import org.springframework.stereotype.Service;
 import testing.demo.Repository.StreamRepo;
 import testing.demo.model.Stream;
@@ -10,8 +9,6 @@ import java.util.List;
 
 @Service
 public class StreamService {
-    @Autowired
-    private RequirementsService requirementsService;
     private StreamRepo streamsRepo;
 
     public Stream saveStream(Stream stream){
@@ -22,9 +19,7 @@ public class StreamService {
 
         return streamsRepo.findAll();
     }
-//    public List<Stream> getStream(String id){
-//        return streamsRepo.
-//    }
+
 
     public Stream getStreamById(int id){
         return streamsRepo.findById(id);
