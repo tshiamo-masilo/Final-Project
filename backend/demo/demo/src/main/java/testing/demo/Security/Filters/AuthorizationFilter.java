@@ -1,4 +1,4 @@
-package testing.demo.Security.Filters;
+package testing.demo.security.filters;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 import lombok.var;
-import testing.demo.Services.UserDetailService;
+import testing.demo.services.UserDetailService;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 
@@ -56,15 +56,15 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
             return null;
         }
 
-        var email = JWT.require(Algorithm.HMAC256(secretKey))
+        var username = JWT.require(Algorithm.HMAC256(secretKey))
                 .build()
                 .verify(token.replace(TOKEN_PREFIX, ""))
                 .getSubject();
 
-        if (email == null)
+        if (username == null)
             return null;
 
-        var userDetail = userDetailService.loadUserByUsername(email);
+        var userDetail = userDetailService.loadUserByUsername(username);
 
         return new UsernamePasswordAuthenticationToken(userDetail.getUsername(), null, userDetail.getAuthorities());
     }

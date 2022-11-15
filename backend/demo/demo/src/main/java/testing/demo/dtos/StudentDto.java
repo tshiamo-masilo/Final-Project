@@ -1,4 +1,4 @@
-package testing.demo.dto;
+package testing.demo.dtos;
 
 import lombok.*;
 

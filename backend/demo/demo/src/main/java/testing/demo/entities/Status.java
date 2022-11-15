@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 public enum Status {
     Rejected,

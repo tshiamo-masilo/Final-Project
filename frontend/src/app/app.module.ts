@@ -25,20 +25,11 @@ import { SchoolComponent } from './school/school.component';
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MdbCollapseModule,
-    appRoutingModule,
-
-  ],
-
   declarations: [
     AppComponent,
     ApplicationComponent,
@@ -48,11 +39,19 @@ import { SignupComponent } from './user/signup/signup.component';
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-    
+  ],
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    UserModule,
+    MdbCollapseModule,
+    appRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
   
 })
 
 export class AppModule { }
-export class PizzaPartyAppModule { }
