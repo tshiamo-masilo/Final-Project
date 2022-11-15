@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-
+import { UserModule } from './user/user.module';
 
 
 import { HomeComponent } from './home';
@@ -16,17 +16,13 @@ import { ApplicationComponent } from './application';
 
 
 const routes: Routes = [
-    { path: 'home', component: ApplicationComponent },
+
+    { path: 'application', component: ApplicationComponent },
     { path: 'homce', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
-   
-    
-    
-    // { path: 'admin', component: AdminComponent },
-    // { path: 'learner', component: LearnerComponent },
-    
+
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }

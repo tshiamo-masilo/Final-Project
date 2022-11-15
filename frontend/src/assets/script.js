@@ -84,25 +84,41 @@
 //     }
 //     //console.log('The file is dropped in drag area')
 // }
-
+    
 const name = document.getElementById('name');
 const identificationNumber = document.getElementById('Identification number');
 const Nationality = document.getElementById('Nationality');
 const Gender = document.getElementById('Gender');
-
 const emailAddress = document.getElementById('Language');
 const mobileNumber = document.getElementById('Mobile Number');
 const Language = document.getElementById('Language');
 const homeAddress= document.getElementById('Home address');
 
+form.addListeners('submit', function(e){
+    e.preventDefault();
+});
+
 //Show error function
 
 function ShowError(input, message){
-    const container = input.parentElement;
-    container.className = 'container error'
-    const small = container.querySelector('small');
+    const row = input.parentElement;
+    row.className = 'row error'
+    const small = row.querySelector('small');
     small.innerText = message;
 }
 
+//show success 
+function showSuccess(){
+    row = input.parentElement;
+    row.className = 'row success';
+
+}
+
 //Event listeners
-form.addListeners('submit')
+form.addListeners('submit', function (e){
+    if(name.value===''){
+        ShowError(name,'name is required')
+    } else{
+        showSuccess(name);
+    }
+})

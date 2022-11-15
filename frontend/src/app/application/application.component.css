@@ -44,11 +44,11 @@ align-items: center;
 
 input {
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     color: black;
     border: none;
-    margin-top: 3%;
-    margin-left: 12px;
+
+    margin-left: 1px;
     text-align: center;
     text-decoration: none;
 }
@@ -134,4 +134,22 @@ h1{
     font-weight: 500;
     color: #1683ff;
     cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+    background-color:#1683ff;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 7px;
+    margin-top: 20px;
+    width: 120px;
+    margin-left: 90%;
+}
+small{
+    color: red;
+    text-align: center;
+    visibility: hidden;
 }
