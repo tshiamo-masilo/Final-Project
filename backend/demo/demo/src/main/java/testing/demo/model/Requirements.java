@@ -21,4 +21,5 @@ public class Requirements {
     private String ems;
     private String Arts;
     private String socialScience;
+    
 }

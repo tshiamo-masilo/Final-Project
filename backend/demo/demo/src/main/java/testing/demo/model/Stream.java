@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Stream {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="streamId")
     private Long id;
     private String StreamName;
     // We're not doing this

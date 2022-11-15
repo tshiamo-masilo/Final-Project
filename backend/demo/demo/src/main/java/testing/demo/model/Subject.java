@@ -21,7 +21,6 @@ public class Subject {
 
     private String Name;
     private String Description;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "subject")
     private Set<Stream> Streams = new HashSet<>();
 }

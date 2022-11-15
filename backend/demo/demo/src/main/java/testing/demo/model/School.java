@@ -15,6 +15,7 @@ import java.util.Set;
 public class School implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="schoolId")
     private Long id;
     private String School_Name;
     private String Admin_name;
