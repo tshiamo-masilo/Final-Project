@@ -1,7 +1,7 @@
-package testing.demo.dto;
+package testing.demo.dtos;
 
 import lombok.*;
-import testing.demo.model.Status;
+import testing.demo.entities.Status;
 
 @Data
 @Builder

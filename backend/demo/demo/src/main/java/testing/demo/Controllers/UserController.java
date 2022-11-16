@@ -1,4 +1,4 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -7,9 +7,9 @@ import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
-import testing.demo.Services.UserService;
-import testing.demo.model.ApiResponse;
-import testing.demo.model.User;
+import testing.demo.entities.ApiResponse;
+import testing.demo.entities.User;
+import testing.demo.services.UserService;
 
 @RestController
 @RequestMapping("/user")

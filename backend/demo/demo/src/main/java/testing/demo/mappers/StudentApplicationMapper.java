@@ -1,4 +1,4 @@
-package testing.demo.mapper;
+package testing.demo.mappers;
 
 //@Mapper
 public class StudentApplicationMapper {

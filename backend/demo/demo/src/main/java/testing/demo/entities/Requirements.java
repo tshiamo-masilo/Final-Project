@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 import lombok.*;
 
@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Requirements")
-@AllArgsConstructor(staticName = "build")
+@Table(name = "Requirements")
+@AllArgsConstructor
 @NoArgsConstructor
 public class Requirements {
     @Id
