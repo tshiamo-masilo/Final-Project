@@ -1,9 +1,10 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 
 import org.springframework.stereotype.Service;
-import testing.demo.Repository.StreamRepo;
-import testing.demo.model.Stream;
+
+import testing.demo.entities.Stream;
+import testing.demo.repositories.StreamRepo;
 
 import java.util.List;
 
@@ -11,28 +12,37 @@ import java.util.List;
 public class StreamService {
     private StreamRepo streamsRepo;
 
-    public Stream saveStream(Stream stream){
+    public Stream saveStream(Stream stream) {
         return streamsRepo.save(stream);
     }
 
-    public List<Stream> getAllStreams(){
+    public List<Stream> getAllStreams() {
 
         return streamsRepo.findAll();
     }
+<<<<<<< HEAD
 
+=======
+    // public List<Stream> getStream(String id){
+    // return streamsRepo.
+    // }
+>>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
 
-    public Stream getStreamById(int id){
+    public Stream getStreamById(int id) {
         return streamsRepo.findById(id);
     }
-    public String deleteStreamById(int id){
+
+    public String deleteStreamById(int id) {
         streamsRepo.deleteById(id);
-        return "Stream with Id:"+id+" is deleted";
+        return "Stream with Id:" + id + " is deleted";
     }
-    public String deleteAllStream(){
+
+    public String deleteAllStream() {
         streamsRepo.deleteAll();
         return "All Stream are deleted";
     }
-    public Stream updateStream(Stream stream){
+
+    public Stream updateStream(Stream stream) {
         Stream existing = streamsRepo.findById(stream.getId());
         existing.setStreamName(stream.getStreamName());
         existing.setStreamId(stream.getStreamId());

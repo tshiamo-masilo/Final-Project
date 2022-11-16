@@ -1,4 +1,4 @@
-package testing.demo.Security.Configurations;
+package testing.demo.security.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,11 +16,11 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import lombok.var;
-import testing.demo.Security.Filters.AuthorizationFilter;
-import testing.demo.Security.Filters.JsonObjectAuthenticationFilter;
-import testing.demo.Security.Handler.AuthSuccesHandler;
-import testing.demo.Services.UserDetailService;
-import testing.demo.model.Role;
+import testing.demo.entities.Role;
+import testing.demo.security.filters.AuthorizationFilter;
+import testing.demo.security.filters.JsonObjectAuthenticationFilter;
+import testing.demo.security.handler.AuthSuccesHandler;
+import testing.demo.services.UserDetailService;
 
 @Configuration
 public class Security {

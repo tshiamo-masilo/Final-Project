@@ -11,6 +11,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MdbCollapseModule } from "mdb-angular-ui-kit/collapse";
 
+<<<<<<< HEAD
 
 
 
@@ -33,6 +34,15 @@ import { LoginComponent } from "./user/login";
 @NgModule({
 
 
+=======
+// import { LoginComponent } from './user/login/login.component';
+import { SignupComponent } from './user/signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
+
+@NgModule({
+>>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
   declarations: [
     AppComponent,
     ApplicationComponent,
@@ -42,8 +52,21 @@ import { LoginComponent } from "./user/login";
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
+<<<<<<< HEAD
     SignupComponent,
     LoginComponent
+=======
+  ],
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    UserModule,
+    MdbCollapseModule,
+    appRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+>>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
   ],
   imports: [
     BrowserModule,
@@ -61,3 +84,7 @@ import { LoginComponent } from "./user/login";
 })
 export class AppModule {}
 
+<<<<<<< HEAD
+=======
+export class AppModule { }
+>>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d

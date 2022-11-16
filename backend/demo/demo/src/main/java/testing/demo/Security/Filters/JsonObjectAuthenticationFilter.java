@@ -1,4 +1,4 @@
-package testing.demo.Security.Filters;
+package testing.demo.security.filters;
 
 import java.io.BufferedReader;
 
@@ -11,7 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testing.demo.model.LoginCredentials;
+import testing.demo.dtos.LoginCredentialsDto;
 
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -30,7 +30,8 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
                 sb.append(line);
             }
 
-            LoginCredentials authenticationRequest = objectMapper.readValue(sb.toString(), LoginCredentials.class);
+            LoginCredentialsDto authenticationRequest = objectMapper.readValue(sb.toString(),
+                    LoginCredentialsDto.class);
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                     authenticationRequest.getUsername(), authenticationRequest.getPassword());
             setDetails(request, token);

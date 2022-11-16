@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="streams")
+@Table(name = "streams")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stream {
@@ -23,6 +23,5 @@ public class Stream {
     private String Subject2;
     private String Subject3;
     private String Subject4;
-
 
 }

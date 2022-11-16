@@ -1,4 +1,4 @@
-package testing.demo.Security.Configurations;
+package testing.demo.security.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
