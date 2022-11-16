@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../signup.service';
-import { UsersInfor } from '../users.model';
+import { UsersInfor } from '../models/users.model';
+import ValidateForm from '../Validation/validation';
 
 @Component({
   selector: 'app-signup',
@@ -21,12 +22,15 @@ export class SignupComponent implements OnInit {
   
   ngOnInit(): void {
     this.signupForm = this.formbuilder.group({
-      name:[''],
-      surname:[''],
-      email:[''],
-      username:[''],
-      password:[''],
-      confirmPassword:['']
+      name:new FormControl('', Validators.required),
+      surname:new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])),
+      username:new FormControl('', Validators.required),
+      password:new FormControl('', Validators.required),
+      confirmPassword:new FormControl('', Validators.required)
     })
   }
 
@@ -36,7 +40,15 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) return;
 
     this.apiSignUp.addUser(this.signupForm.value).subscribe((res: any) => {
-      console.log(res);
+       this.signupForm = res;
     });
+  }
+  onSignUp(){
+    if(this.signupForm.valid){
+      alert("You have successfuly Registered As A School Log User!")
+    }else{
+      ValidateForm.validateAllformfields(this.signupForm);
+      alert("Something went wrong please !!")
+    }
   }
 }
