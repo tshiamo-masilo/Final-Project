@@ -1,4 +1,4 @@
-package testing.demo.Security.Handler;
+package testing.demo.security.handler;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

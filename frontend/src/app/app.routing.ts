@@ -1,3 +1,4 @@
+import { LoginComponent } from './user/login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
@@ -6,23 +7,19 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
-
-
-// import { DashboardModule } from './dashboard';
-// import { AdminComponent } from './dashboard/admin';
-// import { LearnerComponent } from './dashboard/learner';
-
-
-
+import { LoginGuard } from './user/guards/login.guard';
 
 const routes: Routes = [
-    { path: 'home', component: ApplicationComponent },
-    { path: 'homce', component: HomeComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'account', component: AccountComponent },
-
-
+    { 
+        path: 'home', component: HomeComponent,
+        canActivate: [ LoginGuard ],
+        children: [
+            { path: 'contact', component: ContactComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'account', component: AccountComponent },
+        ]
+    },
+    { path: 'login', component: LoginComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
 ];

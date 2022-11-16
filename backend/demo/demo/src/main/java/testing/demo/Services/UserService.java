@@ -1,11 +1,11 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import testing.demo.model.User;
+import testing.demo.entities.User;
 
 import java.util.Optional;
 
