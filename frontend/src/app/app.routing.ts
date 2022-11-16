@@ -6,6 +6,8 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
+import { ApplicationComponent } from './application';
+import { StudentComponent } from './dashboard/student/student.component';
 
 
 // import { DashboardModule } from './dashboard';
@@ -21,6 +23,7 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
+    { path: 'student', component: StudentComponent },
 
 
     // otherwise redirect to home
