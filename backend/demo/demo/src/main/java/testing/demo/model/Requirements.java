@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Requirements {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="requirementsId")
     private int id;
     private String streamId;

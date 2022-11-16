@@ -1,99 +1,41 @@
 <div class="container">
-    <!-- 
-        ===============================================================================
-          // onSelectedMaths(value: string): any {
-  //   this.selectedMaths = value.substring(0, 1);
-  // }
-  // onSelectedTechnology(value: string): any {
-  //   this.selectedTechnology = value.substring(0, 1);
-  // }
-  // onSelectedNaturalScience(value: string): any {
-  //   this.selectedNaturalScience = value.substring(0, 1);
-  // }
-  // onSelectedEms(value: string): any {
-  //   this.selectedEms = value.substring(0, 1);
-  // }
-  // onSelectedArts(value: string): any {
-  //   this.selectedArts = value.substring(0, 1);
-  // }
-  // onSelectedSocialScience(value: string): any {
-  //   this.selectedSocialScience = value.substring(0, 1);
-  // }
-==============================
-  // selectedMaths: any;
-  // selectedTechnology: any;
-  // selectedNaturalScience: any;
-  // selectedEms: any;
-  // selectedArts: any;
-  // selectedSocialScience: any;
-==============================
-          // addingFormValues() {
-  //   this.reqform.get('maths')?.setValue(this.selectedMaths);
-  //   this.reqform.get('technology')?.setValue(this.selectedTechnology);
-  //   this.reqform.get('naturalScience')?.setValue(this.selectedNaturalScience);
-  //   this.reqform.get('ems')?.setValue(this.selectedEms);
-  //   this.reqform.get('arts')?.setValue(this.selectedArts);
-  //   this.reqform.get('socialScience')?.setValue(this.selectedSocialScience);
-  // }      
+    <h3>Requirements</h3>
 
-        ===============================================================================
-        <div class="row container2" style="margin:auto ;">            
-        <div class="col">
-            <form >
-                <h3>Stream</h3>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="School Name"formControlName="" required>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="Stream Name" required>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="Subject 1" required>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="Subject 2" required>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="Subject 3" required>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" placeholder="Subject 4" required>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col">
-            
-        </div>
-        <hr>
-    </div> -->
     <form [formGroup]="reqform" (ngSubmit)="Onsubmit()">
-        <h3>Requirements</h3>
         <div class="requirements">
+            <div class="row">
+                <div class="col-6" id="stream">
+                    <select #stream (change)=" onSelectedStream(stream.value)">
+                        <ng-container *ngFor="let select of streamlist">
+                            <option >{{select}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <ng-container *ngIf="num === 1">
+                    <div class="col-4" >
+                        <label class="tick">&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="stream.value == ''">
+                    <div class="col-4">
+                        <label>{{stream.value}}</label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
             <div class="row">
                 <div class="col-6" id="maths">
                     <input id="math" type="number" max="7" min="1" maxlength="1" onkeydown="return false"
                         placeholder="Maths Level" formControlName="maths" required>
                 </div>
+                <ng-container *ngIf="reqform.value.maths !== '' ">
+                    <div class="col-2" >
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.maths == '' ">
                     <div class="col-4">
-                        <label>Select Somthing </label>
+                        <label>Select Maths Level </label>
                     </div>
                 </ng-container>
             </div>
@@ -103,9 +45,14 @@
                     <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
                         placeholder="Natural Science Level" formControlName="naturalScience" required>
                 </div>
+                <ng-container *ngIf="reqform.value.naturalScience !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.naturalScience == '' ">
                     <div class="col-4">
-                        <label>Select Somthing </label>
+                        <label>Select Natural Science Level </label>
                     </div>
                 </ng-container>
             </div>
@@ -115,6 +62,11 @@
                     <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
                         placeholder="Technology Level" formControlName="technology" required>
                 </div>
+                <ng-container *ngIf="reqform.value.technology !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.technology == '' ">
                     <div class="col-4">
                         <label>Select Somthing </label>
@@ -127,6 +79,11 @@
                     <input type="number" max="7" min="1" maxlength="1" onkeydown="return false" placeholder="EMS Level"
                         formControlName="ems" required>
                 </div>
+                <ng-container *ngIf="reqform.value.ems !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.ems == '' ">
                     <div class="col-4">
                         <label>Select Somthing </label>
@@ -139,6 +96,11 @@
                     <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
                         placeholder="Arts and Calture Level" formControlName="arts" required>
                 </div>
+                <ng-container *ngIf="reqform.value.arts !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.arts == '' ">
                     <div class="col-4">
                         <label>Select Somthing </label>
@@ -151,6 +113,11 @@
                     <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
                         placeholder="Social Science Level" formControlName="socialScience" required>
                 </div>
+                <ng-container *ngIf="reqform.value.socialScience !== '' ">
+                    <div class="col-2">
+                        <label  class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
                 <ng-container *ngIf="reqform.value.socialScience == '' ">
                     <div class="col-4">
                         <label>Select Somthing </label>
@@ -158,11 +125,11 @@
                 </ng-container>
             </div>
             <hr>
-           
-        </div>
+
+        </div> 
         <div class="row button">
             <div class="col-12">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit">
+                <input type="submit" class="btn" value="Submit">
             </div>
         </div>
     </form>

@@ -17,7 +17,7 @@ public class RequirementsController {
     private RequirementsService repository;
     @PostMapping("/save")
     @CrossOrigin
-    public Requirements saveRequirements(Requirements requirements){
+    public Requirements saveRequirements(@RequestBody Requirements requirements){
         return repository.saveRequirements(requirements);
     }
     @GetMapping("/get/{id}")
