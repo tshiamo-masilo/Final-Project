@@ -3,10 +3,10 @@ package testing.demo.mappers;
 import org.modelmapper.*;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import testing.demo.dto.StudentApplicationDto;
-import testing.demo.dto.StudentDto;
-import testing.demo.model.Student;
-import testing.demo.model.StudentApplication;
+import testing.demo.dtos.StudentApplicationDto;
+import testing.demo.dtos.StudentDto;
+import testing.demo.entities.Student;
+import testing.demo.entities.StudentApplication;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;

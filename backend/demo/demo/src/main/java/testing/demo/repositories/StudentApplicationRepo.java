@@ -1,8 +1,8 @@
-package testing.demo.Repository;
+package testing.demo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import testing.demo.model.Status;
-import testing.demo.model.StudentApplication;
+import testing.demo.entities.Status;
+import testing.demo.entities.StudentApplication;
 
 import java.util.List;
 

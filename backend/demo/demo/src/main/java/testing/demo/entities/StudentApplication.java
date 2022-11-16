@@ -1,10 +1,6 @@
 package testing.demo.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -16,5 +12,7 @@ public class StudentApplication {
     @GeneratedValue()
     @Column()
     private Long ApplicationId;
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Status status;
 }

@@ -2,11 +2,11 @@ package testing.demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.Repository.StudentApplicationRepo;
-import testing.demo.dto.StudentApplicationDto;
-import testing.demo.mapper.StudentApplicationMapper;
-import testing.demo.model.Status;
-import testing.demo.model.StudentApplication;
+import testing.demo.repositories.StudentApplicationRepo;
+import testing.demo.dtos.StudentApplicationDto;
+import testing.demo.mappers.StudentApplicationMapper;
+import testing.demo.entities.Status;
+import testing.demo.entities.StudentApplication;
 
 import java.util.List;
 
@@ -26,6 +26,22 @@ public class ApplicationService {
             appRepo.save(studentApplication);
             return Objmapper.entityToDto(studentApplication);
     }
+
+    public List<StudentApplicationDto> getAllApplicatios(){
+        return  Objmapper.entityToDto(appRepo.findAll());
+    }
+
+    public String deleteById(Long id){
+        String status ="";
+        if(appRepo.existsById(id)){
+            appRepo.deleteById(id);
+            status = "Application deleted";
+        }else{
+            status = "Id does not exist";
+        }
+        return status;
+    }
+
 
     public StudentApplicationDto getApplicationById(Long id){
         //dto.setApplicationId(id);
