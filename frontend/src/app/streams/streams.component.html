@@ -1,145 +1,174 @@
 <div class="container">
-    <div class="row container2" style="margin:auto ;">            
+    <!-- 
+        ===============================================================================
+          // onSelectedMaths(value: string): any {
+  //   this.selectedMaths = value.substring(0, 1);
+  // }
+  // onSelectedTechnology(value: string): any {
+  //   this.selectedTechnology = value.substring(0, 1);
+  // }
+  // onSelectedNaturalScience(value: string): any {
+  //   this.selectedNaturalScience = value.substring(0, 1);
+  // }
+  // onSelectedEms(value: string): any {
+  //   this.selectedEms = value.substring(0, 1);
+  // }
+  // onSelectedArts(value: string): any {
+  //   this.selectedArts = value.substring(0, 1);
+  // }
+  // onSelectedSocialScience(value: string): any {
+  //   this.selectedSocialScience = value.substring(0, 1);
+  // }
+==============================
+  // selectedMaths: any;
+  // selectedTechnology: any;
+  // selectedNaturalScience: any;
+  // selectedEms: any;
+  // selectedArts: any;
+  // selectedSocialScience: any;
+==============================
+          // addingFormValues() {
+  //   this.reqform.get('maths')?.setValue(this.selectedMaths);
+  //   this.reqform.get('technology')?.setValue(this.selectedTechnology);
+  //   this.reqform.get('naturalScience')?.setValue(this.selectedNaturalScience);
+  //   this.reqform.get('ems')?.setValue(this.selectedEms);
+  //   this.reqform.get('arts')?.setValue(this.selectedArts);
+  //   this.reqform.get('socialScience')?.setValue(this.selectedSocialScience);
+  // }      
+
+        ===============================================================================
+        <div class="row container2" style="margin:auto ;">            
         <div class="col">
             <form >
                 <h3>Stream</h3>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="School Name"formControlName="" required>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="Stream Name" required>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="Subject 1" required>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="Subject 2" required>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="Subject 3" required>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="copl-6">
+                    <div class="col-6">
                         <input type="text" placeholder="Subject 4" required>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col">
-            <form [formGroup]="reqform" >
-                <h3>Requirements</h3>
-                <div class="requirements">
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #maths (change)="onSelectedMaths(maths.value)">
-                                <option>Select Level of Maths Required</option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #naturalScience (change)="onSelectedNaturalScience(naturalScience.value)">
-                                <option>Select Level of NaturalScience Required </option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #technology (change)="onSelectedTechnology(technology.value)">
-                                <option>Select Level of Technology Required </option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #ems (change)="onSelectedEms(ems.value)">
-                                <option>Select Level of E.M.S Required</option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>       <hr>
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #arts (change)="onSelectedArts(arts.value)">
-                                <option>Select Level of Arts and Calture Required </option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="copl-6">
-                            <select #socialScience (change)="onSelectedSocialScience(socialScience.value)">
-                                <option>Select Level ofSocial ScRequired </option>
-                                <option>1  (0-29%)</option>
-                                <option>2  (30-39%)</option>
-                                <option>3  (40-49%)</option>
-                                <option>4  (50-59%)</option>
-                                <option>5  (60-69%)</option>
-                                <option>6  (70-79%)</option>
-                                <option>7  (80-100%)</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            
         </div>
         <hr>
-    </div>
-    <div class="row button">
+    </div> -->
+    <form [formGroup]="reqform" (ngSubmit)="Onsubmit()">
+        <h3>Requirements</h3>
+        <div class="requirements">
+            <div class="row">
+                <div class="col-6" id="maths">
+                    <input id="math" type="number" max="7" min="1" maxlength="1" onkeydown="return false"
+                        placeholder="Maths Level" formControlName="maths" required>
+                </div>
+                <ng-container *ngIf="reqform.value.maths == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
+                        placeholder="Natural Science Level" formControlName="naturalScience" required>
+                </div>
+                <ng-container *ngIf="reqform.value.naturalScience == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
+                        placeholder="Technology Level" formControlName="technology" required>
+                </div>
+                <ng-container *ngIf="reqform.value.technology == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" max="7" min="1" maxlength="1" onkeydown="return false" placeholder="EMS Level"
+                        formControlName="ems" required>
+                </div>
+                <ng-container *ngIf="reqform.value.ems == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
+                        placeholder="Arts and Calture Level" formControlName="arts" required>
+                </div>
+                <ng-container *ngIf="reqform.value.arts == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" max="7" min="1" maxlength="1" onkeydown="return false"
+                        placeholder="Social Science Level" formControlName="socialScience" required>
+                </div>
+                <ng-container *ngIf="reqform.value.socialScience == '' ">
+                    <div class="col-4">
+                        <label>Select Somthing </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+           
+        </div>
+        <div class="row button">
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit">
+            </div>
+        </div>
+    </form>
+    <!-- <div class="row button">
         <div class="col-12">
             <button type="submit" class="btn btn-primary pull-right">Add</button>
         </div>
-    </div>
+    </div> -->
 </div>

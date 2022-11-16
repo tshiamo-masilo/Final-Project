@@ -12,11 +12,6 @@ public class RequirementsService {
     private RequirementsRepo requirementsRepo;
       public Requirements saveRequirements(Requirements requirements){
           return requirementsRepo.save(requirements);
-//                Requirements requirements1 = requirements.build(requirements.getId(),
-//                requirements.getStreamId(),requirements.getRequirementsId(),
-//                requirements.getMaths(),requirements.getNaturalScience(),
-//                requirements.getTechnology(),requirements.getEconomicManagementScience(),
-//                requirements.getArtAndCulture(),requirements.getSocialScience());
 
     }
     public List<Requirements> getAllRequirements(){

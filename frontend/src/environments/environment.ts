@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:4400/api",
-  defaultPassword:"p@ssword1"
+  BaseUrl:"http://localhost:8080/"
+  
+
 };
 
 /*

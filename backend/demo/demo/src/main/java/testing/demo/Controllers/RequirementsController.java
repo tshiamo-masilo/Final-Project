@@ -1,5 +1,6 @@
 package testing.demo.Controllers;
 
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,9 @@ public class RequirementsController {
     @Autowired
     private RequirementsService repository;
     @PostMapping("/save")
-   public ResponseEntity<Requirements> saveRequirements(Requirements requirements){
-        return new ResponseEntity<>(repository.saveRequirements(requirements),HttpStatus.CREATED);
+    @CrossOrigin
+    public Requirements saveRequirements(Requirements requirements){
+        return repository.saveRequirements(requirements);
     }
     @GetMapping("/get/{id}")
     public ResponseEntity<Requirements> getRequirementsById(@PathVariable int id){

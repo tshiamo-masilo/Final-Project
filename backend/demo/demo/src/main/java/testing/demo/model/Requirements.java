@@ -19,7 +19,7 @@ public class Requirements {
     private String naturalScience;
     private String technology;
     private String ems;
-    private String Arts;
+    private String arts;
     private String socialScience;
     
 }
