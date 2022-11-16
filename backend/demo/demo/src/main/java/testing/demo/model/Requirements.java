@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Requirements")
+@Table(name = "Requirements")
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
 public class Requirements {
@@ -21,5 +21,5 @@ public class Requirements {
     private String ems;
     private String arts;
     private String socialScience;
-    
+
 }

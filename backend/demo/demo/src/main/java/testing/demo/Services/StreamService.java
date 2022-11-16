@@ -1,4 +1,4 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,30 +15,33 @@ public class StreamService {
     private RequirementsService requirementsService;
     private StreamRepo streamsRepo;
 
-    public Stream saveStream(Stream stream){
+    public Stream saveStream(Stream stream) {
         return streamsRepo.save(stream);
     }
 
-    public List<Stream> getAllStreams(){
+    public List<Stream> getAllStreams() {
 
         return streamsRepo.findAll();
     }
-//    public List<Stream> getStream(String id){
-//        return streamsRepo.
-//    }
+    // public List<Stream> getStream(String id){
+    // return streamsRepo.
+    // }
 
-    public Stream getStreamById(Long id){
+    public Stream getStreamById(Long id) {
         return streamsRepo.findById(id).get();
     }
-    public String deleteStreamById(Long id){
+
+    public String deleteStreamById(Long id) {
         streamsRepo.deleteById(id);
-        return "Stream with Id:"+id+" is deleted";
+        return "Stream with Id:" + id + " is deleted";
     }
-    public String deleteAllStream(){
+
+    public String deleteAllStream() {
         streamsRepo.deleteAll();
         return "All Stream are deleted";
     }
-    public Stream updateStream(Stream stream){
+
+    public Stream updateStream(Stream stream) {
         Stream existing = streamsRepo.findById(stream.getId()).get();
         existing.setStreamName(stream.getStreamName());
         existing.setSubject(stream.getSubject());

@@ -1,4 +1,4 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

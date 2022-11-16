@@ -1,4 +1,4 @@
-package testing.demo.Security;
+package testing.demo.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,35 +7,38 @@ import testing.demo.model.Subject;
 
 import java.util.List;
 
-
 @Service
 public class SubjectService {
     @Autowired
     SubjectRepository repository;
 
-    public Subject saveSubject(Subject subject){
+    public Subject saveSubject(Subject subject) {
         return repository.save(subject);
     }
-    public Subject getSubjectById(Long id){
+
+    public Subject getSubjectById(Long id) {
         return repository.findById(id).get();
     }
-    public List<Subject> getSubjects(){
+
+    public List<Subject> getSubjects() {
         return repository.findAll();
     }
-    public  String deleteSubjectById(Long id){
+
+    public String deleteSubjectById(Long id) {
         repository.deleteById(id);
-        return "Subject with "+id+" Id is successfully deleted!";
+        return "Subject with " + id + " Id is successfully deleted!";
     }
-    public  String deleteAllSubjects(){
+
+    public String deleteAllSubjects() {
         repository.deleteAll();
         return "Successfully Deleted!";
     }
-    public Subject updateSubject(Subject subject){
+
+    public Subject updateSubject(Subject subject) {
         Subject existing = repository.findById(subject.getId()).get();
         existing.setName(subject.getName());
         existing.setDescription(subject.getDescription());
         return existing;
     }
-
 
 }

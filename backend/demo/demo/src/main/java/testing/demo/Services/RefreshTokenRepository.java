@@ -1,4 +1,4 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

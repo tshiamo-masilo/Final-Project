@@ -1,4 +1,4 @@
-package testing.demo.Security.Filters;
+package testing.demo.security.filters;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 import lombok.var;
-import testing.demo.Services.UserDetailService;
+import testing.demo.services.UserDetailService;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 
