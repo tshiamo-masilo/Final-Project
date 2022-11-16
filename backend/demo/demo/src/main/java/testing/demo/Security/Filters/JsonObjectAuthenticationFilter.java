@@ -1,4 +1,4 @@
-package testing.demo.Security.Filters;
+package testing.demo.security.filters;
 
 import java.io.BufferedReader;
 

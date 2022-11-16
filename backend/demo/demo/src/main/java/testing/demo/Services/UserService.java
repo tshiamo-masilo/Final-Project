@@ -1,4 +1,4 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import javax.persistence.EntityNotFoundException;
 

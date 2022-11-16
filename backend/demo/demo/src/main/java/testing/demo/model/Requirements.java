@@ -6,13 +6,13 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="Requirements")
+@Table(name = "Requirements")
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
 public class Requirements {
     @Id
-    @GeneratedValue()
-    @Column(name="requirementsId")
+    @Column(name = "requirementsId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String streamId;
     private String maths;
@@ -21,5 +21,5 @@ public class Requirements {
     private String ems;
     private String arts;
     private String socialScience;
-    
+
 }
