@@ -1,4 +1,4 @@
-package testing.demo.entities;
+package testing.demo.dtos;
 
 import org.springframework.http.HttpStatus;
 
