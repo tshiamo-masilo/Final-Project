@@ -1,39 +1,28 @@
 <div class="container">
-    <h3>Requirements</h3>
+    <h3>Adding School</h3>
 
     <form [formGroup]="form" (ngSubmit)="Onsubmit()">
         <div class="requirements">
-            <!-- <div class="row">
-                <div class="col-6" id="stream">
-                    <select #stream (change)=" onSelectedStream(stream.value)">
-                        <ng-container *ngFor="let select of streamlist">
-                            <option >{{select}}</option>
-                        </ng-container>
-                    </select>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" 
+                        placeholder="School Name" formControlName="school_Name" required>
                 </div>
-                <ng-container *ngIf="1 === 1">
-                    <div class="col-4" >
-                        <label class="tick">&#10004;</label>
+                <ng-container *ngIf="form.value.school_Name !== '' ">
+                    <div class="col-2">
+                        <label  class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="stream.value == ''">
+                <ng-container *ngIf="form.value.school_Name == '' ">
                     <div class="col-4">
-                        <label>{{stream.value}}</label>
+                        <label>Enter school name </label>
                     </div>
                 </ng-container>
             </div>
-                school_Name: [''],
-      admin_name: [''],
-      admin_Emp_No: [''],
-      postal_Address: [''],
-      street_name: [''],
-      suburb: [''],
-      city: [''],
-      postal_code: ['']
-            <hr> -->
+            <hr>
             <div class="row">
                 <div class="col-6" id="admin_name">
-                    <input id="math" type="text" placeholder="Admins name" formControlName="admin_name" required>
+                    <input id="math" type="text" placeholder="Admin Name" formControlName="admin_name" required>
                 </div>
                 <ng-container *ngIf="form.value.admin_name !== '' ">
                     <div class="col-2" >
@@ -133,7 +122,7 @@
             <hr>
             <div class="row">
                 <div class="col-6">
-                    <input type="number" maxlength="4" onkeydown="return false"
+                    <input type="number" maxlength="4" 
                         placeholder="Postal Code" formControlName="postal_code" required>
                 </div>
                 <ng-container *ngIf="form.value.postal_code !== '' ">

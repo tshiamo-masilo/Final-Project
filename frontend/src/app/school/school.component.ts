@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SchoolsServiceService } from './Services/schools-service.service';
 
 @Component({
   selector: 'app-school',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SchoolComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: FormBuilder, private schoolService: SchoolsServiceService) { }
 
   creatingForm(): void {
     this.form = this.formBuilder.group({
@@ -24,9 +25,15 @@ export class SchoolComponent implements OnInit {
   }
 
   Onsubmit() {
+    this.schoolService.savingSchool(this.form.value).subscribe(res => {
+      alert('School saved successfully');
+    })
     console.log(this.form.value)
   }
   ngOnInit(): void {
+    this.schoolService.get(1).subscribe(data=>{
+      console.log(data)
+    })
     this.creatingForm();
   }
 
