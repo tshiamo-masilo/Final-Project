@@ -1,4 +1,4 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,31 +9,32 @@ import testing.demo.services.SchoolService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/School")
+@RequestMapping("/school")
 public class SchoolController {
     @Autowired
     private SchoolService schoolService;
 
-    @PostMapping("/saveSchool")
+    @PostMapping("/save")
     @CrossOrigin
     public School saveSchool(@RequestBody School school) {
 
         return schoolService.saveSchool(school);
     }
 
-    @GetMapping("/getSchool/{id}")
+    @GetMapping("/get/{id}")
+    @CrossOrigin
     public School findSchoolById(@PathVariable Long id) {
 
         return schoolService.findSchoolById(id);
     }
 
-    @GetMapping("/getAllSchool")
+    @GetMapping("/getAll")
     public List<School> findAllSchool() {
 
         return schoolService.getAllSchools();
     }
 
-    @DeleteMapping("/deleteSchool/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteSchoolById(@PathVariable Long id) {
 
         return schoolService.deleteSchoolById(id);
