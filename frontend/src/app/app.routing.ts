@@ -8,25 +8,27 @@ import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
 import { LoginGuard } from './user/guards/login.guard';
+import { StudentComponent } from './dashboard';
+
 // import 
 
 const routes: Routes = [
-    { 
-        path: 'home', component: HomeComponent,
-        canActivate: [ LoginGuard ],
-        children: [
-            { path: 'contact', component: ContactComponent },
-            { path: 'about', component: AboutComponent },
-            { path: 'account', component: AccountComponent },
-           // { path: 'account', component: AccountComponent },
-        ]
-    },
+    // { 
+    //     path: 'home', component: HomeComponent,
+    //     // canActivate: [ LoginGuard ],
+    //     children: [
+    //         { path: 'contact', component: ContactComponent },
+    //         { path: 'about', component: AboutComponent },
+    //         { path: 'account', component: AccountComponent },
+    //        // { path: 'account', component: AccountComponent },
+    //     ]
+    // },
 
-    //For dev Tshifura
-    {  path: 'account', component: AccountComponent },
-    // {  path: 'home', component: HomeComponent },
-    // otherwise redirect to home
-    { path: '**', redirectTo: 'home', pathMatch:"full" }
+    // //For dev Tshifura
+    // {  path: 'account', component: AccountComponent },
+    // // {  path: 'home', component: HomeComponent },
+    // // otherwise redirect to home
+    { path: 'student', component: StudentComponent },
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

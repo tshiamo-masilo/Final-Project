@@ -22,6 +22,7 @@ import {ContactComponent} from './contact/contact.component';
 import { AccountComponent } from './account/account.component';
 import { ApplicationComponent } from './application/application.component';
 import { SchoolComponent } from './school/school.component';
+import { StudentComponent } from './dashboard';
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';

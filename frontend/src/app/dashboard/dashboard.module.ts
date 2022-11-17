@@ -9,7 +9,6 @@ import { StudentComponent } from './student/student.component';
   declarations: [
     StudentComponent,
     AdminComponent,
-    StudentComponent
   ],
   imports: [
     CommonModule
