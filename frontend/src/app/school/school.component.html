@@ -1,1 +1,159 @@
-<p>school works!</p>
+<div class="container">
+    <h3>Requirements</h3>
+
+    <form [formGroup]="form" (ngSubmit)="Onsubmit()">
+        <div class="requirements">
+            <!-- <div class="row">
+                <div class="col-6" id="stream">
+                    <select #stream (change)=" onSelectedStream(stream.value)">
+                        <ng-container *ngFor="let select of streamlist">
+                            <option >{{select}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <ng-container *ngIf="1 === 1">
+                    <div class="col-4" >
+                        <label class="tick">&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="stream.value == ''">
+                    <div class="col-4">
+                        <label>{{stream.value}}</label>
+                    </div>
+                </ng-container>
+            </div>
+                school_Name: [''],
+      admin_name: [''],
+      admin_Emp_No: [''],
+      postal_Address: [''],
+      street_name: [''],
+      suburb: [''],
+      city: [''],
+      postal_code: ['']
+            <hr> -->
+            <div class="row">
+                <div class="col-6" id="admin_name">
+                    <input id="math" type="text" placeholder="Admins name" formControlName="admin_name" required>
+                </div>
+                <ng-container *ngIf="form.value.admin_name !== '' ">
+                    <div class="col-2" >
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.admin_name == '' ">
+                    <div class="col-4">
+                        <label>Enter your school admin name </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" placeholder="Admins employee number" formControlName="admin_Emp_No" required>
+                </div>
+                <ng-container *ngIf="form.value.admin_Emp_No !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.admin_Emp_No == '' ">
+                    <div class="col-4">
+                        <label>Enter admins employee number</label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" 
+                        placeholder="Postal Address" formControlName="postal_Address" required>
+                </div>
+                <ng-container *ngIf="form.value.postal_Address !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.postal_Address == '' ">
+                    <div class="col-4">
+                        <label>Enter school's postal Address </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" placeholder="Street name"
+                        formControlName="street_name" required>
+                </div>
+                <ng-container *ngIf="form.value.street_name !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.street_name == '' ">
+                    <div class="col-4">
+                        <label>Enter school street name </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text"
+                        placeholder="Suburb" formControlName="suburb" required>
+                </div>
+                <ng-container *ngIf="form.value.suburb !== '' ">
+                    <div class="col-2">
+                        <label class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.suburb == '' ">
+                    <div class="col-4">
+                        <label>Enter school surbub </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" 
+                        placeholder="City" formControlName="city" required>
+                </div>
+                <ng-container *ngIf="form.value.city !== '' ">
+                    <div class="col-2">
+                        <label  class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.city == '' ">
+                    <div class="col-4">
+                        <label>Enter school city where the school is located </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <input type="number" maxlength="4" onkeydown="return false"
+                        placeholder="Postal Code" formControlName="postal_code" required>
+                </div>
+                <ng-container *ngIf="form.value.postal_code !== '' ">
+                    <div class="col-2">
+                        <label  class="tick">	&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.postal_code == '' ">
+                    <div class="col-4">
+                        <label>Enter school postal code </label>
+                    </div>
+                </ng-container>
+            </div>
+            <hr>
+
+        </div> 
+        <div class="row button">
+            <div class="col-12">
+                <input type="submit" class="btn" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>

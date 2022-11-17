@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/stream")
+@CrossOrigin
 public class StreamController {
     @Autowired
     private StreamService streamService;

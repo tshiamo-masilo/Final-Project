@@ -10,6 +10,8 @@ import {LoginComponent} from './user/login';
 import {SignupComponent} from './user/signup';
 import {ForgotComponent} from './user/forgot';
 import {StreamsComponent} from './streams';
+import {SubjectsComponent} from './subjects';
+import { SchoolComponent } from './school/school.component';
 
 
 // import { DashboardModule } from './dashboard';
@@ -28,6 +30,8 @@ const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
     { path: 'streams', component: StreamsComponent },
+    {path: 'subjects', component: SubjectsComponent },
+    {path: 'school', component: SchoolComponent},
     
 
     // otherwise redirect to home

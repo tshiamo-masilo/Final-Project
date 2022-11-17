@@ -15,6 +15,7 @@ public class SchoolController {
     private SchoolService schoolService;
 
     @PostMapping("/saveSchool")
+    @CrossOrigin
     public School saveSchool(@RequestBody School school) {
 
         return schoolService.saveSchool(school);
