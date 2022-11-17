@@ -9,6 +9,7 @@ import { AccountComponent } from './account';
 import {LoginComponent} from './user/login';
 import {SignupComponent} from './user/signup';
 import {ForgotComponent} from './user/forgot';
+import {ApplicationComponent} from './application';
 
 
 // import { DashboardModule } from './dashboard';
@@ -26,6 +27,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
+    { path: 'application', component: ApplicationComponent },
     
 
     // otherwise redirect to home

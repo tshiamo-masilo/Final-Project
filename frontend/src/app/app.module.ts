@@ -8,6 +8,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AppComponent } from './app.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,6 +37,8 @@ import { SignupComponent } from './user/signup/signup.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MdbCollapseModule,
+    NgxPaginationModule, 
+    HttpClientModule,
     appRoutingModule,
 
   ],
