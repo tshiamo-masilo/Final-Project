@@ -1,1 +1,69 @@
-<p>student works!</p>
+<div class="image" id="icon" style="display: block"></div>
+<!-- /ICON -->
+
+<!-- SEARCH BAR -->
+<div id="cover" style="z-index: 1000">
+    <form method="get" action="">
+        <div class="tb">
+            <div class="td">
+                <input type="text" placeholder="Search Schools" required />
+            </div>
+            <div onclick="myFunction()" class="td" id="s-cover">
+                <button aria-label="Aria Name" type="submit">
+                    <div id="s-circle"></div>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <br />
+</div>
+<!-- /SEARCH BAR -->
+
+<!-- FILTER BAR -->
+<div id="filter" style="display: none">
+    <div class="dropdown show" id="filterbuttons">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink2"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Province
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
+            <a class="dropdown-item" href="#">Gauteng</a>
+            <a class="dropdown-item" href="#">Eastern Cape</a>
+            <a class="dropdown-item" href="#">Kwa-Zulu Natal</a>
+            <a class="dropdown-item" href="#">Limpopo</a>
+            <a class="dropdown-item" href="#">Free State</a>
+        </div>
+    </div>
+
+    <div class="dropdown show" id="filterbuttons">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            City/Town
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
+            <a class="dropdown-item" href="#">Johannesburg</a>
+            <a class="dropdown-item" href="#">Pretoria</a>
+            <a class="dropdown-item" href="#">City of Tshwane</a>
+            <a class="dropdown-item" href="#">Soweto </a>
+            <a class="dropdown-item" href="#">Alberton</a>
+        </div>
+    </div>
+    <div class="dropdown show" id="filtergeo">
+        <a class="btn btn-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Check My <br />
+            Location
+        </a>
+    </div>
+</div>
+<!-- /FILTER BAR -->
+  <!-- Jumbotron -->
+  <div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Heading</h1>
+    <h4 class="mb-3">Subheading</h4>
+    <a class="btn btn-primary" href="" role="button">Call to action</a>
+  </div>
+  <!-- Jumbotron -->

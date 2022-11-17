@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
 
-import { HomeComponent } from './home';
+import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
@@ -18,9 +18,13 @@ const routes: Routes = [
             { path: 'contact', component: ContactComponent },
             { path: 'about', component: AboutComponent },
             { path: 'account', component: AccountComponent },
+           // { path: 'account', component: AccountComponent },
         ]
     },
-    { path: 'login', component: LoginComponent },
+
+    //For dev Tshifura
+    {  path: 'account', component: AccountComponent },
+    // {  path: 'home', component: HomeComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
 ];
