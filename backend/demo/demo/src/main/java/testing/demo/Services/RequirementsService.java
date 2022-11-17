@@ -25,7 +25,7 @@ public class RequirementsService {
         return requirementsRepo.findById(id);
     }
 
-    public String deleteRequirementsById(int id) {
+    public String deleteRequirementsById(Long id) {
         requirementsRepo.deleteById(id);
         return "Requirement with Id:" + id + " is deleted";
     }
@@ -37,7 +37,6 @@ public class RequirementsService {
 
     public Requirements updateRequirements(Requirements requirements) {
         Requirements existing = requirementsRepo.findById(requirements.getId());
-        existing.setStreamId(requirements.getStreamId());
         existing.setMaths(requirements.getMaths());
         existing.setNaturalScience(requirements.getNaturalScience());
         existing.setTechnology(requirements.getTechnology());

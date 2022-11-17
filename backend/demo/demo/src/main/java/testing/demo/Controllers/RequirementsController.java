@@ -1,4 +1,4 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +32,7 @@ public class RequirementsController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteRequirementById(@PathVariable int id) {
+    public ResponseEntity<String> deleteRequirementById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.deleteRequirementsById(id));
     }
 

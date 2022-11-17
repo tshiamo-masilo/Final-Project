@@ -1,5 +1,6 @@
 package testing.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,13 +17,15 @@ public class Stream {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="streamId")
     private Long id;
-    private String StreamName;
+    private String streamName;
     // We're not doing this
 
     //    private String Subject1;
     //    private String Subject2;
     //    private String Subject3;
     //    private String Subject4;
+    //    @JsonIgnore
+    @ManyToMany(mappedBy = "enrolledStreams")
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subject_id")

@@ -1,8 +1,8 @@
-package testing.demo.services;
+package testing.demo.Services;
 
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
+import testing.demo.services.RequirementsService;
 import org.springframework.stereotype.Service;
 import testing.demo.Repository.StreamRepo;
 import testing.demo.model.Stream;
@@ -13,6 +13,7 @@ import java.util.List;
 public class StreamService {
     @Autowired
     private RequirementsService requirementsService;
+    @Autowired
     private StreamRepo streamsRepo;
 
     public Stream saveStream(Stream stream) {
@@ -20,13 +21,8 @@ public class StreamService {
     }
 
     public List<Stream> getAllStreams() {
-
         return streamsRepo.findAll();
     }
-    // public List<Stream> getStream(String id){
-    // return streamsRepo.
-    // }
-
     public Stream getStreamById(Long id) {
         return streamsRepo.findById(id).get();
     }

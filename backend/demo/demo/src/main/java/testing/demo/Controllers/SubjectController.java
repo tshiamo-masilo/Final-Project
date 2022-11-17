@@ -1,10 +1,10 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import testing.demo.model.Subject;
-import testing.demo.security.SubjectService;
+import testing.demo.Services.SubjectService;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class SubjectController {
     private SubjectService service;
 
     @PostMapping("/save")
-    public Subject saveSubject(Subject subject) {
+    public Subject saveSubject(@RequestBody Subject subject) {
         return service.saveSubject(subject);
     }
 
@@ -40,7 +40,7 @@ public class SubjectController {
     }
 
     @PutMapping("/update")
-    public Subject updateSubject(Subject subject) {
+    public Subject updateSubject(@RequestBody Subject subject) {
         return service.updateSubject(subject);
     }
 
