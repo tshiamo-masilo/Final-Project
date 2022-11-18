@@ -8,7 +8,7 @@ import { LoginInfo } from '../models/login.model';
   providedIn: 'root'
 })
 export class LoginService {
-  private api: string = environment.BaseUrl;
+  private api: string = environment.apiUrl;
 
   constructor(private http:HttpClient) { }
 

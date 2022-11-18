@@ -10,7 +10,7 @@ import { environment } from 'environments/environment';
 export class AppComponent {
   title = 'Project-FrontEnd';
 
-  private api: string = environment.BaseUrl;
+  private api: string = environment.apiUrl;
 
   constructor(public http:HttpClient){}
   public ping(){

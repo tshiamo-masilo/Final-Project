@@ -8,7 +8,7 @@ import { UsersInfor } from "../models/users.model";
   providedIn: "root",
 })
 export class SignupService {
-  private api: string = environment.BaseUrl;
+  private api: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
