@@ -1,4 +1,4 @@
-package testing.demo.security.configurations;
+package testing.demo.Security.Configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,11 +13,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 import lombok.var;
+import testing.demo.Security.Handler.AuthSuccesHandler;
+import testing.demo.Services.UserDetailService;
 import testing.demo.model.Role;
-import testing.demo.security.filters.AuthorizationFilter;
 import testing.demo.security.filters.JsonObjectAuthenticationFilter;
-import testing.demo.security.handler.AuthSuccesHandler;
-import testing.demo.services.UserDetailService;
 
 @Configuration
 public class Security {
@@ -52,7 +51,7 @@ public class Security {
                                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                                 .and()
                                 .addFilter(authenticationFilter())
-                                .addFilter(new AuthorizationFilter(authenticationManager, userDetailService, secretKey))
+                                .addFilter(new testing.demo.Security.Filters.AuthorizationFilter(authenticationManager, userDetailService, secretKey))
                                 .exceptionHandling()
                                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
                     } catch (Exception e) {

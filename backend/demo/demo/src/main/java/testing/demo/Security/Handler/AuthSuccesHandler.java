@@ -1,4 +1,4 @@
-package testing.demo.security.handler;
+package testing.demo.Security.Handler;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -19,7 +19,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.var;
-import testing.demo.services.UserService;
+import testing.demo.Services.UserService;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -52,6 +52,6 @@ public class AuthSuccesHandler extends SimpleUrlAuthenticationSuccessHandler {
                 .sign(Algorithm.HMAC256(secretKey));
         response.addHeader("Authorization", "Bearer " + token);
         response.addHeader("Content-Type", "application/json");
-        response.getWriter().write(objectMapper.writeValueAsString(TokenResponse.of(token, null)));
+        response.getWriter().write(objectMapper.writeValueAsString(testing.demo.security.handler.TokenResponse.of(token, null)));
     }
 }
