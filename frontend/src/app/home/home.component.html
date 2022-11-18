@@ -9,9 +9,12 @@
 
   <div class="tb">
     <div class="td">
-      <input type="text" placeholder="Search Schools" [(ngModel)]="SearchTag" (input)="Search()" 
+
+      <input type="text" placeholder="Search Schools" [(ngModel)]="SearchTag" 
           id="searchbar"  onclick="displayFunction()">
+
     </div>
+
     <div class="td" id="s-cover" onclick="search_schools()">
       <button aria-label="Aria Name" type="submit" return="false">
         <div id="s-circle"></div>
@@ -74,9 +77,12 @@
 <!-- SCHOOL CARDS -->
 <div id="sections" style="display: none;" class=" w3-animate-bottom">
   <div class="row">
+
     <div class="card schools blogBox moreBox" *ngFor="let file of schools
       
-            | paginate: { itemsPerPage: 20, currentPage: p }">
+            | paginate: { itemsPerPage: 5, currentPage: p }">
+
+
       <div class="card-body">
         <h5 class="card-title ">{{ file.Institution_Name }}</h5>
         <hr><br>
@@ -99,8 +105,11 @@
 
 
 <div class="d-flex justify-content-center" id="paginate">
-  <pagination-controls (pageChange)="onPageChange($event)" (pageBoundsCorrection)="onPageChange($event)"
+
+  <pagination-controls (pageChange)="onPageChange($event)" 
+  (pageBoundsCorrection)="onPageChange($event)"
     style="float: right;"></pagination-controls>
+
 </div>
 
 
