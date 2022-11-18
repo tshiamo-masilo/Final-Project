@@ -18,6 +18,7 @@ public class RequirementsController {
     @PostMapping("/save")
     @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public Requirements saveRequirements(@RequestBody Requirements requirements) {
+        System.out.print("yiyo =============================="+requirements.getStream()+requirements.getMaths());
         return repository.saveRequirements(requirements);
     }
 

@@ -5,10 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SchoolsServiceService {
-<<<<<<< HEAD
- 
-  constructor() { }
-=======
  savingSchool(values:any){
   return this.http.post('http://localhost:8080/school/save', values)
  }
@@ -16,5 +12,4 @@ export class SchoolsServiceService {
   return this.http.get(`http://localhost:8080/school/get/${id}`)
  }
   constructor(private http:HttpClient) { }
->>>>>>> 69a29dee79dfbb0972d442b12270179118efa477
 }

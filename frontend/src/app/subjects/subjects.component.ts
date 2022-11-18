@@ -23,8 +23,9 @@ export class SubjectsComponent implements OnInit {
       alert('Please enter Subjects and its Description');
     } else {
       this.subjectService.submitingSubject(this.form.value).subscribe((data: any) => {
-       alert("Suject Saved Success")
        this.form.reset()
+       alert("Suject Saved Success")
+       
       })
     }
   }

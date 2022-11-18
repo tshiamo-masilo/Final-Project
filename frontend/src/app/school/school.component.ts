@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SchoolsServiceService } from './Services/schools-service.service';
->>>>>>> 69a29dee79dfbb0972d442b12270179118efa477
 
 @Component({
   selector: 'app-school',
@@ -11,11 +8,6 @@ import { SchoolsServiceService } from './Services/schools-service.service';
   styleUrls: ['./school.component.css']
 })
 export class SchoolComponent implements OnInit {
-<<<<<<< HEAD
-ngOnInit(): void {
-    
-}
-=======
   form: FormGroup = new FormGroup({});
   constructor(private formBuilder: FormBuilder, private schoolService: SchoolsServiceService) { }
 
@@ -44,6 +36,5 @@ ngOnInit(): void {
     })
     this.creatingForm();
   }
->>>>>>> 69a29dee79dfbb0972d442b12270179118efa477
 
 }
