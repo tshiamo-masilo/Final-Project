@@ -60,45 +60,6 @@ throw new Error('Method not implemented.');
 
   schools: School[] = schoolsData;
 
-//separate
-
-
-  SearchTag!: String;
-  files = [];
-  main: {}[] = [];  
-  p!: number;
-
-  ngOnInit() {
-    for (let i = 1; i <= 100; i++) {
-      // this.files.push(this.createFile(i));
-    }
-
-    this.main = this.files.slice();
-  }
-
-
-
-  onPageChange(page: number) {
-    this.p = page;
-  }
-
-  private createFile(key: String): {} {
-    return { 
-      Institution_Name: `Institution_Name ${key}`, 
-      Sector: `Sector ${key}`, 
-      Phase: `Phase ${key}`, 
-      StreetAddress: `StreetAddress ${key}`
-    };
-  }
-
-
-
-
-
-
-  
-
- 
 }
 
 
