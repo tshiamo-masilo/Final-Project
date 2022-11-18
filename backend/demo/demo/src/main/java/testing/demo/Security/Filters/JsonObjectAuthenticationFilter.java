@@ -13,6 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import testing.demo.dtos.LoginCredentialsDto;
 
+
+
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -37,7 +39,7 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
             setDetails(request, token);
             return this.getAuthenticationManager().authenticate(token);
         } catch (Exception e) {
-            throw new RuntimeException("String msg" + e.getMessage(), e);
+            throw new RuntimeException("String msg :" + e.getMessage(), e);
         }
     }
 
