@@ -6,20 +6,21 @@ import { DashboardModule } from './dashboard/dashboard.module';
 // import { UserModule } from './user/user.module';
 
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AppComponent } from './app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { FormsModule } from '@angular/forms';
 
 
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 
-
-import {HomeComponent } from './home/home.component';
-import {AboutComponent } from './about/about.component';
-import {ContactComponent} from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 import { AccountComponent } from './account/account.component';
 import { ApplicationComponent } from './application/application.component';
@@ -35,11 +36,13 @@ import { SignupComponent } from './user/signup/signup.component';
 @NgModule({
   imports: [
     BrowserModule,
+    Ng2SearchPipeModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     MdbCollapseModule,
-    NgxPaginationModule, 
+    NgxPaginationModule,
     HttpClientModule,
+    FormsModule,
     appRoutingModule,
 
   ],
@@ -56,7 +59,7 @@ import { SignupComponent } from './user/signup/signup.component';
     NavbarComponent,
   ],
   bootstrap: [AppComponent]
-  
+
 })
 
 export class AppModule { }

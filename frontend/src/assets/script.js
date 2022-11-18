@@ -27,6 +27,9 @@ for (i = 0; i < x.length; i++) {
 }
 }
 
+
+
+
 //SCROLL TOP
 
 let mybutton = document.getElementById("myBtn");
@@ -42,21 +45,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-//Filter
-
-// $('#dropdownmenu').on('change',function() {
-//   var value = $(this).val();
-//   if(value=='active'){
-//     $('div.item').show();
-//   }else{
-//     $('div.item').hide();
-//     $('.'+value).show();
-//   }
-// });
-
-// fetch("./schools.json")
-//  .then(resp => resp.json()) 
-//  .then(data =>
-//   {
-//   data.forEach(el=>console.log(el.NatEmis) )
-//   })

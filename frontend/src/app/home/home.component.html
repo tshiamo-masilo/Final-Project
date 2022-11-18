@@ -9,22 +9,21 @@
 
   <div class="tb">
     <div class="td">
-      <input type="text" name="search" id="searchbar" placeholder="Search Schools..." 
-        onclick="displayFunction()" onkeyup="search_schools()" />
+      <input type="text" placeholder="Search Schools" [(ngModel)]="SearchTag" (input)="Search()" 
+          id="searchbar"  onclick="displayFunction()">
     </div>
-    <div class="td" id="s-cover" >
+    <div class="td" id="s-cover" onclick="search_schools()">
       <button aria-label="Aria Name" type="submit" return="false">
         <div id="s-circle"></div>
         <span></span>
-      </button  >
+      </button>
     </div>
   </div>
 
   <br />
+
 </div>
 <!-- /SEARCH BAR -->
-
-
 
 <!-- FILTER BAR -->
 <div id="filter" style="display: none">
@@ -68,32 +67,26 @@
     </div>
 
   </div>
-  </div>
+</div>
 
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
 <div id="sections" style="display: none;" class=" w3-animate-bottom">
   <div class="row">
-    <div class="card schools blogBox moreBox" *ngFor="let school of schools
-            | paginate
-              : {
-                  itemsPerPage: tableSize,
-                  currentPage: page,
-                  totalItems: count
-                };
-          let i = index">
+    <div class="card schools blogBox moreBox" *ngFor="let file of schools
+      
+            | paginate: { itemsPerPage: 20, currentPage: p }">
       <div class="card-body">
-        <h5 class="card-title ">{{ school.Institution_Name }}</h5>
+        <h5 class="card-title ">{{ file.Institution_Name }}</h5>
         <hr><br>
         <div class="card-text ">
-          <div class="item "></div>{{ school.Sector }}
-          {{ school.Phase }}<br>
-          Address: {{ school.StreetAddress }}<br>
-          Email: {{school.E_Mail}}<br>
-          Mobile No: {{ school.cellno }}<br>
-          
-          National Emis No: {{ school.NatEmis }}<br>
+          <div class="item "></div>{{ file.Sector }}
+          {{ file.Phase }}<br>
+          Address: {{ file.StreetAddress }}<br>
+          Email: {{file.E_Mail}}<br>
+          Mobile No: {{ file.cellno }}<br>
+          National Emis No: {{ file.NatEmis }}<br>
           <a class="btn btn-primary" href="application">Apply</a>
         </div>
       </div>
@@ -105,13 +98,9 @@
 
 
 
-<div class="d-flex justify-content-center" id="paginate" >
-  <pagination-controls
-    
-    previousLabel="Prev" 
-    nextLabel="Next"
-    (pageChange)="onTableDataChange($event)">
-  </pagination-controls>
+<div class="d-flex justify-content-center" id="paginate">
+  <pagination-controls (pageChange)="onPageChange($event)" (pageBoundsCorrection)="onPageChange($event)"
+    style="float: right;"></pagination-controls>
 </div>
 
 
