@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
   Onsubmit() {
     this.schoolService.savingSchool(this.form.value).subscribe(res => {
       alert('School saved successfully');
+    this.form.reset();
     })
     console.log(this.form.value)
   }

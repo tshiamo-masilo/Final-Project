@@ -1,4 +1,4 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -9,12 +9,11 @@ import org.springframework.http.HttpStatus;
 
 import testing.demo.model.ApiResponse;
 import testing.demo.model.User;
-import testing.demo.services.UserService;
+import testing.demo.Services.UserService;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
     @Autowired
     private UserService userService;
 

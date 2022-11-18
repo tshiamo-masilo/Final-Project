@@ -5,9 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StreamServiceService {
+  BaseUrl = 'http://localhost:8080'
   //saving Stream to stream table in database
   submittingStreams(value: any) {
-    return this.http.post('http://localhost:8080/streams/save', value);
+    return this.http.post(this.BaseUrl+'/stream/save', value);
   }
   constructor(private http: HttpClient) { }
 }

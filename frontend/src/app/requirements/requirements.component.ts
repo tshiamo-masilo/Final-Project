@@ -9,10 +9,12 @@ import { RequirementsServiceService } from './service/requirements-service.servi
 })
 export class RequirementsComponent implements OnInit {
 
-  reqform: FormGroup = new FormGroup({});
-  streamlist: String[] = ["Select Stream", "Science", "Commerce", "General"]
+  form: FormGroup = new FormGroup({});
+  streamlist: any[] = ["Select a stream"]
+  streams: any[] = []
   stream: any;
   num: any;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,7 +30,7 @@ export class RequirementsComponent implements OnInit {
     }
   }
   requirementform() {
-    this.reqform = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       maths: [''],
       naturalScience: [''],
       technology: [''],
@@ -43,18 +45,27 @@ export class RequirementsComponent implements OnInit {
   }
   valid() {
 
-    if (this.reqform.value.maths.length === 0 || this.reqform.value.naturalScience.length === 0 || this.reqform.value.technology.length === 0) {
+    if (this.form.value.maths.length === 0 || this.form.value.naturalScience.length === 0 || this.form.value.technology.length === 0) {
       alert("Select all the stream requirements")
     } else {
-      this.streamService.submittingRequirements(this.reqform.value).subscribe((data: any) => {
+      this.streamService.submittingRequirements(this.form.value).subscribe((data: any) => {
         alert("Submitted")
+        this.form.reset();
       })
 
     }
   }
   ngOnInit(): void {
     this.requirementform();
-   
+    this.streamService.getAllStreams().subscribe(data => {
+      this.streams.push(data)
+      this.streams.forEach(result => {
+        result.forEach((res: any) => {
+          this.streamlist.push(res.streamName)
+        })
+      })
+    })
+
   }
 
 }

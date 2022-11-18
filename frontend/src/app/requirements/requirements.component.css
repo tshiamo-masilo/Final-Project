@@ -47,7 +47,8 @@ option {
     width: 100%;
 }
 h3 {
-    text-align: center 
+    text-align: center; 
+    text-decoration:underline;
 }
 hr {
     opacity: 100%;

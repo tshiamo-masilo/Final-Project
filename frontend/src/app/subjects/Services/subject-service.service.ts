@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SubjectServiceService {
+  BaseUrl = 'http://localhost:8080'
 
  //saving Requirements to requirements table in  database
- submitingSubject(values: any) {
-  console.log(values)
-  return this.http.post('http://localhost:8080/subject/save', values);
+ submitingSubject(values: any) {  
+  return this.http.post(this.BaseUrl+'/subject/save', values);
  
 }
   constructor(private http:HttpClient) { }

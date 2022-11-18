@@ -22,6 +22,7 @@ export class StreamsComponent implements OnInit {
   onSubmit() {
     this.streamService.submittingStreams(this.form.value).subscribe(data => {
       alert("Stream Successfully submitted")
+      this.form.reset()
     })
   }
 }

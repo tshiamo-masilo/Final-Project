@@ -1,7 +1,7 @@
 <div class="container">
     <h3>Requirements</h3>
 
-    <form [formGroup]="reqform" (ngSubmit)="Onsubmit()">
+    <form [formGroup]="form" (ngSubmit)="Onsubmit()">
         <div class="requirements">
             <div class="row">
                 <div class="col-6" id="stream">
@@ -16,7 +16,7 @@
                         <label class="tick">&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="stream.value == ''">
+                <ng-container *ngIf="stream.value.length == 15">
                     <div class="col-4">
                         <label>{{stream.value}}</label>
                     </div>
@@ -29,12 +29,12 @@
                     onkeyup="nospaces(this)"
                         placeholder="Maths Level" formControlName="maths" required>
                 </div>
-                <ng-container *ngIf="reqform.value.maths !== '' ">
+                <ng-container *ngIf="form.value.maths !== '' ">
                     <div class="col-2" >
                         <label class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.maths == '' ">
+                <ng-container *ngIf="form.value.maths == '' ">
                     <div class="col-4">
                         <label>Select Maths Level </label>
                     </div>
@@ -47,12 +47,12 @@
                     onkeyup="nospaces(this)"
                         placeholder="Natural Science Level" formControlName="naturalScience" required>
                 </div>
-                <ng-container *ngIf="reqform.value.naturalScience !== '' ">
+                <ng-container *ngIf="form.value.naturalScience !== '' ">
                     <div class="col-2">
                         <label class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.naturalScience == '' ">
+                <ng-container *ngIf="form.value.naturalScience == '' ">
                     <div class="col-4">
                         <label>Select Natural Science Level </label>
                     </div>
@@ -65,12 +65,12 @@
                     onkeyup="nospaces(this)"
                         placeholder="Technology Level" formControlName="technology" required>
                 </div>
-                <ng-container *ngIf="reqform.value.technology !== '' ">
+                <ng-container *ngIf="form.value.technology !== '' ">
                     <div class="col-2">
                         <label class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.technology == '' ">
+                <ng-container *ngIf="form.value.technology == '' ">
                     <div class="col-4">
                         <label>Select Technology Level </label>
                     </div>
@@ -83,12 +83,12 @@
                     onkeyup="nospaces(this)" placeholder="EMS Level"
                         formControlName="ems" required>
                 </div>
-                <ng-container *ngIf="reqform.value.ems !== '' ">
+                <ng-container *ngIf="form.value.ems !== '' ">
                     <div class="col-2">
                         <label class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.ems == '' ">
+                <ng-container *ngIf="form.value.ems == '' ">
                     <div class="col-4">
                         <label>Select Economics Management Science Level </label>
                     </div>
@@ -101,12 +101,12 @@
                     onkeyup="nospaces(this)"
                         placeholder="Arts and Calture Level" formControlName="arts" required>
                 </div>
-                <ng-container *ngIf="reqform.value.arts !== '' ">
+                <ng-container *ngIf="form.value.arts !== '' ">
                     <div class="col-2">
                         <label class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.arts == '' ">
+                <ng-container *ngIf="form.value.arts == '' ">
                     <div class="col-4">
                         <label>Select Arts and Culture Level </label>
                     </div>
@@ -119,12 +119,12 @@
                     onkeyup="nospaces(this)"
                         placeholder="Social Science Level" formControlName="socialScience" required>
                 </div>
-                <ng-container *ngIf="reqform.value.socialScience !== '' ">
+                <ng-container *ngIf="form.value.socialScience !== '' ">
                     <div class="col-2">
                         <label  class="tick">	&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="reqform.value.socialScience == '' ">
+                <ng-container *ngIf="form.value.socialScience == '' ">
                     <div class="col-4">
                         <label>Select Social Science Level </label>
                     </div>

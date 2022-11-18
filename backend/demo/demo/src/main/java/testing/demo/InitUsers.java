@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.var;
 import testing.demo.model.Role;
 import testing.demo.model.User;
-import testing.demo.services.UserService;
+import testing.demo.Services.UserService;
 
 @Component
 @RequiredArgsConstructor

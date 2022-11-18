@@ -47,7 +47,7 @@ public class StreamController {
     public ResponseEntity<String> deleteStream() {
         return ResponseEntity.ok(streamService.deleteAllStream());
     }
-    
+
     @PutMapping("/{subjectId}/streams/{streamId}")
     public Subject enrolledStreamToSubject(@PathVariable Long subjectId, @PathVariable Long streamId){
         Subject subject = subjectService.getSubjectById(subjectId);

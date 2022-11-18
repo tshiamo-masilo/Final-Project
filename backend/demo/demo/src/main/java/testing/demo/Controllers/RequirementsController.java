@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import testing.demo.model.Requirements;
-import testing.demo.services.RequirementsService;
+import testing.demo.Services.RequirementsService;
 
 import java.util.List;
 

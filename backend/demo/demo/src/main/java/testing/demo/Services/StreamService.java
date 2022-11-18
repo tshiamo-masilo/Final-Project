@@ -1,8 +1,6 @@
 package testing.demo.Services;
 
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
-import testing.demo.services.RequirementsService;
 import org.springframework.stereotype.Service;
 import testing.demo.Repository.StreamRepo;
 import testing.demo.model.Stream;
@@ -11,8 +9,6 @@ import java.util.List;
 
 @Service
 public class StreamService {
-    @Autowired
-    private RequirementsService requirementsService;
     @Autowired
     private StreamRepo streamsRepo;
 

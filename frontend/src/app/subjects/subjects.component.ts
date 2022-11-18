@@ -24,6 +24,7 @@ export class SubjectsComponent implements OnInit {
     } else {
       this.subjectService.submitingSubject(this.form.value).subscribe((data: any) => {
        alert("Suject Saved Success")
+       this.form.reset()
       })
     }
   }

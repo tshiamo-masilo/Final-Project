@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import testing.demo.model.School;
-import testing.demo.services.SchoolService;
+import testing.demo.Services.SchoolService;
 
 import java.util.List;
 
