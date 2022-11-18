@@ -1,10 +1,15 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< HEAD
 import testing.demo.model.Student;
 import testing.demo.Services.StudentService;
+=======
+import testing.demo.entities.Student;
+import testing.demo.services.StudentService;
+>>>>>>> db9abb4a47de7be7c0cc363c5cf5ab39f622ccc7
 
 import java.util.List;
 

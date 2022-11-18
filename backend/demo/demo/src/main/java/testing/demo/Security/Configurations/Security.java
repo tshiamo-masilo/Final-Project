@@ -1,4 +1,4 @@
-package testing.demo.Security.Configurations;
+package testing.demo.security.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,12 +11,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import lombok.var;
+<<<<<<< HEAD
 import testing.demo.Security.Handler.AuthSuccesHandler;
 import testing.demo.Services.UserDetailService;
 import testing.demo.model.Role;
 import testing.demo.security.filters.JsonObjectAuthenticationFilter;
+=======
+import testing.demo.entities.Role;
+import testing.demo.security.filters.AuthorizationFilter;
+import testing.demo.security.filters.JsonObjectAuthenticationFilter;
+import testing.demo.security.handler.AuthSuccesHandler;
+import testing.demo.services.UserDetailService;
+>>>>>>> db9abb4a47de7be7c0cc363c5cf5ab39f622ccc7
 
 @Configuration
 public class Security {
@@ -68,5 +79,12 @@ public class Security {
         filter.setAuthenticationManager(authenticationManager);
         filter.setAuthenticationSuccessHandler(authSuccesHandler);
         return filter;
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
     }
 }

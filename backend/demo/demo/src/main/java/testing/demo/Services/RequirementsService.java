@@ -1,20 +1,27 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.Repository.RequirementsRepo;
-import testing.demo.model.Requirements;
+
+import testing.demo.entities.Requirements;
+import testing.demo.repositories.RequirementsRepo;
 
 import java.util.List;
 
 @Service
 public class RequirementsService {
+
     @Autowired
     private RequirementsRepo requirementsRepo;
+<<<<<<< HEAD
 
     public Requirements saveRequirements(Requirements requirements) {
         return requirementsRepo.save(requirements);
+=======
+>>>>>>> db9abb4a47de7be7c0cc363c5cf5ab39f622ccc7
 
+    public Requirements saveRequirements(Requirements requirements) {
+        return requirementsRepo.save(requirements);
     }
 
     public List<Requirements> getAllRequirements() {
@@ -25,7 +32,11 @@ public class RequirementsService {
         return requirementsRepo.findById(id);
     }
 
+<<<<<<< HEAD
     public String deleteRequirementsById(Long id) {
+=======
+    public String deleteRequirementsById(int id) {
+>>>>>>> db9abb4a47de7be7c0cc363c5cf5ab39f622ccc7
         requirementsRepo.deleteById(id);
         return "Requirement with Id:" + id + " is deleted";
     }
