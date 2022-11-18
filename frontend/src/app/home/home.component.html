@@ -10,13 +10,13 @@
   <div class="tb">
     <div class="td">
       <input type="text" name="search" id="searchbar" placeholder="Search Schools..." 
-        onclick="myFunction()" onkeypress="search_schools()" />
+        onclick="displayFunction()" onkeyup="search_schools()" />
     </div>
     <div class="td" id="s-cover" >
       <button aria-label="Aria Name" type="submit" return="false">
         <div id="s-circle"></div>
         <span></span>
-      </button>
+      </button  >
     </div>
   </div>
 
@@ -58,21 +58,18 @@
       <hr>
       <a class="dropdown-item" href="#">Pretoria</a>
       <hr>
-      <a class="dropdown-item" href="#">City of Tshwane</a>
+      <a class="dropdown-item" href="#">Benoni</a>
       <hr>
       <a class="dropdown-item" href="#">Soweto </a>
       <hr>
       <a class="dropdown-item" href="#">Alberton</a>
+      <hr>
+      <a class="dropdown-item" href="#">Randburg</a>
     </div>
+
   </div>
-  <div class="dropdown show" id="filtergeo">
-    <a class="btn btn-secondary w3-animate-top" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-      aria-expanded="false">
-      Check My <br />
-      Location
-    </a>
   </div>
-</div>
+
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
@@ -93,9 +90,11 @@
           <div class="item "></div>{{ school.Sector }}
           {{ school.Phase }}<br>
           Address: {{ school.StreetAddress }}<br>
+          Email: {{school.E_Mail}}<br>
           Mobile No: {{ school.cellno }}<br>
+          
           National Emis No: {{ school.NatEmis }}<br>
-          <a class="btn btn-primary">Apply</a>
+          <a class="btn btn-primary" href="application">Apply</a>
         </div>
       </div>
     </div>
@@ -103,12 +102,12 @@
 </div>
 <!-- /SCHOOL CARDS -->
 
-<!-- <div id="loadMore" style="display:none ;" class=" w3-animate-bottom">
-  <a href="">Show more</a>
-</div> -->
 
-<div class="d-flex justify-content-center paginate" >
-  <pagination-controls  
+
+
+<div class="d-flex justify-content-center" id="paginate" >
+  <pagination-controls
+    
     previousLabel="Prev" 
     nextLabel="Next"
     (pageChange)="onTableDataChange($event)">

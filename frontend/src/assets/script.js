@@ -1,19 +1,18 @@
 //LANDING PAGE LOAD
 
-function myFunction() { 
+function displayFunction() { 
   document.getElementById("icon").style.display="none";  
   document.getElementById("filter").style.display="block";
   document.getElementById("sections").style.display="block";
   document.getElementById("myBtn").style.display="block";
-  document.getElementById("loadMore").style.display="block";
-  document.getElementById("paginate").style.display="block";
+  document.getElementById("paginate").style.visibility="visible";
 }
+
+
 
 //SEARCH BAR
 
 function search_schools() {
-  document.getElementById("loadMore").style.display="none";
- 
 let input = document.getElementById('searchbar').value
 input=input.toLowerCase();
 let x = document.getElementsByClassName('schools');
@@ -27,19 +26,6 @@ for (i = 0; i < x.length; i++) {
     }
 }
 }
-
-
-// LOAD MORE
-// $( document ).ready(function () {
-//    $(".moreBox").slice(0, 10).show()
-
-//     $("#loadMore").on('click', function (e) {
-//       e.preventDefault();
-//       $(".moreBox:hidden").slice(0, 10).slideDown();
-//     });
-//   });
-
-
 
 //SCROLL TOP
 

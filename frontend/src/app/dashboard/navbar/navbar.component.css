@@ -1,0 +1,52 @@
+.header{
+    background: url("http://a.top4top.net/p_397znzmu1.png") center center fixed;
+    color: #FFF;
+    height: 100vh;
+    position: relative;
+    -msn-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(0, 217, 255);
+    
+}
+
+
+#navbar ul{
+    background-color: #2E3542;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+}
+
+.logout{
+    text-decoration: underline;
+    color: red;
+    
+}
+
+.admin i{
+    font-size:40px ;
+    float: center;
+    margin:auto;
+}
+
+.admin{
+    padding-top: 40px;
+}
+
+
+
+  

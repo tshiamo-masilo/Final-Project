@@ -24,6 +24,7 @@ import {ContactComponent} from './contact/contact.component';
 import { AccountComponent } from './account/account.component';
 import { ApplicationComponent } from './application/application.component';
 import { SchoolComponent } from './school/school.component';
+import { NavbarComponent } from './dashboard/navbar';
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
@@ -52,7 +53,7 @@ import { SignupComponent } from './user/signup/signup.component';
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-    
+    NavbarComponent,
   ],
   bootstrap: [AppComponent]
   

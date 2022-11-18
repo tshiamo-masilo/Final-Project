@@ -320,8 +320,10 @@ button span:after {
 
 }
 
-.paginate{
+#paginate{
   color: white;
-  
+  visibility: hidden;
 }
+
+
 

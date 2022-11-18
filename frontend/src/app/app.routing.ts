@@ -6,10 +6,11 @@ import { HomeComponent } from './home';
 import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
-import {LoginComponent} from './user/login';
-import {SignupComponent} from './user/signup';
-import {ForgotComponent} from './user/forgot';
-import {ApplicationComponent} from './application';
+import { LoginComponent } from './user/login';
+import { SignupComponent } from './user/signup';
+import { ForgotComponent } from './user/forgot';
+import { ApplicationComponent } from './application';
+import { NavbarComponent } from './dashboard/navbar';
 
 
 // import { DashboardModule } from './dashboard';
@@ -28,10 +29,11 @@ const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
     { path: 'application', component: ApplicationComponent },
-    
+    { path: 'navbar', component: NavbarComponent },
+
 
     // otherwise redirect to home
-    { path: '**', redirectTo: 'home', pathMatch:"full" }
+    { path: '**', redirectTo: 'home', pathMatch: "full" }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
