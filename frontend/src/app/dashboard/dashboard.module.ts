@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LearnerComponent } from './learner/learner.component';
 import { AdminComponent } from './admin/admin.component';
 import { Router } from '@angular/router';
-import { ApplicationsComponent } from './admin/viewApplications/applications/applications.component';
-
+import { ApplicationsComponent } from './admin/applications/applications.component';
 
 @NgModule({
   declarations: [
