@@ -1,28 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { appRoutingModule } from './app.routing';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { NgModule } from "@angular/core";
 
-// import { UserModule } from './user/user.module';
-
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {AppComponent } from './app.component';
-
-
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { appRoutingModule } from "./app.routing";
 
 
 
-import {HomeComponent } from './home/home.component';
-import {AboutComponent } from './about/about.component';
-import {ContactComponent} from './contact/contact.component';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { AppComponent } from "./app.component";
 
-import { AccountComponent } from './account/account.component';
-import { ApplicationComponent } from './application/application.component';
-import { SchoolComponent } from './school/school.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MdbCollapseModule } from "mdb-angular-ui-kit/collapse";
+
+
+
+
+
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { ContactComponent } from "./contact/contact.component";
 
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
@@ -31,11 +26,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { RegisterComponent } from './register/register.component';
 import { RequirementsComponent } from './requirements/requirements.component';
+import { AccountComponent } from "./account/account.component";
+import { ApplicationComponent } from "./application/application.component";
+import { SchoolComponent } from "./school/school.component";
+import { SignupComponent } from "./user/signup";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from "./user/login";
 
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptor } from "./user/token.interceptor";
 
 
 
 @NgModule({
+
+
+
   declarations: [
     AppComponent,
     ApplicationComponent,
@@ -44,13 +51,14 @@ import { RequirementsComponent } from './requirements/requirements.component';
     ContactComponent,
     AccountComponent,
     ApplicationComponent,
-    SchoolComponent,  
+    SchoolComponent,
+    SignupComponent,
+    LoginComponent,
+    SchoolComponent,
     StreamsComponent,
     SubjectsComponent,
     RegisterComponent,
     RequirementsComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -60,11 +68,16 @@ import { RequirementsComponent } from './requirements/requirements.component';
     appRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
-  ],
-  bootstrap: [AppComponent]
-  
+    ],
+  bootstrap: [AppComponent],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ]
 })
+export class AppModule {}
 
-export class AppModule { }
-export class PizzaPartyAppModule { }
+

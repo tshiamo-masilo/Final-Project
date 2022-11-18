@@ -36,7 +36,7 @@ const routes: Routes = [
     {path: 'school', component: SchoolComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'requirements', component: RequirementsComponent},
-    
+
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
