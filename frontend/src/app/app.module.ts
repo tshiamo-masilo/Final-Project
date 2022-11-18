@@ -29,6 +29,8 @@ import { SignupComponent } from './user/signup/signup.component';
 import { StreamsComponent } from './streams/streams.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { RegisterComponent } from './register/register.component';
+import { RequirementsComponent } from './requirements/requirements.component';
 
 
 
@@ -45,6 +47,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
     SchoolComponent,  
     StreamsComponent,
     SubjectsComponent,
+    RegisterComponent,
+    RequirementsComponent,
     
     
   ],

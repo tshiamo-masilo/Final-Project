@@ -15,26 +15,28 @@ public class SchoolController {
     private SchoolService schoolService;
 
     @PostMapping("/save")
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public School saveSchool(@RequestBody School school) {
 
         return schoolService.saveSchool(school);
     }
 
     @GetMapping("/get/{id}")
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public School findSchoolById(@PathVariable Long id) {
 
         return schoolService.findSchoolById(id);
     }
 
     @GetMapping("/getAll")
+    @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public List<School> findAllSchool() {
 
         return schoolService.getAllSchools();
     }
 
     @DeleteMapping("/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public String deleteSchoolById(@PathVariable Long id) {
 
         return schoolService.deleteSchoolById(id);

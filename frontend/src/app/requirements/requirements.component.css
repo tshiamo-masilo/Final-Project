@@ -29,6 +29,19 @@ input:hover {
 label {
     padding-top: 35px;
 }
+select {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    background-color: rgb(63, 63, 63, 0.0);
+    border: none;
+    width: 92%;
+    height: 38px;
+    border-radius: 5px;
+    color: white;
+}
+option {
+    background-color: gray 
+}
 .btn {
     background-color: rgb(37, 41, 43);
     width: 100%;

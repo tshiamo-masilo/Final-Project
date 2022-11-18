@@ -12,6 +12,8 @@ import {ForgotComponent} from './user/forgot';
 import {StreamsComponent} from './streams';
 import {SubjectsComponent} from './subjects';
 import { SchoolComponent } from './school/school.component';
+import { RegisterComponent } from './register';
+import { RequirementsComponent } from './requirements';
 
 
 // import { DashboardModule } from './dashboard';
@@ -32,6 +34,8 @@ const routes: Routes = [
     { path: 'streams', component: StreamsComponent },
     {path: 'subjects', component: SubjectsComponent },
     {path: 'school', component: SchoolComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'requirements', component: RequirementsComponent},
     
 
     // otherwise redirect to home

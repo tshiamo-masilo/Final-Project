@@ -1,12 +1,10 @@
 
 <div class="container">
-    <h3>Requirements</h3>
+    
 
     <form [formGroup]="form" (ngSubmit)="Onsubmit()">
+        <h3>Adding Subject</h3>
         <div class="requirements">
-            
-            
-
             <div class="row">
                 <div class="col-6">
                     <input type="text" placeholder="Subject Description" formControlName="description" required>
@@ -18,7 +16,7 @@
                 </ng-container>
                 <ng-container *ngIf="form.value.description == '' ">
                     <div class="col-4">
-                        <label>Enter the subject </label>
+                        <label>Enter the subject Description</label>
                     </div>
                 </ng-container>
             </div>

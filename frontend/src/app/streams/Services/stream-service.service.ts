@@ -5,17 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StreamServiceService {
-
-
-  //saving Streams to stream table in  database
+  //saving Stream to stream table in database
   submittingStreams(value: any) {
     return this.http.post('http://localhost:8080/streams/save', value);
-  }
-  //saving Requirements to requirements table in  database
-  submittingRequirements(values: any) {
-    console.log(values)
-    return this.http.post('http://localhost:8080/requirements/save', values);
-   
   }
   constructor(private http: HttpClient) { }
 }
