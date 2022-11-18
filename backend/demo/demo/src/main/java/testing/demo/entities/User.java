@@ -37,6 +37,9 @@ public class User implements UserDetails {
 
     private String password;
 
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
+
     // Defining the roles
     @Column
     @Enumerated(EnumType.STRING)

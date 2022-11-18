@@ -11,7 +11,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MdbCollapseModule } from "mdb-angular-ui-kit/collapse";
 
-<<<<<<< HEAD
+
 
 
 
@@ -28,21 +28,15 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from "./user/login";
 
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptor } from "./user/token.interceptor";
 
 
 
 @NgModule({
 
 
-=======
-// import { LoginComponent } from './user/login/login.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { UserModule } from './user/user.module';
 
-@NgModule({
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
   declarations: [
     AppComponent,
     ApplicationComponent,
@@ -52,21 +46,11 @@ import { UserModule } from './user/user.module';
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-<<<<<<< HEAD
+
     SignupComponent,
-    LoginComponent
-=======
-  ],
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    UserModule,
-    MdbCollapseModule,
-    appRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
+    LoginComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -81,10 +65,14 @@ import { UserModule } from './user/user.module';
    
     ],
   bootstrap: [AppComponent],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ]
 })
 export class AppModule {}
 
-<<<<<<< HEAD
-=======
-export class AppModule { }
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
+

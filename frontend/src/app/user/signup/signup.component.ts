@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { SignupService } from '../signup.service';
+import { SignupService } from '../services/signup.service';
 import { UsersInfor } from '../models/users.model';
 import ValidateForm from '../Validation/validation';
 
@@ -41,6 +41,8 @@ export class SignupComponent implements OnInit {
 
     this.apiSignUp.addUser(this.signupForm.value).subscribe((res: any) => {
        this.signupForm = res;
+       this.signupForm.reset();
+       this.router.navigate(['signIn']);
     });
   }
   onSignUp(){

@@ -4,13 +4,10 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
+
   BaseUrl: 'http://localhost:8080',
-  defaultPassword:"p@ssword1"
-=======
-  apiUrl: "http://localhost:8080",
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
-};
+
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

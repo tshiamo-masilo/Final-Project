@@ -3,15 +3,24 @@ package testing.demo.controllers;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.var;
+import net.bytebuddy.utility.RandomString;
 
+import java.io.UnsupportedEncodingException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import testing.demo.controllers.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
+import org.springframework.ui.Model;
 
 import testing.demo.services.UserService;
 import testing.demo.dtos.RegistrationDto;
@@ -19,10 +28,15 @@ import testing.demo.entities.ApiResponse;
 import testing.demo.entities.Role;
 import testing.demo.entities.User;
 
-
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    private static final String MessagingException = null;
+
+    private static final String UnsupportedEncodingException = null;
+
+    
 
     @Autowired
     private UserService userService;
@@ -37,7 +51,7 @@ public class UserController {
     public ApiResponse<String> userEndpoint() {
         return new ApiResponse<String>(HttpStatus.OK, "Hello user", null);
     }
-
+    
     /**
      * @return ApiResponse<User>
      */

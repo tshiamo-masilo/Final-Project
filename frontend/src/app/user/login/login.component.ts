@@ -1,9 +1,15 @@
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { LoginService } from "../services/login.service";
+import { TokenService } from "../services/token.service";
+import ValidateForm from "../Validation/validation";
 
-  @Component({
+  @Component ({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
-  )}
+  })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
   
@@ -12,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginApi: LoginService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit(): void {
@@ -23,13 +30,12 @@ export class LoginComponent implements OnInit {
     }
 
   login() {
-
-    this.loginApi.onLogin(this.loginForm.value).subscribe((res:any)=>{
-      alert("Successfully login!");
+    this.loginApi.onLogin(this.loginForm.value).subscribe((res:any)=> {
+      console.log(res);
+      this.tokenService.setToken(res.token);
       this.loginForm.reset();
       this.router.navigate(['home']);
     })
-    
   }
   onSubmit() {
     if (this.loginForm.valid) {
