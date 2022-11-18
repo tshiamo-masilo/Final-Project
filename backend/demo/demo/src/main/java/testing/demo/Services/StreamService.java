@@ -20,13 +20,6 @@ public class StreamService {
 
         return streamsRepo.findAll();
     }
-<<<<<<< HEAD
-
-=======
-    // public List<Stream> getStream(String id){
-    // return streamsRepo.
-    // }
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
 
     public Stream getStreamById(int id) {
         return streamsRepo.findById(id);

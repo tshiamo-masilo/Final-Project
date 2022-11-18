@@ -12,17 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-<<<<<<< HEAD
-import testing.demo.Services.UserService;
-import testing.demo.dto.RegistrationDto;
-import testing.demo.model.ApiResponse;
-import testing.demo.model.Role;
-import testing.demo.model.User;
-=======
-import testing.demo.entities.ApiResponse;
-import testing.demo.entities.User;
+
 import testing.demo.services.UserService;
->>>>>>> 16cd37d4f76e412aec94c726ea618a1905a32b1d
+import testing.demo.dtos.RegistrationDto;
+import testing.demo.entities.ApiResponse;
+import testing.demo.entities.Role;
+import testing.demo.entities.User;
+
 
 @RestController
 @RequestMapping("/user")
