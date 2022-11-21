@@ -1,9 +1,9 @@
-package testing.demo.Services;
+package testing.demo.services;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import testing.demo.model.RefreshToken;
+import testing.demo.entities.RefreshToken;
 
 import java.util.Optional;
 

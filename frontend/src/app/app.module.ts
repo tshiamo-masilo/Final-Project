@@ -28,6 +28,16 @@ import { NgModule } from '@angular/core';
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 
+import { AccountComponent } from "./account/account.component";
+import { ApplicationComponent } from "./application/application.component";
+import { SchoolComponent } from "./school/school.component";
+import { SignupComponent } from "./user/signup";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from "./user/login";
+
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptor } from "./user/token.interceptor";
 
 
 
@@ -55,10 +65,33 @@ import { SignupComponent } from './user/signup/signup.component';
     ApplicationComponent,
     SchoolComponent,
     NavbarComponent,
+
+    SignupComponent,
+    LoginComponent,
+   
+
   ],
-  bootstrap: [AppComponent]
-
+  imports: [
+    BrowserModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MdbCollapseModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
+    appRoutingModule,
+   
+   
+    ],
+  bootstrap: [AppComponent],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ]
 })
+export class AppModule {}
 
-export class AppModule { }
-export class PizzaPartyAppModule { }
+
