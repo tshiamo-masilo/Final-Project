@@ -29,8 +29,6 @@ import { RequirementsComponent } from './requirements/requirements.component';
 import { AccountComponent } from "./account/account.component";
 import { ApplicationComponent } from "./application/application.component";
 import { SchoolComponent } from "./school/school.component";
-import { SignupComponent } from "./user/signup";
-import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from "./user/login";
 

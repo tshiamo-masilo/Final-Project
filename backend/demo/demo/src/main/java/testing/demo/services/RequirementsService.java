@@ -7,6 +7,7 @@ import testing.demo.entities.Requirements;
 import testing.demo.repositories.RequirementsRepo;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RequirementsService {
@@ -23,8 +24,8 @@ public class RequirementsService {
         return requirementsRepo.findAll();
     }
 
-    public Requirements getRequirementsById(int id) {
-        return requirementsRepo.findById(id);
+    public Requirements getRequirementsById(Long id) {
+        return requirementsRepo.findById(id).get();
     }
 
     public String deleteRequirementsById(Long id) {
@@ -38,7 +39,7 @@ public class RequirementsService {
     }
 
     public Requirements updateRequirements(Requirements requirements) {
-        Requirements existing = requirementsRepo.findById(requirements.getId());
+        Requirements existing = requirementsRepo.findById(requirements.getId()).get();
         existing.setMaths(requirements.getMaths());
         existing.setNaturalScience(requirements.getNaturalScience());
         existing.setTechnology(requirements.getTechnology());

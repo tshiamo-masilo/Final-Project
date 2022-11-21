@@ -1,18 +1,22 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import testing.demo.model.Subject;
-import testing.demo.Services.SubjectService;
+import testing.demo.entities.Subject;
+import testing.demo.services.SubjectService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/subject")
 public class SubjectController {
-    @Autowired
+
     private SubjectService service;
+
+    public SubjectController(SubjectService service) {
+        this.service = service;
+    }
 
     @PostMapping("/save")
     @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")

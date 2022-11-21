@@ -3,27 +3,15 @@ package testing.demo.controllers;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.var;
-import net.bytebuddy.utility.RandomString;
 
-import java.io.UnsupportedEncodingException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletRequest;
-import testing.demo.controllers.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.ui.Model;
 
-import testing.demo.model.ApiResponse;
-import testing.demo.model.User;
-import testing.demo.Services.UserService;
 import testing.demo.services.UserService;
 import testing.demo.dtos.RegistrationDto;
 import testing.demo.entities.ApiResponse;

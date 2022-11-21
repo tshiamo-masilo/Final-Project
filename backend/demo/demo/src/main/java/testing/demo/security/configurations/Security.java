@@ -1,4 +1,4 @@
-package testing.demo.Security.Configurations;
+package testing.demo.security.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

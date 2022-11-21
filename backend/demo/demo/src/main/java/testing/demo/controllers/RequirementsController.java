@@ -1,12 +1,11 @@
 package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import testing.demo.model.Requirements;
-import testing.demo.Services.RequirementsService;
+import testing.demo.entities.Requirements;
+import testing.demo.services.RequirementsService;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class RequirementsController {
 
     @GetMapping("/get/{id}")
     @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
-    public ResponseEntity<Requirements> getRequirementsById(@PathVariable int id) {
+    public ResponseEntity<Requirements> getRequirementsById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.getRequirementsById(id));
     }
 

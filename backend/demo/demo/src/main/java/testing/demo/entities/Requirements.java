@@ -13,7 +13,7 @@ public class Requirements {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="requirementsId",nullable = false)
-    private int id;
+    private Long id;
     private String maths;
     private String naturalScience;
     private String technology;

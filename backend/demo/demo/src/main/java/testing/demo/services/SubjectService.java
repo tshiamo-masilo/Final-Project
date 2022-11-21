@@ -1,10 +1,9 @@
-package testing.demo.Services;
+package testing.demo.services;
 
-import org.apache.el.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.Repository.SubjectRepository;
-import testing.demo.model.Subject;
+import testing.demo.entities.Subject;
+import testing.demo.repositories.SubjectRepository;
 
 import java.util.List;
 
