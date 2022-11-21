@@ -1,22 +1,16 @@
 <div class="container">
-  <form>
+  <form  [formGroup]="updates" (ngSubmit)="update()" >
     <h2 class="text-uppercase text-center mb-5">1.PERSONAL INFORMATION</h2>
 
     <!--FIRST NAME FOR CONTACTS-->
     <div class="row">
       <div class="col-6">
-        <label class="form-label" for="form3Example4cdg">First Name:</label>
+        <label class="form-label" for="form3Example4cdg" >Full Name:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="text"
+         formControlName="fullName"placeholder="ctreturtjytyu"required minlength="4"/></div>
     </div>
 
-    <!--LAST NAME FOR CONTACTS-->
-    <div class="row">
-      <div class="col-6">
-        <label class="form-label" for="form3Example4cdg">Last Name:</label>
-      </div>
-      <div class="col-6"><input type="text" /></div>
-    </div>
 
     <!--identification for contanct-->
     <div class="row">
@@ -25,7 +19,7 @@
           >Identification Number:</label
         >
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="text" formControlName="identification" readonly/></div>
     </div>
 
     <!--Gender/Sex  button for contanct-->
@@ -34,27 +28,15 @@
         <label class="form-label" for="form3Example4cdg">Gender/Sex:</label>
       </div>
       <div class="col-6">
-        <button
-          style="background-color: grey"
-          type="button"
-          class="btn btn-primary dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Choose
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#" style="background-color: grey"
-              >MALE</a
-            >
-          </li>
-          <li>
-            <a class="dropdown-item" href="#" style="background-color: grey"
-              >FEMALE</a
-            >
-          </li>
-        </ul>
+        <select name="dropdown-toggle"style="background-color: grey"type="button"class="btn btn-primary dropdown-toggle"data-bs-toggle="dropdown"aria-expanded="false">
+       
+          <option value="SELECT">---SELECT---</option>
+          <option value="MALE">MALE</option>
+          <option value="FEMALE">FEMALE</option>
+          <option value="FEMALE">PREFER NOT TO SAY</option>
+          
+        </select>
+          
       </div>
     </div>
 
@@ -63,13 +45,14 @@
       <div class="col-6"><label for="start">Date Of Birth:</label></div>
       <div class="col-6">
         <input
-          style="border-radius: 15px; height: 40px; width: 200px"
+          style="border-radius: 10px; height: 40px; width: 200px"
           type="date"
           id="start"
           name="trip-start"
           value="2018-07-22"
           min="2018-01-01"
           max="2018-12-31"
+          required
         />
       </div>
     </section>
@@ -79,7 +62,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Nationality:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="text" formControlName="nationality"required/></div>
     </section>
 
     <!--HOME LANGUAGE for contanct-->
@@ -87,7 +70,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Home Language:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="text" formControlName="homeLanguage"required/></div>
     </section>
 
     <!--MOBILE NUMBER for contanct-->
@@ -95,26 +78,20 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Mobile Number:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="tel" formControlName="mobileNumber"required muinlength="10"/></div>
     </section>
 
     <h1 class="text-uppercase text-center mb-5">2.GUARDIAN INFORMATION</h1>
 
-    <!--FIRST NAME for contanct-->
+    <!--Full NAME for contanct-->
     <section class="row">
       <div class="col-6">
-        <label class="form-label" for="form3Example4cdg">First Name:</label>
+        <label class="form-label" for="form3Example4cdg">Full Name:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="text" formControlName="guardianFullName"required/></div>
     </section>
 
-    <!--LAST NAME for contanct-->
-    <section class="row">
-      <div class="col-6">
-        <label class="form-label" for="form3Example4cdg">Last Name:</label>
-      </div>
-      <div class="col-6"><input type="text" /></div>
-    </section>
+   
 
     <!--email address for contanct-->
     <section class="row">
@@ -122,7 +99,7 @@
         <label class="form-label" for="form3Example4cdg">Email Address:</label>
       </div>
       <div class="col-6">
-        <input type="email" placeholder=" E.g email@gmail.com " />
+        <input type="email" placeholder=" E.g email@gmail.com "formControlName="guardianEmail"required />
       </div>
     </section>
 
@@ -131,7 +108,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Phone Number:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      <div class="col-6"><input type="tel" formControlName="guardianPhoneNumber" required/></div>
     </section>
 
     <!--home address for contanct-->
@@ -139,7 +116,8 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Home Address:</label>
       </div>
-      <div class="col-6"><input type="text" /></div>
+      
+      <div class="col-6"><input type="text" formControlName="address"required/></div>
     </section>
 
     <!--POSTAL for contanct-->
@@ -147,7 +125,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Postal:</label>
       </div>
-      <div class="col-6"><input type="text" style="width: 30%" /></div>
+      <div class="col-6"><input type="text" style="width: 30%" formControlName="postalCode" required /></div>
     </section>
 
     <!-- update button -->
@@ -155,7 +133,7 @@
       <div class="col-6"></div>
 
       <div class="col-6">
-        <button type="button" class="btn btn-outline-dark">UPDATE</button>
+        <button type="submit" class="btn btn-outline-dark" >UPDATE</button>
       </div>
     </section>
   </form>

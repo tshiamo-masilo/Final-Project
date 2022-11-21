@@ -26,6 +26,8 @@ import { SchoolComponent } from './school/school.component';
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 
@@ -36,6 +38,7 @@ import { DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.c
     MatToolbarModule,
     BrowserAnimationsModule,
     MdbCollapseModule,
+    ReactiveFormsModule,
     appRoutingModule,
 
   ],
@@ -49,6 +52,7 @@ import { DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.c
     AccountComponent,
     SchoolComponent,
     DashboardComponent,
+    UserDetailsComponent,
 
   ],
   bootstrap: [AppComponent]
