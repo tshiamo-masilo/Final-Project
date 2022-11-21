@@ -51,3 +51,8 @@
 #navbar{
     background-color: rgba(46, 53, 66, 0.5);
 }
+button{
+    background-color: inherit;
+    border-radius: 30px;
+    border-color: #333;
+}

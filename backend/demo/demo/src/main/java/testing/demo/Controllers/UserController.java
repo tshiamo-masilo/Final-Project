@@ -1,6 +1,7 @@
 package testing.demo.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.var;
 import net.bytebuddy.utility.RandomString;
@@ -30,19 +31,32 @@ import testing.demo.entities.User;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
-
-    private static final String MessagingException = null;
-
-    private static final String UnsupportedEncodingException = null;
+public class UserController<ResetPasswordData> {
 
     
+
+    private static final String  REDIREC_LOGIN = "redirct:/login";
+    private static final String M_STRING = "resetPasswordMsg";
 
     @Autowired
     private UserService userService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @PostMapping("request")
+    public String resetPassword(final ResetPasswordData forgotPasswordForm , RedirectAttributes redirAttr ){
+        return "";
+    }
+    @GetMapping("changeP")
+    public String changePassword(@RequestParam(required = false) String token, final RedirectAttributes redirAttr, final Model model){
+        return "";
+    }
+    @PostMapping("changeP")
+    public String changePassword( final ResetPasswordData data, final Model model){
+        return "";
+    }
+    
 
     /**
      * @return ApiResponse
