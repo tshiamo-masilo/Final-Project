@@ -1,34 +1,27 @@
 package testing.demo.controllers;
 
 import org.springframework.web.bind.annotation.*;
-
 import lombok.var;
-
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.HashSet;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import testing.demo.services.UserService;
 import testing.demo.dtos.RegistrationDto;
 import testing.demo.entities.ApiResponse;
 import testing.demo.entities.Role;
 import testing.demo.entities.User;
+import testing.demo.services.UserService;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
     private static final String MessagingException = null;
-
     private static final String UnsupportedEncodingException = null;
 
-
-
-    @Autowired
+   @Autowired
     private UserService userService;
 
     @Autowired

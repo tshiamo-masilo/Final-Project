@@ -13,6 +13,7 @@ export class RequirementsComponent implements OnInit {
   streamlist: any[] = ["Select a stream"]
   streams: any[] = []
   stream: any;
+  selectedStream: any;
   num: any;
 
 
@@ -23,20 +24,24 @@ export class RequirementsComponent implements OnInit {
 
   onSelectedStream(value: any) {
     this.stream = value;
+    this.selectedStream = value
+
     if (this.stream === "Select Stream") {
       this.num = 0;
     } else {
       this.num = 1;
     }
   }
+
   requirementform() {
-    this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({     
       maths: [''],
       naturalScience: [''],
       technology: [''],
       ems: [''],
       arts: [''],
       socialScience: [''],
+      streamId: ['']
     });
   }
 
@@ -48,8 +53,11 @@ export class RequirementsComponent implements OnInit {
     if (this.form.value.maths.length === 0 || this.form.value.naturalScience.length === 0 || this.form.value.technology.length === 0) {
       alert("Select all the stream requirements")
     } else {
+      this.form.get('streamId')?.setValue(+this.selectedStream.substring(0, 1));      
+      console.log(this.form.value)
       this.streamService.submittingRequirements(this.form.value).subscribe((data: any) => {
         alert("Submitted")
+        console.log(data)
         this.form.reset();
       })
 
@@ -61,7 +69,7 @@ export class RequirementsComponent implements OnInit {
       this.streams.push(data)
       this.streams.forEach(result => {
         result.forEach((res: any) => {
-          this.streamlist.push(res.streamName)
+          this.streamlist.push(res.id+"."+res.streamName)
         })
       })
     })

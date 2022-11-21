@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class StreamService {
 
+    @Autowired
     private StreamRepo streamsRepo;
 
     public StreamService(StreamRepo streamsRepo) {
@@ -31,7 +32,6 @@ public class StreamService {
         streamsRepo.deleteById(id);
         return "Stream with Id:" + id + " is deleted";
     }
-
     public String deleteAllStream() {
         streamsRepo.deleteAll();
         return "All Stream are deleted";

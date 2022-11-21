@@ -36,8 +36,8 @@ const routes: Routes = [
     {path: 'school', component: SchoolComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'requirements', component: RequirementsComponent},
-
-
+    { path: 'signUp', component: SignupComponent },
+    { path: 'signIn', component: LoginComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch:"full" }
 ];

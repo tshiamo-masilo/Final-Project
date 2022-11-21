@@ -3,10 +3,8 @@ package testing.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import testing.demo.entities.Requirements;
 import testing.demo.services.RequirementsService;
-
 import java.util.List;
 
 @RestController
@@ -18,7 +16,7 @@ public class RequirementsController {
     @PostMapping("/save")
     @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
     public Requirements saveRequirements(@RequestBody Requirements requirements) {
-        return repository.saveRequirements(requirements);
+         return repository.saveRequirements(requirements);
     }
 
     @GetMapping("/get/{id}")
@@ -50,4 +48,5 @@ public class RequirementsController {
     public ResponseEntity<Requirements> updateRequirement(@RequestBody Requirements requirements) {
         return ResponseEntity.ok(repository.updateRequirements(requirements));
     }
+
 }

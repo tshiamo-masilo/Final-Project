@@ -19,9 +19,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.var;
-import testing.demo.services.UserService;
-
 import org.springframework.beans.factory.annotation.Value;
+import testing.demo.services.UserService;
 
 @Component
 public class AuthSuccesHandler extends SimpleUrlAuthenticationSuccessHandler {

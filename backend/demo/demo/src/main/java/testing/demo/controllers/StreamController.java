@@ -9,7 +9,6 @@ import testing.demo.entities.Stream;
 import testing.demo.entities.Subject;
 import testing.demo.services.StreamService;
 import testing.demo.services.SubjectService;
-
 import java.util.List;
 
 @RestController
@@ -50,7 +49,7 @@ public class StreamController {
     }
 
     @PutMapping("/{subjectId}/streams/{streamId}")
-    public Subject enrolledStreamToSubject(@PathVariable Long subjectId, @PathVariable Long streamId){
+    public Subject enrolledStreamToSubject(@PathVariable Long subjectId, @PathVariable Long streamId) {
         Subject subject = subjectService.getSubjectById(subjectId);
         Stream stream = streamService.getStreamById(streamId);
         subject.enrolledStream(stream);

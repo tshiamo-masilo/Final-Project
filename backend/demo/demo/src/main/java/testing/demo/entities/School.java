@@ -25,7 +25,6 @@ public class School implements Serializable {
     private String Suburb;
     private String City;
     private String Postal_code;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "school")
     private Set<Stream> Streams = new HashSet<>();
 }
