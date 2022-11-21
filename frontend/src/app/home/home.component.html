@@ -14,16 +14,17 @@
 
       <div class="td">
         <input type="text" placeholder="Search Schools"
-         id="searchbar" onclick="displayFunction() [(ngModel)]=schoolFilter.Institution_Name">
+         id="searchbar" onclick="displayFunction()" 
          
+         [(ngModel)]="schoolFilter.Institution_Name">
       </div>
 
-      <div class="td" id="s-cover" onclick="searchSchools()">
+      <!-- <div class="td" id="s-cover">
         <button aria-label="Aria Name" type="submit" return="false">
           <div id="s-circle"></div>
           <span></span>
         </button>
-      </div>
+      </div> -->
     </div>
   
     <br/>  
@@ -54,23 +55,23 @@
   </div>
 
   <div class="dropdown show " id="filterbuttons">
-    <a class="btn btn-secondary dropdown-toggle w3-animate-top" href="#" role="button" id="dropdownMenuLink"
+    <a class="btn btn-secondary dropdown-toggle w3-animate-top" role="button" id="dropdownMenuLink"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       City/Town
     </a>
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
-      <a value="secretariaat" class="dropdown-item" href="#">Johannesburg</a>
+      <a value="secretariaat" class="dropdown-item">Johannesburg</a>
       <hr>
-      <a class="dropdown-item" href="#">Pretoria</a>
+      <a class="dropdown-item" >Pretoria</a>
       <hr>
-      <a class="dropdown-item" href="#">Benoni</a>
+      <a class="dropdown-item" >Benoni</a>
       <hr>
-      <a class="dropdown-item" href="#">Soweto </a>
+      <a class="dropdown-item" >Soweto </a>
       <hr>
-      <a class="dropdown-item" href="#">Alberton</a>
+      <a class="dropdown-item" >Alberton</a>
       <hr>
-      <a class="dropdown-item" href="#">Randburg</a>
+      <a class="dropdown-item" >Randburg</a>
     </div>
 
   </div>
@@ -82,24 +83,23 @@
 <div id="sections" style="display: none;" class=" w3-animate-bottom">
   <div class="row" >
 
-    <div class="card schools blogBox moreBox" *ngFor="let user of users | filterBy: userFilter
+    <div class="card schools blogBox moreBox" *ngFor="let name of schools | filterBy: schoolFilter
         | paginate: {
           itemsPerPage: tableSize,
           currentPage: page,
           totalItems: count};
           let i = index
           ">
-          {{ user.name }}
         <div class="card-body" >
-          <h5 class="card-title ">{{ user.Institution_Name }}</h5>
+          <h5 class="card-title ">{{ name.Institution_Name }}</h5>
           <hr><br>
           <div class="card-text ">
-            <div class="item "></div>{{ user.Sector }}
-            {{ user.Phase }}<br>
-            Address: {{ user.StreetAddress }}<br>
-            Email: {{user.E_Mail}}<br>
-            Mobile No: {{ user.cellno }}<br>
-            National Emis No: {{ user.NatEmis }}<br>
+            <div class="item "></div>{{ name.Sector }}
+            {{ name.Phase }}<br>
+            Address: {{ name.StreetAddress }}<br>
+            Email: {{name.E_Mail}}<br>
+            Mobile No: {{ name.cellno }}<br>
+            National Emis No: {{ name.NatEmis }}<br>
             <a class="btn btn-primary" href="application">Apply</a>
           </div>
         </div>

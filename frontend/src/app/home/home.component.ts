@@ -1,5 +1,4 @@
-import { Component, EventEmitter,Input,OnInit, Output } from '@angular/core';
-import { debounceTime, Subject } from 'rxjs';
+import { Component,OnInit, } from '@angular/core';
 import schoolsData from '../schools.json';
 
 
@@ -19,30 +18,23 @@ interface School {
   styleUrls: ['./home.component.css']
 })
 
-import { NgModule } from '@angular/core';
 
-
-
-
-@NgModule({
-  imports: [
-    NgModule]
-}
-    )
 
 
 export class HomeComponent implements OnInit {
-  users: any[] = [{ name: 'John' }, { name: 'Jane' }, { name: 'Mario' }];
-  userFilter: any = { name: '' };
-  schools: School[] = schoolsData;
+
+
+  schools: any[] = schoolsData;
   schoolFilter: any = { Institution_Name: '' };
+ 
+
 
   //  --PAGINATE--
   
   POSTS: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 5;
+  tableSize: number = 4;
   tableSizes: any = [3, 6, 9, 12];
 
   ngOnInit(): void {

@@ -123,6 +123,7 @@ button span {
 .dropdown-item:hover {
   color: #314e83;
   background-color: #D9D9D9;
+  cursor: pointer;
 }
 
 .dropdown-menu {

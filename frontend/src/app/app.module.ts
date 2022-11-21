@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { appRoutingModule } from './app.routing';
 import { DashboardModule } from './dashboard/dashboard.module';
-
+import {NgxSelectedFilterModule} from 'ngx-selected-filter';
 // import { UserModule } from './user/user.module';
 
 
@@ -34,13 +34,14 @@ import { SignupComponent } from './user/signup/signup.component';
 @NgModule({
   imports: [
     BrowserModule,
-    FilterPipeModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     MdbCollapseModule,
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
+    FilterPipeModule,
+    NgxSelectedFilterModule,
     appRoutingModule,
   ],
 
