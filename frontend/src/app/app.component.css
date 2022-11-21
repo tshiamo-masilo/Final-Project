@@ -3,11 +3,11 @@
     color: #FFF;
     height: 100vh;
     position: relative;
-    background-size: cover;
+    -msn-background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    -msn-background-size: cover;
+    background-size: cover;
 }
 .header .overlay{
     background: rgba(0, 0, 0, 0.58);
@@ -49,5 +49,9 @@
 }
 
 #navbar{
-    background-color: rgba(46, 53, 66, 0.5);
+    background-color: rgba(46, 53, 66, 0.95);
 }
+
+
+
+  

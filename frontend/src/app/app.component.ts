@@ -8,6 +8,9 @@ import { environment } from 'environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+onSearchTextEntered($event: string) {
+throw new Error('Method not implemented.');
+}
   title = 'Project-FrontEnd';
 
   private api: string = environment.apiUrl;
