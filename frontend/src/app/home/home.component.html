@@ -1,32 +1,36 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
+
 <!-- ICON -->
 <div class="image w3-animate-top" id="icon" style="display: block"></div>
 <!-- /ICON -->
 
+
 <!-- SEARCH BAR -->
 <div id="cover" style="z-index: 1000">
 
-  <div class="tb">
-    <div class="td">
+    <div class="tb">
 
-      <input type="text" placeholder="Search Schools" [(ngModel)]="SearchTag" 
-          id="searchbar"  onclick="displayFunction()">
+      <div class="td">
+        <input type="text" placeholder="Search Schools"
+         id="searchbar" onclick="displayFunction() [(ngModel)]=schoolFilter.Institution_Name">
+         
+      </div>
 
+      <div class="td" id="s-cover" onclick="searchSchools()">
+        <button aria-label="Aria Name" type="submit" return="false">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
     </div>
-
-    <div class="td" id="s-cover" onclick="search_schools()">
-      <button aria-label="Aria Name" type="submit" return="false">
-        <div id="s-circle"></div>
-        <span></span>
-      </button>
-    </div>
+  
+    <br/>  
   </div>
+  <!-- /SEARCH BAR -->
 
-  <br />
 
-</div>
-<!-- /SEARCH BAR -->
 
 <!-- FILTER BAR -->
 <div id="filter" style="display: none">
@@ -76,27 +80,34 @@
 
 <!-- SCHOOL CARDS -->
 <div id="sections" style="display: none;" class=" w3-animate-bottom">
-  <div class="row">
+  <div class="row" >
 
-    <div class="card schools blogBox moreBox" *ngFor="let file of schools
-      
-            | paginate: { itemsPerPage: 5, currentPage: p }">
-
-
-      <div class="card-body">
-        <h5 class="card-title ">{{ file.Institution_Name }}</h5>
-        <hr><br>
-        <div class="card-text ">
-          <div class="item "></div>{{ file.Sector }}
-          {{ file.Phase }}<br>
-          Address: {{ file.StreetAddress }}<br>
-          Email: {{file.E_Mail}}<br>
-          Mobile No: {{ file.cellno }}<br>
-          National Emis No: {{ file.NatEmis }}<br>
-          <a class="btn btn-primary" href="application">Apply</a>
+    <div class="card schools blogBox moreBox" *ngFor="let user of users | filterBy: userFilter
+        | paginate: {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count};
+          let i = index
+          ">
+          {{ user.name }}
+        <div class="card-body" >
+          <h5 class="card-title ">{{ user.Institution_Name }}</h5>
+          <hr><br>
+          <div class="card-text ">
+            <div class="item "></div>{{ user.Sector }}
+            {{ user.Phase }}<br>
+            Address: {{ user.StreetAddress }}<br>
+            Email: {{user.E_Mail}}<br>
+            Mobile No: {{ user.cellno }}<br>
+            National Emis No: {{ user.NatEmis }}<br>
+            <a class="btn btn-primary" href="application">Apply</a>
+          </div>
         </div>
-      </div>
+
+
+
     </div>
+
   </div>
 </div>
 <!-- /SCHOOL CARDS -->
@@ -106,11 +117,10 @@
 
 <div class="d-flex justify-content-center" id="paginate">
 
-  <pagination-controls (pageChange)="onPageChange($event)" 
-  (pageBoundsCorrection)="onPageChange($event)"
-    style="float: right;"></pagination-controls>
+  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+  </pagination-controls>
 
 </div>
 
 
-<button onclick="topFunction()" style="display:none ;" id="myBtn" title="Go to top">Top</button>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

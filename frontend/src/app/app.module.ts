@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { appRoutingModule } from './app.routing';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -10,11 +9,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { FormsModule } from '@angular/forms';
-
 
 
 
@@ -26,7 +24,7 @@ import { AccountComponent } from './account/account.component';
 import { ApplicationComponent } from './application/application.component';
 import { SchoolComponent } from './school/school.component';
 import { NavbarComponent } from './dashboard/navbar';
-
+import { NgModule } from '@angular/core';
 // import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 
@@ -36,7 +34,7 @@ import { SignupComponent } from './user/signup/signup.component';
 @NgModule({
   imports: [
     BrowserModule,
-    Ng2SearchPipeModule,
+    FilterPipeModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     MdbCollapseModule,
@@ -44,7 +42,6 @@ import { SignupComponent } from './user/signup/signup.component';
     HttpClientModule,
     FormsModule,
     appRoutingModule,
-
   ],
 
   declarations: [
