@@ -1,7 +1,7 @@
-package testing.demo.Repository;
+package testing.demo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import testing.demo.model.Subject;
+import testing.demo.entities.Subject;
 
 import java.util.Optional;
 
