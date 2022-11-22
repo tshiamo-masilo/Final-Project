@@ -36,6 +36,19 @@ import { TokenInterceptor } from "./user/token.interceptor";
 
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    ApplicationComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    AccountComponent,
+    ApplicationComponent,
+    SchoolComponent,
+    NavbarComponent,
+    SignupComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     MatToolbarModule,
@@ -48,24 +61,6 @@ import { TokenInterceptor } from "./user/token.interceptor";
     appRoutingModule,
     ReactiveFormsModule
   ],
-
-  declarations: [
-    AppComponent,
-    ApplicationComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    AccountComponent,
-    ApplicationComponent,
-    SchoolComponent,
-    NavbarComponent,
-
-    SignupComponent,
-    LoginComponent,
-   
-
-  ],
- 
   bootstrap: [AppComponent],
   providers:[
     {
