@@ -28,6 +28,7 @@ import { SignupComponent } from './user/signup/signup.component';
 import { DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -39,6 +40,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     BrowserAnimationsModule,
     MdbCollapseModule,
     ReactiveFormsModule,
+    HttpClientModule,
     appRoutingModule,
 
   ],

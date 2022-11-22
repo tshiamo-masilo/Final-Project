@@ -1,12 +1,18 @@
 import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  url= "";
-
+  private apiserverUrl=environment.apiBaseUrl;
+ 
+public getAccount():Observable<any>{
+  return this.http.get<any>(`${this.apiserverUrl}/studentApplication/getAll`);
+}
   updateDetails() {
     // var details: any = {
     //   "fullName": "lebo",
@@ -24,8 +30,8 @@ export class AccountService {
     // return details;
   }
   constructor(private http:HttpClient) {}
-  getStudentApplicationById(){
-    return this.http.get('Http://localhost:8080/studentApplication/getAll');
+  getStudentApplicationById(id:number){
+    return this.http.get(`Http://localhost:8080/studentApplication/get/${id}`);
  }
  
 }

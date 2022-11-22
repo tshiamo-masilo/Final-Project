@@ -7,8 +7,8 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg" >Full Name:</label>
       </div>
-      <div class="col-6"><input type="text"
-         formControlName="fullName"placeholder="ctreturtjytyu"required minlength="4"/></div>
+      <div class="col-6"><input value="{{fff}}" type="text"formControlName="fullName"required minlength="4"/>
+        </div>
     </div>
 
 
@@ -19,7 +19,7 @@
           >Identification Number:</label
         >
       </div>
-      <div class="col-6"><input type="text" formControlName="identification" readonly/></div>
+      <div class="col-6"><input value="{{Identification}}" type="text" formControlName="identification" readonly/></div>
     </div>
 
     <!--Gender/Sex  button for contanct-->
@@ -27,42 +27,24 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Gender/Sex:</label>
       </div>
-      <div class="col-6">
-        <select name="dropdown-toggle"style="background-color: grey"type="button"class="btn btn-primary dropdown-toggle"data-bs-toggle="dropdown"aria-expanded="false">
-       
-          <option value="SELECT">---SELECT---</option>
-          <option value="MALE">MALE</option>
-          <option value="FEMALE">FEMALE</option>
-          <option value="FEMALE">PREFER NOT TO SAY</option>
-          
-        </select>
-          
-      </div>
+      <div class="col-6"><input value="{{Gender}}" type="text" formControlName="identification" readonly/></div>
     </div>
+   
 
     <!-- date of birth -->
-    <section class="row">
-      <div class="col-6"><label for="start">Date Of Birth:</label></div>
+    <div class="row">
       <div class="col-6">
-        <input
-          style="border-radius: 10px; height: 40px; width: 200px"
-          type="date"
-          id="start"
-          name="trip-start"
-          value="2018-07-22"
-          min="2018-01-01"
-          max="2018-12-31"
-          required
-        />
+        <label class="form-label" for="form3Example4cdg">Date Of Birth</label>
       </div>
-    </section>
+      <div class="col-6"><input value="{{DateOfBirth}}" type="text" formControlName="identification" readonly/></div>
+    </div>
 
     <!--nationality for contanct-->
     <section class="row">
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Nationality:</label>
       </div>
-      <div class="col-6"><input type="text" formControlName="nationality"required/></div>
+      <div class="col-6"><input value="{{Nationality}}" type="text" formControlName="nationality"required/></div>
     </section>
 
     <!--HOME LANGUAGE for contanct-->
@@ -70,7 +52,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Home Language:</label>
       </div>
-      <div class="col-6"><input type="text" formControlName="homeLanguage"required/></div>
+      <div class="col-6"><input value="{{HomeLanguage}}" type="text" formControlName="homeLanguage"required/></div>
     </section>
 
     <!--MOBILE NUMBER for contanct-->
@@ -78,7 +60,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Mobile Number:</label>
       </div>
-      <div class="col-6"><input type="tel" formControlName="mobileNumber"required muinlength="10"/></div>
+      <div class="col-6"><input value="{{MobileNumber}}"  type="tel" formControlName="mobileNumber"required muinlength="10"/></div>
     </section>
 
     <h1 class="text-uppercase text-center mb-5">2.GUARDIAN INFORMATION</h1>
@@ -88,7 +70,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Full Name:</label>
       </div>
-      <div class="col-6"><input type="text" formControlName="guardianFullName"required/></div>
+      <div class="col-6"><input value="{{GuardianFullName}}" type="text" formControlName="guardianFullName"required/></div>
     </section>
 
    
@@ -99,7 +81,7 @@
         <label class="form-label" for="form3Example4cdg">Email Address:</label>
       </div>
       <div class="col-6">
-        <input type="email" placeholder=" E.g email@gmail.com "formControlName="guardianEmail"required />
+        <input value="{{GuardianEmail}}" type="email" formControlName="guardianEmail"required />
       </div>
     </section>
 
@@ -108,7 +90,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Phone Number:</label>
       </div>
-      <div class="col-6"><input type="tel" formControlName="guardianPhoneNumber" required/></div>
+      <div class="col-6"><input value="{{GuardianPhoneNumber}}" type="tel" formControlName="guardianPhoneNumber" required/></div>
     </section>
 
     <!--home address for contanct-->
@@ -117,7 +99,7 @@
         <label class="form-label" for="form3Example4cdg">Home Address:</label>
       </div>
       
-      <div class="col-6"><input type="text" formControlName="address"required/></div>
+      <div class="col-6"><input value="{{Address}}" type="text" formControlName="address"required/></div>
     </section>
 
     <!--POSTAL for contanct-->
@@ -125,7 +107,7 @@
       <div class="col-6">
         <label class="form-label" for="form3Example4cdg">Postal:</label>
       </div>
-      <div class="col-6"><input type="text" style="width: 30%" formControlName="postalCode" required /></div>
+      <div class="col-6"><input value="{{code}}" type="text" style="width: 30%" formControlName="postalCode" required /></div>
     </section>
 
     <!-- update button -->
