@@ -46,6 +46,7 @@ import { TokenInterceptor } from "./user/token.interceptor";
     FormsModule,
     FilterPipeModule,
     appRoutingModule,
+    ReactiveFormsModule
   ],
 
   declarations: [
