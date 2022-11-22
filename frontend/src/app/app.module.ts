@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { appRoutingModule } from './app.routing';
 import { DashboardModule } from './dashboard/dashboard.module';
-
-// import { UserModule } from './user/user.module';
+import { UserModule } from './user/user.module';
 
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -41,6 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     MdbCollapseModule,
     ReactiveFormsModule,
     HttpClientModule,
+    appRoutingModule,
+    FormsModule,
+    FilterPipeModule,
     appRoutingModule,
 
   ],
