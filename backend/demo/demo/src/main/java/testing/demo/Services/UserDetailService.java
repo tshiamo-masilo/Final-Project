@@ -1,4 +1,4 @@
-package testing.demo.services;
+package testing.demo.Services;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,19 +23,6 @@ public class UserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var user = userService.getUserByUsername(username);
-
-        return new User(
-                user.getUsername(),
-                user.getPassword(),
-                user.isEnabled(),
-                true,
-                true,
-                true,
-                user.getAuthorities());
-    }
-
-    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
-        var user = userService.getUserByEmail(email);
 
         return new User(
                 user.getUsername(),

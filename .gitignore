@@ -42,7 +42,3 @@ secrets.yml
 .sts4-cache
 backend/demo/demo/target
 backend/.idea/
-frontend/dist/
-backend/.idea/compiler.xml
-backend/.idea/encodings.xml
-backend/.idea/jpa-buddy.xml

@@ -1,41 +1,43 @@
-package testing.demo.services;
+package testing.demo.Services;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
-
-import testing.demo.entities.Stream;
-import testing.demo.repositories.StreamRepo;
+import testing.demo.Repository.StreamRepo;
+import testing.demo.model.Stream;
 
 import java.util.List;
 
 @Service
 public class StreamService {
+    @Autowired
+    private RequirementsService requirementsService;
     private StreamRepo streamsRepo;
 
-    public Stream saveStream(Stream stream) {
+    public Stream saveStream(Stream stream){
         return streamsRepo.save(stream);
     }
 
-    public List<Stream> getAllStreams() {
+    public List<Stream> getAllStreams(){
 
         return streamsRepo.findAll();
     }
+//    public List<Stream> getStream(String id){
+//        return streamsRepo.
+//    }
 
-    public Stream getStreamById(int id) {
+    public Stream getStreamById(int id){
         return streamsRepo.findById(id);
     }
-
-    public String deleteStreamById(int id) {
+    public String deleteStreamById(int id){
         streamsRepo.deleteById(id);
-        return "Stream with Id:" + id + " is deleted";
+        return "Stream with Id:"+id+" is deleted";
     }
-
-    public String deleteAllStream() {
+    public String deleteAllStream(){
         streamsRepo.deleteAll();
         return "All Stream are deleted";
     }
-
-    public Stream updateStream(Stream stream) {
+    public Stream updateStream(Stream stream){
         Stream existing = streamsRepo.findById(stream.getId());
         existing.setStreamName(stream.getStreamName());
         existing.setStreamId(stream.getStreamId());

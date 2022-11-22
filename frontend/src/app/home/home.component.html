@@ -1,126 +1,103 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-
 <!-- ICON -->
-<div class="image w3-animate-top" id="icon" style="display: block"></div>
+<div class="image" id="icon" style="display: block"></div>
 <!-- /ICON -->
-
 
 <!-- SEARCH BAR -->
 <div id="cover" style="z-index: 1000">
-
+  <form method="get" action="">
     <div class="tb">
-
       <div class="td">
-        <input type="text" placeholder="Search Schools"
-         id="searchbar" onclick="displayFunction()" 
-         
-         [(ngModel)]="schoolFilter.Institution_Name">
+        <input type="text" placeholder="Search Schools" required />
       </div>
-
-      <!-- <div class="td" id="s-cover">
-        <button aria-label="Aria Name" type="submit" return="false">
+      <div onclick="myFunction()" class="td" id="s-cover">
+        <button aria-label="Aria Name" type="submit">
           <div id="s-circle"></div>
           <span></span>
         </button>
-      </div> -->
+      </div>
     </div>
-  
-    <br/>  
-  </div>
-  <!-- /SEARCH BAR -->
-
-
+  </form>
+  <br />
+</div>
+<!-- /SEARCH BAR -->
 
 <!-- FILTER BAR -->
 <div id="filter" style="display: none">
   <div class="dropdown show" id="filterbuttons">
-    <a class="btn btn-secondary dropdown-toggle w3-animate-top" href="#" role="button" id="dropdownMenuLink2"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a
+      class="btn btn-secondary dropdown-toggle"
+      href="#"
+      role="button"
+      id="dropdownMenuLink2"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
       Province
     </a>
 
-    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink" id="dropdownmenu">
-      <a class="dropdown-item">Gauteng</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Eastern Cape</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Kwa-Zulu Natal</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Limpopo</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Free State</a>
+    <div
+      class="dropdown-menu"
+      aria-labelledby="dropdownMenuLink"
+      id="dropdownmenu"
+    >
+      <a class="dropdown-item" href="#">Gauteng</a>
+      <a class="dropdown-item" href="#">Eastern Cape</a>
+      <a class="dropdown-item" href="#">Kwa-Zulu Natal</a>
+      <a class="dropdown-item" href="#">Limpopo</a>
+      <a class="dropdown-item" href="#">Free State</a>
     </div>
   </div>
 
-  <div class="dropdown show " id="filterbuttons">
-    <a class="btn btn-secondary dropdown-toggle w3-animate-top" role="button" id="dropdownMenuLink"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="dropdown show" id="filterbuttons">
+    <a
+      class="btn btn-secondary dropdown-toggle"
+      href="#"
+      role="button"
+      id="dropdownMenuLink"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
       City/Town
     </a>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
-      <a value="secretariaat" class="dropdown-item">Johannesburg</a>
-      <hr>
-      <a class="dropdown-item" >Pretoria</a>
-      <hr>
-      <a class="dropdown-item" >Benoni</a>
-      <hr>
-      <a class="dropdown-item" >Soweto </a>
-      <hr>
-      <a class="dropdown-item" >Alberton</a>
-      <hr>
-      <a class="dropdown-item" >Randburg</a>
+    <div
+      class="dropdown-menu"
+      aria-labelledby="dropdownMenuLink"
+      id="dropdownmenu"
+    >
+      <a class="dropdown-item" href="#">Johannesburg</a>
+      <a class="dropdown-item" href="#">Pretoria</a>
+      <a class="dropdown-item" href="#">City of Tshwane</a>
+      <a class="dropdown-item" href="#">Soweto </a>
+      <a class="dropdown-item" href="#">Alberton</a>
     </div>
-
+  </div>
+  <div class="dropdown show" id="filtergeo">
+    <a
+      class="btn btn-secondary"
+      href="#"
+      role="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Check My <br />
+      Location
+    </a>
   </div>
 </div>
-
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
-<div id="sections" style="display: none;" class=" w3-animate-bottom">
-  <div class="row" >
+<div id="sections" style="display: none;" >
+  <div class="col">
+    <div class="card" *ngFor="let school of schools">
+      <div class="card-body">
 
-    <div class="card schools blogBox moreBox" *ngFor="let name of schools | filterBy: schoolFilter
-        | paginate: {
-          itemsPerPage: tableSize,
-          currentPage: page,
-          totalItems: count};
-          let i = index
-          ">
-        <div class="card-body" >
-          <h5 class="card-title ">{{ name.Institution_Name }}</h5>
-          <hr><br>
-          <div class="card-text ">
-            <div class="item "></div>{{ name.Sector }}
-            {{ name.Phase }}<br>
-            Address: {{ name.StreetAddress }}<br>
-            Email: {{name.E_Mail}}<br>
-            Mobile No: {{ name.cellno }}<br>
-            National Emis No: {{ name.NatEmis }}<br>
-            <a class="btn btn-primary" href="application">Apply</a>
-          </div>
-        </div>
-
-
-
+      </div>
     </div>
-
   </div>
 </div>
 <!-- /SCHOOL CARDS -->
-
-
-
-
-<div class="d-flex justify-content-center" id="paginate">
-
-  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-  </pagination-controls>
-
-</div>
-
-
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

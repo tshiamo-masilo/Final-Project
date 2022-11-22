@@ -1,17 +1,29 @@
-import { Component,OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import schoolsData from '../schools.json';
 
-
-interface School {
-  NatEmis: Number;
-  Institution_Name: String;
-  Sector: String;
-  Phase: String;
-  StreetAddress: String;
-  cellno: String;
-  E_Mail: String;
-}
-
+interface School {  
+        NatEmis: Number ;
+        Institution_Name: String ;
+        Status: String ;
+        Sector: String ;
+        Phase: String ;
+        EIRegion: String ;
+        EIDistrict: String;
+        Addressee: String;
+        Town_City: String;
+        StreetAddress: String ;
+        PostalAddress: String;
+        // GIS_Longitude: Number;
+        // GIS_Latitude: Number ;
+        // Telephone: String;
+        // Facsimile: String ;
+        cellno: String ;
+        E_Mail: String ;
+        // RegistrationDate: String ;
+        Urban_Rural: String;
+        Full_Service_School: String;
+        School_Prototype_size: String ;
+}  
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,37 +31,12 @@ interface School {
 })
 
 
-
-
 export class HomeComponent implements OnInit {
 
-
-  schools: any[] = schoolsData;
-  schoolFilter: any = { Institution_Name: '' };
- 
-
-
-  //  --PAGINATE--
-  
-  POSTS: any;
-  page: number = 1;
-  count: number = 0;
-  tableSize: number = 4;
-  tableSizes: any = [3, 6, 9, 12];
-
+  constructor() { }
   ngOnInit(): void {
   }
 
-  onTableDataChange(event: any) {
-    this.page = event;
+  schools:School[] = schoolsData;  
 
-  }
-  onTableSizeChange(event: any): void {
-    this.tableSize = event.target.value;
-    this.page = 1;
-
-  }
-
-  //  --/PAGINATE--
 }
-

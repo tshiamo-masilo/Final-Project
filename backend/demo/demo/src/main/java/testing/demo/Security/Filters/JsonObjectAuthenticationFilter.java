@@ -1,4 +1,4 @@
-package testing.demo.security.filters;
+package testing.demo.Security.Filters;
 
 import java.io.BufferedReader;
 
@@ -11,9 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testing.demo.dtos.LoginCredentialsDto;
-
-
+import testing.demo.model.LoginCredentials;
 
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -32,14 +30,13 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
                 sb.append(line);
             }
 
-            LoginCredentialsDto authenticationRequest = objectMapper.readValue(sb.toString(),
-                    LoginCredentialsDto.class);
+            LoginCredentials authenticationRequest = objectMapper.readValue(sb.toString(), LoginCredentials.class);
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                    authenticationRequest.getUsername(), authenticationRequest.getPassword());
+                    authenticationRequest.getEmail(), authenticationRequest.getPassword());
             setDetails(request, token);
             return this.getAuthenticationManager().authenticate(token);
         } catch (Exception e) {
-            throw new RuntimeException("String msg :" + e.getMessage(), e);
+            throw new RuntimeException("String msg" + e.getMessage(), e);
         }
     }
 

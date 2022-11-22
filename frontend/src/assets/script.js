@@ -1,3 +1,10 @@
+
+function myFunction() { 
+    document.getElementById("icon").style.display="none";  
+    document.getElementById("filter").style.display="block";
+    document.getElementById("sections").style.display="flex";
+  }
+
 //LANDING PAGE LOAD
 
 function displayFunction() { 
@@ -124,3 +131,4 @@ form.addListeners('Submit', function (e){
         showSuccess(fullName);
     }
 });
+

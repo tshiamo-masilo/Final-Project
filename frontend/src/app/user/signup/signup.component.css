@@ -50,12 +50,3 @@
 #links:hover{
     color: grey;
 }
-
-.social-links a{
-    color: white;
-    margin: auto;
-}
-
-.social-links a:hover{
-    color: rgb(0, 150, 142);
-}

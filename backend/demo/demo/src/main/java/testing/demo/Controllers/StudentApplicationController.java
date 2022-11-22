@@ -1,10 +1,43 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import testing.demo.Repository.StudentApplicationRepo;
+import testing.demo.Services.ApplicationService;
+import testing.demo.model.Requirements;
+import testing.demo.model.StudentApplication;
 
-@RestController("/application")
+import java.util.List;
+
+@RestController("/studentApplication")
 public class StudentApplicationController {
 
-   // @Autowired
-   // Student
+   @Autowired
+private ApplicationService applicationService;
+   @PostMapping("/save")
+    public StudentApplication addStudentApplication(@RequestBody StudentApplication studentApplication){
+       return applicationService.saveStudentApplication(studentApplication);
+   }
+
+   @GetMapping("/get/{Id}")
+    public StudentApplication getStudentApplicationById(@PathVariable Long Id){
+       return applicationService.getStudentApplicationById(Id);
+   }
+    @GetMapping("/getAll")
+        public List<StudentApplication> getAllStudentApplication(){
+        return applicationService.getAllStudentApplication();
+    }
+    @GetMapping("/delete/{Id}")
+    public String deleteStudentApplicationById(@PathVariable Long Id) {
+        return applicationService.deleteStudentApplicationById(Id);
+    }
+    @GetMapping("/delete")
+    public String deleteAllStudentApplication() {
+        return applicationService.deleteStudentApplication();
+    }
+    @PutMapping("/update")
+        public ResponseEntity<StudentApplication> updateRequirement(@RequestBody StudentApplication studentApplicatio){
+        return  ResponseEntity.ok(applicationService.updateStudentApplication(studentApplicatio));
+    }
 }

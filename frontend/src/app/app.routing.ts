@@ -7,19 +7,7 @@ import { ContactComponent } from './contact';
 import { AboutComponent } from './about';
 import { AccountComponent } from './account';
 import { LoginComponent } from './user/login';
-import { SignupComponent } from './user/signup';
-import { ForgotComponent } from './user/forgot';
-import { ApplicationComponent } from './application';
-import { NavbarComponent } from './dashboard/navbar';
-
-
-
-// import { DashboardModule } from './dashboard';
-// import { AdminComponent } from './dashboard/admin';
-// import { LearnerComponent } from './dashboard/learner';
-
-
-
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -27,10 +15,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'forgot', component: ForgotComponent },
-    { path: 'application', component: ApplicationComponent },
-    { path: 'navbar', component: NavbarComponent },
+    {path:'userdetails',component:UserDetailsComponent},
 
 
     // otherwise redirect to home
