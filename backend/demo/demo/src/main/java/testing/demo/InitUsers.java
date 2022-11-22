@@ -43,5 +43,7 @@ public class InitUsers implements CommandLineRunner {
             u.setEnabled(true);
             userService.createUser(u);
         }
+
+
     }
 }

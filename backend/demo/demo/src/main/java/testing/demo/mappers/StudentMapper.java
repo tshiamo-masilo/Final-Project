@@ -1,12 +1,13 @@
-package testing.demo.mapper;
+package testing.demo.mappers;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
-import testing.demo.dto.StudentDto;
-import testing.demo.model.Student;
+import org.springframework.stereotype.Component;
+import testing.demo.dtos.StudentDto;
+import testing.demo.entities.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Component
 public class StudentMapper {
     public List<StudentDto> entityToDto(List<Student> student) {
 

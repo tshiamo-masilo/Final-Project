@@ -17,3 +17,8 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 }
+/*
+
+Properties props = System.getProperties();
+props.setProperty("gate.home", "http://gate.ac.uk/wiki/code-repository");
+ */
