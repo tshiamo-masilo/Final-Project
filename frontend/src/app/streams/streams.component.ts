@@ -13,13 +13,16 @@ export class StreamsComponent implements OnInit {
   SchoolIds: any[] = [];
   schoolIds: any[] = [];
   form: FormGroup = new FormGroup({});
+  
   constructor(private formBuilder: FormBuilder, private streamService: StreamServiceService) { }
+
   formBinding() {
     this.form = this.formBuilder.group({
-      schoolId: [],
+      schoolId: [''],
       streamName: ['']
     })
   }
+  
   ngOnInit(): void {
 
     this.formBinding()
