@@ -18,7 +18,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 import lombok.var;
-import testing.demo.services.UserDetailService;
+import testing.demo.Services.UserDetailService;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import testing.demo.services.ApplicationService;
 import testing.demo.entities.Requirements;
 import testing.demo.entities.StudentApplication;
-import testing.demo.services.ApplicationService;
 
 import java.util.List;
 

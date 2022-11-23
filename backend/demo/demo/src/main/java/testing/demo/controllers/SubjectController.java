@@ -2,8 +2,8 @@ package testing.demo.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
-import testing.demo.entities.Subject;
 import testing.demo.services.SubjectService;
+import testing.demo.entities.Subject;
 
 import java.util.List;
 

@@ -3,11 +3,9 @@ package testing.demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import testing.demo.entities.Requirements;
-import testing.demo.entities.Subject;
 import testing.demo.repositories.RequirementsRepo;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class RequirementsService {
