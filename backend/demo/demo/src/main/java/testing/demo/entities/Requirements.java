@@ -1,6 +1,9 @@
 package testing.demo.entities;
-
-import lombok.*;
+import testing.demo.entities.Subject;
+import testing.demo.entities.Stream;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -11,18 +14,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Requirements {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="requirementsId",nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="requirementId")
     private Long id;
-    private String maths;
-    private String naturalScience;
-    private String technology;
-    private String ems;
-    private String arts;
-    private String socialScience;
+    private String level;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "streamId")
     private Stream stream;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subjectId")
+    private Subject subject;
 
 }
