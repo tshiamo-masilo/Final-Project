@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -22,9 +23,9 @@ public class Stream {
     private String description;
 
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name="streamId")
-    private Set<Requirements> Requirements = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_streamId",referencedColumnName = "streamId")
+    private List<Requirements> requirements;
 
 
 }

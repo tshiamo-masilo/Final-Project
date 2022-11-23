@@ -13,14 +13,14 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 import lombok.var;
+import testing.demo.services.UserDetailService;
+import testing.demo.entities.Role;
 import testing.demo.security.filters.AuthorizationFilter;
 import testing.demo.security.filters.JsonObjectAuthenticationFilter;
 import testing.demo.security.handler.AuthSuccesHandler;
-import testing.demo.services.UserDetailService;
-import testing.demo.entities.Role;
 
 @Configuration
-public class Security {
+public class security {
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -28,7 +28,7 @@ public class Security {
     private final UserDetailService userDetailService;
     private String secretKey;
 
-    public Security(AuthSuccesHandler authSuccesHandler, UserDetailService userDetailService,
+    public security(AuthSuccesHandler authSuccesHandler, UserDetailService userDetailService,
             @Value("${jwt.secretKey}") String secretKey) {
         this.authSuccesHandler = authSuccesHandler;
         this.userDetailService = userDetailService;

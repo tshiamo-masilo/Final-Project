@@ -39,11 +39,4 @@ public class StreamService {
         return "All Stream are deleted";
     }
 
-    public Stream updateStream(Stream stream) {
-        Stream existing = streamsRepo.findById(stream.getId()).get();
-        existing.setStreamName(stream.getStreamName());
-        existing.setSubject(stream.getSubject());
-        existing.setSchool(stream.getSchool());
-        return existing;
-    }
 }

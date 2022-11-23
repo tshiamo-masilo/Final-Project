@@ -34,32 +34,6 @@ public class RequirementsController {
     public  ResponseEntity<String> deleteRequirements(){
         return  ResponseEntity.ok(repository.deleteAllRequirements());
     }
-    @PutMapping("/update")
-    public  ResponseEntity<Requirements> updateRequirement(@RequestBody Requirements requirements){
-        return  ResponseEntity.ok(repository.updateRequirements(requirements));
-    }
 
 
-//    @GetMapping("/get/{id}")
-//    public Requirements getRequirementsById( @PathVariable int id){
-//
-//    }
-//    @GetMapping("/getAll")
-//    public List<Requirements> getAllRequirements(){
-//
-//        return
-//    }
-//    @DeleteMapping("/delete/{id}")
-//    public String deleteRequirementsById(@PathVariable int id){
-//
-//        return repository.deleteRequirementsById( id);
-//    }
-//    @DeleteMapping("/deleteAll")
-//    public String deleteAllRequirements(){
-//        return repository.deleteAllRequirements();
-//    }
-//    @PutMapping("/update")
-//    public Requirements updateRequirements(Requirements requirements){
-//        return
-//    }
 }

@@ -46,10 +46,5 @@ public class SubjectController {
         return service.deleteAllSubjects();
     }
 
-    @PutMapping("/update")
-    @CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
-    public Subject updateSubject(@RequestBody Subject subject) {
-        return service.updateSubject(subject);
-    }
 
 }

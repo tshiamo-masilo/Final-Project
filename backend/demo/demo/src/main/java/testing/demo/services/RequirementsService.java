@@ -37,14 +37,4 @@ public class RequirementsService {
         return "All Requirements are deleted";
     }
 
-    public Requirements updateRequirements(Requirements requirements) {
-        Requirements existing = requirementsRepo.findById(requirements.getId()).get();
-        existing.setMaths(requirements.getMaths());
-        existing.setNaturalScience(requirements.getNaturalScience());
-        existing.setTechnology(requirements.getTechnology());
-        existing.setEms(requirements.getEms());
-        existing.setArts(requirements.getArts());
-        existing.setSocialScience(requirements.getSocialScience());
-        return existing;
-    }
 }

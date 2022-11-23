@@ -34,11 +34,5 @@ public class SubjectService {
         return "Successfully Deleted!";
     }
 
-    public Subject updateSubject(Subject subject) {
-        Subject existing = repository.findById(subject.getId()).get();
-        existing.setName(subject.getName());
-        existing.setDescription(subject.getDescription());
-        return existing;
-    }
 
 }
