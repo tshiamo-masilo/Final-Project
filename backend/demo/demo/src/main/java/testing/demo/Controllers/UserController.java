@@ -7,9 +7,9 @@ import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
+import testing.demo.services.UserService;
 import testing.demo.dtos.ApiResponse;
 import testing.demo.entities.User;
-import testing.demo.services.UserService;
 
 @RestController
 @RequestMapping("/user")

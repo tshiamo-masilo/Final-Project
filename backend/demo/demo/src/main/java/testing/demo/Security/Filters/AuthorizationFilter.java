@@ -56,15 +56,15 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
             return null;
         }
 
-        var username = JWT.require(Algorithm.HMAC256(secretKey))
+        var email = JWT.require(Algorithm.HMAC256(secretKey))
                 .build()
                 .verify(token.replace(TOKEN_PREFIX, ""))
                 .getSubject();
 
-        if (username == null)
+        if (email == null)
             return null;
 
-        var userDetail = userDetailService.loadUserByUsername(username);
+        var userDetail = userDetailService.loadUserByUsername(email);
 
         return new UsernamePasswordAuthenticationToken(userDetail.getUsername(), null, userDetail.getAuthorities());
     }

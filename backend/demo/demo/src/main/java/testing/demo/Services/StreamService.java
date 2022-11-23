@@ -1,18 +1,15 @@
 package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
-
+import testing.demo.Repository.StreamRepo;
 import testing.demo.entities.Stream;
-import testing.demo.repositories.StreamRepo;
 
 import java.util.List;
 
 @Service
 public class StreamService {
     @Autowired
-    private RequirementsService requirementsService;
     private StreamRepo streamsRepo;
 
     public Stream saveStream(Stream stream) {

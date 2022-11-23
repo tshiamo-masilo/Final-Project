@@ -13,7 +13,7 @@ export class TokenService {
 
   getFromSessionStorage(){
     if(sessionStorage.getItem(contants.token))
-    this.jwtToken = sessionStorage.getItem(contants.token);
+      this.jwtToken = sessionStorage.getItem(contants.token)
   }
 
   decodeToken() {
