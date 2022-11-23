@@ -16,13 +16,6 @@ public class Requirements {
     private Long id;
     private String level;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "streamId")
-//    private Stream stream;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "subjectId")
-//    private Subject subject;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subjectId")
