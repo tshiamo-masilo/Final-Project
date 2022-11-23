@@ -1,9 +1,6 @@
 package testing.demo.entities;
-import testing.demo.entities.Subject;
-import testing.demo.entities.Stream;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -26,5 +23,9 @@ public class Requirements {
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "subjectId")
 //    private Subject subject;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subjectId")
+    private Subject subject;
 
 }

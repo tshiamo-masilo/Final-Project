@@ -2,8 +2,10 @@ package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import testing.demo.entities.School;
 import testing.demo.services.SchoolService;
+
 import java.util.List;
 
 @RestController

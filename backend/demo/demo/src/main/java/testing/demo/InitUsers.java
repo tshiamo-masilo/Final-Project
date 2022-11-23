@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
 import lombok.var;
-import testing.demo.services.UserService;
 import testing.demo.entities.Role;
 import testing.demo.entities.User;
+import testing.demo.services.UserService;
 
 @Component
 @RequiredArgsConstructor

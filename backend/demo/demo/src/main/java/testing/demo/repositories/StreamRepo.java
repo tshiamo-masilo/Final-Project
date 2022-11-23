@@ -6,6 +6,6 @@ import testing.demo.entities.Stream;
 
 import java.util.Optional;
 
-public interface StreamRepo extends JpaRepository<Stream, Long> {
+public interface StreamRepo extends JpaRepository<Stream, Long> {   
     Optional<Stream> findById(Long id);
 }

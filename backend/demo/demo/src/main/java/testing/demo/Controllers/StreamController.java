@@ -4,10 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.services.StreamService;
-import testing.demo.services.SubjectService;
+
 import testing.demo.entities.Stream;
 import testing.demo.entities.Subject;
+import testing.demo.services.StreamService;
+import testing.demo.services.SubjectService;
 
 import java.util.List;
 
