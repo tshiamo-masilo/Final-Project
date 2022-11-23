@@ -1,4 +1,4 @@
-package testing.demo.repositories;
+ package testing.demo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

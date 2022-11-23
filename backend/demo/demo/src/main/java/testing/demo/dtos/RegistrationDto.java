@@ -11,11 +11,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegistrationDto {
-
     private String name;
     private String surname;
-    private String email;
     private String username;
+    private String email;
     private String password;
     private String confirmPassword;
 }

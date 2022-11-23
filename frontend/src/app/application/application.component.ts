@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
 @Component({
-  selector: 'app-application',
-  templateUrl: './application.component.html',
-  styleUrls: ['./application.component.css']
+  selector: "app-application",
+  templateUrl: "./application.component.html",
+  styleUrls: ["./application.component.css"],
 })
 export class ApplicationComponent implements OnInit {
+  ngOnInit(): void {}
+}
 
-  constructor() { }
+@Component({
+  selector: "app-application",
+  templateUrl: "./application.component.html",
+})
+export class AppApplication {
+  application: any;
 
-  ngOnInit(): void {
+  Submit() {
+    console.log("form submitted");
   }
 
 }

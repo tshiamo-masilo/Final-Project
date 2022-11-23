@@ -32,11 +32,11 @@ public class UserController {
      */
     @GetMapping("")
     public ApiResponse<String> userEndpoint() {
-        return new ApiResponse<String>(HttpStatus.OK, "Hello user", null);
+        return new ApiResponse<String>(HttpStatus.OK, "Hello user", "");
     }
-
+    
     /**
-     * @return ApiResponse
+     * @return ApiResponse<User>
      */
     @GetMapping("/{email}")
     public ApiResponse<User> getUser(@PathVariable String email, Principal principal) {
@@ -46,7 +46,7 @@ public class UserController {
 
     /**
      *
-     * @param user
+     * @param registerationDto
      * @return ApiResponse<User>
      */
     @PostMapping("")
