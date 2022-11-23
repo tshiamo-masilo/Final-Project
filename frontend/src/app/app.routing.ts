@@ -10,18 +10,23 @@ import { AccountComponent } from './account';
 import { LoginGuard } from './user/guards/login.guard';
 
 const routes: Routes = [
-    { 
-        path: 'home', component: HomeComponent,
-        canActivate: [ LoginGuard ],
-        children: [
-            { path: 'contact', component: ContactComponent },
-            { path: 'about', component: AboutComponent },
-            { path: 'account', component: AccountComponent },
-        ]
+    {
+        path: '', component: HomeComponent,
+        canActivate: [LoginGuard],
+    },
+    {
+        path: 'contact', component: ContactComponent,
+    },
+    {
+        path: 'about', component: AboutComponent,
+    },
+    {
+        path: 'account', component: AccountComponent,
+        canActivate: [LoginGuard],
     },
     { path: 'login', component: LoginComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: 'home', pathMatch:"full" }
+    { path: '**', redirectTo: '', pathMatch: "full" }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
