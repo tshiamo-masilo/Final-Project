@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 import javax.persistence.*;
 
@@ -11,16 +11,16 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "StudentsApplication")
-        @NoArgsConstructor
-        @AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class StudentApplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="StudentId")
+    @Column(name = "StudentId")
     private Long Id;
     private Status status;
-    private String FullName ;
+    private String FullName;
     private String Identification;
     private String Gender;
     private Date DateOfBirth;
@@ -32,7 +32,5 @@ public class StudentApplication {
     private String GuardianPhoneNumber;
     private String Address;
     private String code;
-
-
 
 }

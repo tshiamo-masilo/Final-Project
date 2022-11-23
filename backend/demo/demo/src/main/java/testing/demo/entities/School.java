@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 import lombok.*;
 
@@ -14,7 +14,7 @@ public class School implements Serializable {
     @Id
     @GeneratedValue()
     @Column()
-    private  int id;
+    private int id;
     private String School_Name;
     private String School_Id;
     private String Admin_name;
@@ -28,7 +28,8 @@ public class School implements Serializable {
     public School() {
     }
 
-    public School(String school_Name, String school_Id, String admin_name, String admin_Emp_No, String postal_Address, String street_name, String suburb, String city, String postal_code) {
+    public School(String school_Name, String school_Id, String admin_name, String admin_Emp_No, String postal_Address,
+            String street_name, String suburb, String city, String postal_code) {
         School_Name = school_Name;
         School_Id = school_Id;
         Admin_name = admin_name;
@@ -39,6 +40,5 @@ public class School implements Serializable {
         City = city;
         Postal_code = postal_code;
     }
-
 
 }

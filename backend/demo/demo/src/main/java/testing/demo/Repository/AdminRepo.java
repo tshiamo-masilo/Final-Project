@@ -1,7 +1,8 @@
 package testing.demo.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import testing.demo.model.Admin;
+
+import testing.demo.entities.Admin;
 
 import java.util.Optional;
 

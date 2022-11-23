@@ -1,4 +1,4 @@
-package testing.demo.Security.Filters;
+package testing.demo.security.filters;
 
 import java.io.BufferedReader;
 
@@ -11,7 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testing.demo.model.LoginCredentials;
+import testing.demo.entities.LoginCredentials;
 
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

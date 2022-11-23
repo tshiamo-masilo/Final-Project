@@ -1,4 +1,4 @@
-package testing.demo.Security.Handler;
+package testing.demo.security.handler;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -19,7 +19,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.var;
-import testing.demo.Services.UserService;
+import testing.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Value;
 
 @Component
