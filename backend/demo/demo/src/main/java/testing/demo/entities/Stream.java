@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,23 +15,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Stream {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="streamId")
     private Long id;
     private String streamName;
-    // We're not doing this
+    private String description;
 
-    //    private String Subject1;
-    //    private String Subject2;
-    //    private String Subject3;
-    //    private String Subject4;
-    //    @JsonIgnore
-    @ManyToMany(mappedBy = "enrolledStreams")
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "subject_id")
-    private Subject subject;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school_id")
-    private School school;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="streamId")
+    private Set<Requirements> Requirements = new HashSet<>();
+
+
 }
