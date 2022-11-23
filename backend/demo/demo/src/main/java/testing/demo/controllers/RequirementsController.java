@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import testing.demo.services.RequirementsService;
 import testing.demo.entities.Requirements;
 
@@ -35,10 +34,6 @@ public class RequirementsController {
     public  ResponseEntity<String> deleteRequirements(){
         return  ResponseEntity.ok(repository.deleteAllRequirements());
     }
-    // @PutMapping("/update")
-    // public  ResponseEntity<Requirements> updateRequirement(@RequestBody Requirements requirements){
-    //     return  ResponseEntity.ok(repository.saveRequirements(requirements));
-    // }
 
 
 }
