@@ -35,6 +35,10 @@ public class RequirementsController {
     public  ResponseEntity<String> deleteRequirements(){
         return  ResponseEntity.ok(repository.deleteAllRequirements());
     }
+    @PutMapping("/update")
+    public  ResponseEntity<Requirements> updateRequirement(@RequestBody Requirements requirements){
+        return  ResponseEntity.ok(repository.saveRequirements(requirements));
+    }
 
 
 }
