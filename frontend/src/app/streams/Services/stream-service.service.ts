@@ -8,6 +8,7 @@ export class StreamServiceService {
   BaseUrl = 'http://localhost:8080'
   //saving Stream to stream table in database
   submittingStreams(value: any) {
+    console.log("im on services")
     return this.http.post(this.BaseUrl + '/stream/save', value);
   }
   //getting school

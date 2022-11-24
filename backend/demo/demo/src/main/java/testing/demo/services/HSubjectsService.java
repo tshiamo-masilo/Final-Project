@@ -2,25 +2,28 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.entities.Subject;
-import testing.demo.repositories.SubjectRepository;
+import testing.demo.entities.HSubject;
+import testing.demo.entities.JSubject;
+import testing.demo.repositories.HighSchoolSubjectsRepository;
+import testing.demo.repositories.JSubjectRepository;
 
 import java.util.List;
 
 @Service
-public class SubjectService {
+public class HSubjectsService {
     @Autowired
-    SubjectRepository repository;
+    HighSchoolSubjectsRepository repository;
 
-    public Subject saveSubject(Subject subject) {
-        return repository.save(subject);
+
+    public HSubject saveSubject(JSubject JSubject) {
+        return repository.save(JSubject);
     }
 
-    public Subject getSubjectById(Long id) {
+    public JSubject getSubjectById(Long id) {
         return repository.findById(id).get();
     }
 
-    public List<Subject> getSubjects() {
+    public List<HSubject> getSubjects() {
         return repository.findAll();
     }
 
@@ -33,6 +36,5 @@ public class SubjectService {
         repository.deleteAll();
         return "Successfully Deleted!";
     }
-
 
 }

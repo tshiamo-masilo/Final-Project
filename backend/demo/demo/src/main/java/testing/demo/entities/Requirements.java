@@ -17,8 +17,4 @@ public class Requirements {
     private String level;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "subjectId")
-    private Subject subject;
-
 }

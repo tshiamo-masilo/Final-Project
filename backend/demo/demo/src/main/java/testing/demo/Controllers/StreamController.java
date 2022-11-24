@@ -1,13 +1,13 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import testing.demo.services.StreamService;
-import testing.demo.services.SubjectService;
+import testing.demo.services.JSubjectService;
 import testing.demo.entities.Stream;
-import testing.demo.entities.Subject;
+import testing.demo.entities.JSubject;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class StreamController {
     @Autowired
     private StreamService streamService;
     @Autowired
-    private SubjectService subjectService;
+    private JSubjectService JSubjectService;
 
     @PostMapping("/save")
     public ResponseEntity<Stream> saveStream(@RequestBody Stream requirements) {
@@ -45,12 +45,12 @@ public class StreamController {
     }
 
     @PutMapping("/{subjectId}/streams/{streamId}")
-    public Subject enrolledStreamToSubject(@PathVariable Long subjectId,
-                                           @PathVariable Long streamId) {
-        Subject subject = subjectService.getSubjectById(subjectId);
+    public JSubject enrolledStreamToSubject(@PathVariable Long subjectId,
+                                            @PathVariable Long streamId) {
+        JSubject JSubject = JSubjectService.getSubjectById(subjectId);
         Stream stream = streamService.getStreamById(streamId);
         //subject.enrolledStream(stream);
-        return subjectService.saveSubject(subject);
+        return JSubjectService.saveSubject(JSubject);
     }
 
 }

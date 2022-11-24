@@ -59,3 +59,7 @@ hr {
     color: limegreen;
     text-decoration: bold;
 }
+span{
+    color: red;
+    text-decoration: bolder;
+}

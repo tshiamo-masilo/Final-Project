@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StreamServiceService } from './services/stream-service.service';
 
 @Component({
@@ -14,8 +14,8 @@ export class StreamsComponent implements OnInit {
 
   formBinding() {
     this.form = this.formBuilder.group({
-      streamDescription: [''],
-      streamName: ['']
+      streamDescription: ['', Validators.requiredTrue],
+      streamName: ['', Validators.required],
     })
   }
 
@@ -36,6 +36,7 @@ export class StreamsComponent implements OnInit {
 
     //   })
   }
+  
   onSubmit() {
     //sending form to database
     if (this.form.value.streamDescription.length === 0 || this.form.value.streamName.length === 0) {

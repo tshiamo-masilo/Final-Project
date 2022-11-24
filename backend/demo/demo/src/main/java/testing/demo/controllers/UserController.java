@@ -1,4 +1,4 @@
-package testing.demo.controllers;
+package testing.demo.Controllers;
 
 import org.springframework.web.bind.annotation.*;
 import lombok.var;
