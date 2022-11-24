@@ -1,1 +1,1 @@
-export * from './streams.component';
+export * from './streams.component'

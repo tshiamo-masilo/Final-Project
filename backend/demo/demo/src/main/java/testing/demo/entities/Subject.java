@@ -6,9 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
@@ -25,7 +23,7 @@ public class Subject {
     private String Description;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_subjectId",referencedColumnName = "subjectId")
+    @JoinColumn(name = "fkSubjectId",referencedColumnName = "subjectId")
     private List<Requirements> requirements;
 
 }

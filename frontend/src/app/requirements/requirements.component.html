@@ -1,13 +1,13 @@
 <div class="container">
     <h3>Requirements</h3>
 
-    <form [formGroup]="form" (ngSubmit)="Onsubmit()">
-        <div class="requirements">
-            <div class="row">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="requirements">           
+             <div class="row">
                 <div class="col-6" id="stream">
                     <select #stream (change)=" onSelectedStream(stream.value)">
-                        <ng-container *ngFor="let select of streamlist">
-                            <option >{{select}}</option>
+                        <ng-container *ngFor="let stream of streamlist">
+                            <option >{{stream}}</option>
                         </ng-container>
                     </select>
                 </div>
@@ -16,123 +16,48 @@
                         <label class="tick">&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="stream.value.length == 15">
+                <ng-container *ngIf="num == 0">
                     <div class="col-4">
                         <label>{{stream.value}}</label>
                     </div>
                 </ng-container>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-6" id="maths">
-                    <input id="math" type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)"
-                        placeholder="Maths Level" formControlName="maths" required>
+            </div>  <div class="row">
+                <div class="col-6" id="subject">
+                    <select #subject (change)=" onSelectedSubject(subject.value)">
+                        <ng-container *ngFor="let subject of subjectlist">
+                            <option >{{subject}}</option>
+                        </ng-container>
+                    </select>
                 </div>
-                <ng-container *ngIf="form.value.maths !== '' ">
-                    <div class="col-2" >
-                        <label class="tick">	&#10004;</label>
+                <ng-container *ngIf="num1 === 1">
+                    <div class="col-4" >
+                        <label class="tick">&#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="form.value.maths == '' ">
+                <ng-container *ngIf="num1 == 0">
                     <div class="col-4">
-                        <label>Select Maths Level </label>
+                        <label>{{subject.value}}</label>
                     </div>
                 </ng-container>
             </div>
-            <hr>
             <div class="row">
-                <div class="col-6">
-                    <input type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)"
-                        placeholder="Natural Science Level" formControlName="naturalScience" required>
+                <div class="col-6" id="level">
+                    <input id="level" type="tel" max="7" min="1" maxlength="1"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"  placeholder="Level " formControlName="level" required>
                 </div>
-                <ng-container *ngIf="form.value.naturalScience !== '' ">
+                <ng-container *ngIf="form.value.level !== '' ">
                     <div class="col-2">
-                        <label class="tick">	&#10004;</label>
+                        <label class="tick"> &#10004;</label>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="form.value.naturalScience == '' ">
+                <ng-container *ngIf="form.value.level == '' ">
                     <div class="col-4">
-                        <label>Select Natural Science Level </label>
-                    </div>
-                </ng-container>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <input type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)"
-                        placeholder="Technology Level" formControlName="technology" required>
-                </div>
-                <ng-container *ngIf="form.value.technology !== '' ">
-                    <div class="col-2">
-                        <label class="tick">	&#10004;</label>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="form.value.technology == '' ">
-                    <div class="col-4">
-                        <label>Select Technology Level </label>
-                    </div>
-                </ng-container>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <input type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)" placeholder="EMS Level"
-                        formControlName="ems" required>
-                </div>
-                <ng-container *ngIf="form.value.ems !== '' ">
-                    <div class="col-2">
-                        <label class="tick">	&#10004;</label>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="form.value.ems == '' ">
-                    <div class="col-4">
-                        <label>Select Economics Management Science Level </label>
-                    </div>
-                </ng-container>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <input type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)"
-                        placeholder="Arts and Calture Level" formControlName="arts" required>
-                </div>
-                <ng-container *ngIf="form.value.arts !== '' ">
-                    <div class="col-2">
-                        <label class="tick">	&#10004;</label>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="form.value.arts == '' ">
-                    <div class="col-4">
-                        <label>Select Arts and Culture Level </label>
-                    </div>
-                </ng-container>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <input type="number" max="7" min="1" maxlength="1" [maxlength]="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                    onkeyup="nospaces(this)"
-                        placeholder="Social Science Level" formControlName="socialScience" required>
-                </div>
-                <ng-container *ngIf="form.value.socialScience !== '' ">
-                    <div class="col-2">
-                        <label  class="tick">	&#10004;</label>
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="form.value.socialScience == '' ">
-                    <div class="col-4">
-                        <label>Select Social Science Level </label>
+                        <label>Enter Level</label>
                     </div>
                 </ng-container>
             </div>
             <hr>
 
-        </div> 
+        </div>
         <div class="row button">
             <div class="col-12">
                 <input type="submit" class="btn" value="Submit">

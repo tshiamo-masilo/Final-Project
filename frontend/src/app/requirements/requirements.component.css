@@ -5,7 +5,6 @@
     color: WHITE;
     align-items: center;
     border-radius: 5px;
-    padding: 5% ;
 }
 input {
     margin-bottom: 5%;
@@ -48,8 +47,7 @@ option {
     width: 100%;
 }
 h3 {
-    text-align: center; 
-    text-decoration:underline;
+    text-align: center 
 }
 hr {
     opacity: 100%;

@@ -11,8 +11,8 @@ export class StreamServiceService {
     return this.http.post(this.BaseUrl + '/stream/save', value);
   }
   //getting school
-  getSchool() {
-    return this.http.get(this.BaseUrl + '/school/getAll');
-  }
+  // getSchool() {
+  //   return this.http.get(this.BaseUrl + '/school/getAll');
+  // }
   constructor(private http: HttpClient) { }
 }

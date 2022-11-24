@@ -1,124 +1,81 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://material.angular.io/components/select/overview#select-value-binding">
+<h1 style="text-align: center;font-size: 40px;">Application Form</h1>
+<hr style="height: 20px; width: 100%; ">
 
-<h1>Application Form</h1>
-(
-<div class="class">
-  <form>
 
-  </form>
 
-  <h3 class="heading">1. Personal information</h3>
-  <hr>
 
-  <div class="row">
-    <div class="col-6">
-      <label for="fname">Full name:</label>
+<div class="container">
+  <form action="">
+    <u>
+      <h3 class="heading">1.Personal information</h3>
+    </u>
+    <div class="row">
+      <div class="col-6">
+        <label for="fname">Full name:</label>
+      </div>
+
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="Idnumber">Identification number:</label>
+      </div>
+
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="date of Birth">Date of Birth:</label>
+      </div>
+
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
 
-    <div class="col-6">
-      <input type="text" id="name" formControlName="fullName" class="form-control" required />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>please specify your name</small>
-    </div>
-  </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="Nationality">Nationality:</label>
+      </div>
 
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="Idnumber">Identification number:</label>
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
 
-    <div class="col-6">
-      <input type="tel" id="Identification number" formControlName="idNumber" class="form-control" maxlength="13"
-        pattern="[0-12]{1}[0-12]{12}" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Please specify your Identification number</small>
-    </div>
-  </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="fname">Nationality:</label>
+      </div>
 
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="date of Birth">Date of Birth:</label>
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
 
-    <div class="col-6">
-      <input type="date" id="date" name="date" class="form-control" formControlName="dateOfBirth" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">date of birth is required</small>
-    </div>
-  </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="fAddress">Home Address</label>
+      </div>
 
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="Nationality">Nationality:</label>
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
 
-    <div class="col-6">
-      <input type="text" id="Nationality" name="Nationality" class="form-control" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">Please specify your Nationality</small>
+    <div class="row">
+      <div class="col-6">
+        <label for="fhomeLanguage">Home Language:</label>
+      </div>
+
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
-  </div>
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fname">Gender:</label>
-    </div>
-
-    <div class="col-6">
-      <input type="text" id="Gender" name="Gender" class="form-control" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">Please specify your gender: Male or Female</small>
-    </div>
-  </div>
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fAddress">Home Address</label>
-    </div>
-
-    <div class="col-6">
-      <input type="text" id="Address" name="Address" class="form-control" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">Home address is required</small>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fhomeLanguage">Home Language:</label>
-    </div>
-
-    <div class="col-6">
-      <input type="text" id="Language" name="Language" class="form-control" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">Specify your home Language</small>
-    </div>
-
-
-
 
     <div class="row">
       <div class="col-6">
@@ -126,34 +83,13 @@
       </div>
 
       <div class="col-6">
-        <input type="tel" id="Mobile Number" name="Phone" maxlength="10" pattern="[0-9]{1}[0-9]{9}"
-          class="form-control">
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small class="text-danger">Phone number is required</small>
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
 
-
-
-
-    <div class="row">
-      <div class="col-6">
-        <label for="fname">Email address:</label>
-      </div>
-
-      <div class="col-6">
-        <input type="email" id="Email Adress" name="Email address" class="form-control">
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small class="text-danger">Email is required</small>
-      </div>
-    </div>
-
-    <h3 class="heading">2. Guardian information</h3>
-    <hr>
-
-
+    <u>
+      <h3 class="heading">2.Gaurdian information</h3>
+    </u>
 
     <div class="row">
       <div class="col-6">
@@ -161,155 +97,75 @@
       </div>
 
       <div class="col-6">
-        <input type="text" id="name" name="name" class="form-control" />
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small class="text-danger">Full name is required</small>
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
 
-
     <div class="row">
       <div class="col-6">
-        <label for="fname">Email address:</label>
+        <label for="fname">Language:</label>
       </div>
 
       <div class="col-6">
-        <input type="email" id="Email" name="emailAddress" class="form-control" />
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small class="text-danger">Email address is required</small>
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
 
     <div class="row">
       <div class="col-6">
         <label for="fname">Relationship with the applicant:</label>
-
       </div>
 
       <div class="col-6">
-        <input type="text" id="name" name="name" class="form-control" />
-        <small class="text-danger">Specify the Relationship with the applicant</small>
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
-
-
-
 
     <div class="row">
       <div class="col-6">
-        <label for="fname">Mobile number:</label>
+        <label for="fname">Phone number:</label>
       </div>
 
       <div class="col-6">
-        <input type="tel" id="Mobile Number" name="Phone" maxlength="10" pattern="[0-9]{1}[0-9]{9}"
-          class="form-control">
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small class="text-danger">phone number is required</small>
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
 
-
-
-
-    <h3 class="heading">3. Academic Records</h3>
-    <hr>
-
-
+    <u>
+      <h3 class="heading">3.Academic Records</h3>
+    </u>
 
     <div class="row">
       <div class="col-6">
         <label for="fname">Previous school name:</label>
       </div>
       <div class="col-6">
-        <input type="text" id="Schoolname" name="Scoolname" class="form-control" />
-        <small class="text-danger">Please specify the previous school</small>
-        <i class="fas fa-check-cirle "></i>
-        <i class="fas fa-exclamation-circle"></i>
+        <input type="text" id="fname" name="fname" />
+      </div>
+
+      <div class="col-6">
+        <label for="fname">If a returning leaner tick the box:</label>
+      </div>
+
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
       </div>
     </div>
-
-    <div class="col-6">
-      <label for="fname">If a returning leaner tick the box:</label>
-
-    </div>
-
-
-  </div>
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fname">Previous grade completed:</label>
-    </div>
-
-    <div class="col-6">
-      <input type="text" id="grade" name="grade" class="form-control" />
-      <i class="fas fa-check-cirle "></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small class="text-danger">Please fill the empty box</small>
-    </div>
-  </div>
-
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fname">Please upload your Documents/Report here:</label>
-    </div>
-
-  </div>
-  <section>
-    <div class="container">
-      <h3>Upload your file</h3>
-      <div class="drag-area">
-        <div class="icon">
-          <i class="fas fa-images"></i>
-        </div>
-        <span class="header">Drag and Drop</span>
-        <span class="header">or <span class="button">browse</span></span>
-        <input type="file" hidden>
-        <span class="support">Supports:JPEG, JPG, PNG</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="row">
-    <div class="col-6">
-      <label for="fname">Streams offered</label>
-    </div>
-
-    <div class="col-6">
-      <select name="Dropdown-menu" id="Select">
-        <option value="option0">Select </option>
-        <option value="option1">Science Stream </option>
-        <option value="option2">General Stream</option>
-        <option value="option3">Commerce Stream</option>
-        select [(value)]="selected">
-        <p>Chosen Stream: (value)</p>
-      </select>
-    </div>
-
-  </div>
-
-
-
-  <div class="col-6">
-    <label for="fname">Subject</label>
 
     <div class="row">
       <div class="col-6">
-        <label for="fname">Requirements</label>
-
+        <label for="fname">Previous grade completed:</label>
       </div>
 
+      <div class="col-6">
+        <input type="text" id="fname" name="fname" />
+      </div>
     </div>
 
-  </div>
-  <button id="Button" type="button" class="btn btn-primary" >Submit</button>
-
+    <div class="row">
+      <div class="col-6">
+        <label for="fname">Please upload your Documents/Report here:</label>
+      </div>
+    </div>
+  </form>
 </div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <h3>Junior Subject</h3>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="requirements">
+
+            <div class="row">
+                <div class="col-6" id="subjectName">
+                    <input id="subjectName" type="text"  placeholder="Subject Name" formControlName="subjectName" required>
+                </div>
+                <ng-container *ngIf="form.value.subjectName !== '' ">
+                    <div class="col-2">
+                        <label class="tick"> &#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.subjectName == '' ">
+                    <div class="col-4">
+                        <label>Enter Subject Name </label>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="row">
+                <div class="col-6" id="subjectDescription">
+                    <input id="subjectDescription" type="text"  placeholder="Subject Description" formControlName="subjectDescription" required>
+                </div>
+                <ng-container *ngIf="form.value.subjectDescription !== '' ">
+                    <div class="col-2">
+                        <label class="tick"> &#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="form.value.subjectDescription == '' ">
+                    <div class="col-4">
+                        <label>Enter Subject Description </label>
+                    </div>
+                </ng-container>
+            </div>
+
+            <hr>
+
+        </div>
+        <div class="row button">
+            <div class="col-12">
+                <input type="submit" class="btn" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>

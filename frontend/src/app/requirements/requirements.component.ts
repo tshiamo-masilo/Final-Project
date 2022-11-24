@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { RequirementsServiceService } from './service/requirements-service.service';
+import { RequirementsServicesService } from './services/requirements-services.service';
 
 @Component({
   selector: 'app-requirements',
@@ -10,70 +10,62 @@ import { RequirementsServiceService } from './service/requirements-service.servi
 export class RequirementsComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  streamlist: any[] = ["Select a stream"]
-  streams: any[] = []
+  streamlist: any[] = ["Select a stream", "1.Science", "2.Commerce", "3.General", "4.Mix1", "5.Mix2"]
   stream: any;
   selectedStream: any;
-  num: any;
+  num1: any = 0;
 
+  subjectlist: any[] = ["Select a subject", "1.Maths", "2.English", "3.Xhosa", "4.EMS", "5.Tech"]
+  subject: any;
+  selectedSubject: any;
+  num: any = 0;
+  constructor(private formBuilder: FormBuilder, private service: RequirementsServicesService) { }
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private streamService: RequirementsServiceService
-  ) { }
+  formBinding() {
+    this.form = this.formBuilder.group({
+      streamId: [''],
+      subjectId: [''],
+      level: ['']
 
+    })
+  }
+  onSelectedSubject(value: any) {
+    this.subject = value;
+    this.selectedSubject = value
+
+    if (this.stream === "Select a subject") {
+      this.num1 = 0;
+    } else {
+      this.num1 = 1;
+    }
+  }
   onSelectedStream(value: any) {
     this.stream = value;
     this.selectedStream = value
 
-    if (this.stream === "Select Stream") {
+    if (this.stream === "Select a stream") {
       this.num = 0;
     } else {
       this.num = 1;
     }
   }
-
-  requirementform() {
-    this.form = this.formBuilder.group({     
-      maths: [''],
-      naturalScience: [''],
-      technology: [''],
-      ems: [''],
-      arts: [''],
-      socialScience: [''],
-      streamId: ['']
-    });
-  }
-
-  Onsubmit() {
-    this.valid()
-  }
-  valid() {
-
-    if (this.form.value.maths.length === 0 || this.form.value.naturalScience.length === 0 || this.form.value.technology.length === 0) {
-      alert("Select all the stream requirements")
-    } else {
-      this.form.get('streamId')?.setValue(+this.selectedStream.substring(0, 1));      
-      console.log(this.form.value)
-      this.streamService.submittingRequirements(this.form.value).subscribe((data: any) => {
-        alert("Submitted")
-        console.log(data)
-        this.form.reset();
-      })
-
-    }
-  }
   ngOnInit(): void {
-    this.requirementform();
-    this.streamService.getAllStreams().subscribe(data => {
-      this.streams.push(data)
-      this.streams.forEach(result => {
-        result.forEach((res: any) => {
-          this.streamlist.push(res.id+"."+res.streamName)
-        })
-      })
-    })
+    this.formBinding()
 
+  }
+  onSubmit() {
+    //sending form to database   
+    if (this.form.value.streamId.length != 0 || this.form.value.subjectId.length != 0 || this.form.value.level.length != 0) {
+      alert("Subject Successfully submitted")
+      this.form.get('streamId')?.setValue(+this.selectedStream.substring(0, 1));
+      this.form.get('subjectId')?.setValue(+this.selectedSubject.substring(0, 1));
+      this.service.submittingRequirements(this.form.value).subscribe((data: any) => {
+        alert("Subject Successfully submitted")
+        this.form.reset()
+      })
+    } else {
+      alert("Fill all the fields correctly")
+    }
   }
 
 }

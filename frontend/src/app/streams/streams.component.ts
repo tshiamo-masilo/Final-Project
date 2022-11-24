@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StreamServiceService } from './Services/stream-service.service';
-
+import { StreamServiceService } from './services/stream-service.service';
 
 @Component({
   selector: 'app-streams',
@@ -9,46 +8,45 @@ import { StreamServiceService } from './Services/stream-service.service';
   styleUrls: ['./streams.component.css']
 })
 export class StreamsComponent implements OnInit {
-  schoolList: any[] = [];
-  SchoolIds: any[] = [];
-  schoolIds: any[] = [];
   form: FormGroup = new FormGroup({});
-  
+
   constructor(private formBuilder: FormBuilder, private streamService: StreamServiceService) { }
 
   formBinding() {
     this.form = this.formBuilder.group({
-      schoolId: [''],
+      streamDescription: [''],
       streamName: ['']
     })
   }
-  
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     this.formBinding()
     // getting school list to get school IDs
-    this.streamService.getSchool()
-      .subscribe((data: any) => {
-        console.log(data)
-        this.schoolList = data;
-        this.SchoolIds.push(this.schoolList)
-        this.SchoolIds.forEach(result => {
-          result.forEach((res: any) => {
-            this.schoolIds.push(res.id);
-          })
-        })
+    // this.streamService.getSchool()
+    //   .subscribe((data: any) => {
+    //     console.log(data)
+    //     this.schoolList = data;
+    //     this.SchoolIds.push(this.schoolList)
+    //     this.SchoolIds.forEach(result => {
+    //       result.forEach((res: any) => {
+    //         this.schoolIds.push(res.id);
+    //       })
+    //     })
 
 
-      })
+    //   })
   }
   onSubmit() {
-    //setting school Id to the form
-    this.form.get('schoolId')?.setValue(this.schoolIds[0]);
-    console.log(this.form.value)
     //sending form to database
-    this.streamService.submittingStreams(this.form.value).subscribe(data => {
+    if (this.form.value.streamDescription.length === 0 || this.form.value.streamName.length === 0) {
+      alert("Select all the stream requirements")
+    } else {
       alert("Stream Successfully submitted")
-      this.form.reset()
-    })
+      this.streamService.submittingStreams(this.form.value).subscribe((data: any) => {
+        alert("Stream Successfully submitted")
+        this.form.reset()
+      })
+    }
+
   }
 }
