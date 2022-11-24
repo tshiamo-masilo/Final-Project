@@ -9,26 +9,25 @@ import { AboutComponent } from './about';
 import { AccountComponent } from './account';
 import { LoginGuard } from './user/guards/login.guard';
 import { StudentComponent } from './dashboard';
+import { SignupComponent } from './user/signup';
 
 // import 
 
 const routes: Routes = [
-    // { 
-    //     path: 'home', component: HomeComponent,
-    //     // canActivate: [ LoginGuard ],
-    //     children: [
-    //         { path: 'contact', component: ContactComponent },
-    //         { path: 'about', component: AboutComponent },
-    //         { path: 'account', component: AccountComponent },
-    //        // { path: 'account', component: AccountComponent },
-    //     ]
-    // },
+     { 
+        path: 'home', component: HomeComponent,
+        // canActivate: [ LoginGuard ],
+        children: [
+           
+            { path: 'account', component: AccountComponent },
+            { path: 'student', component: StudentComponent },
+       ] },
+       {path:'login',component:LoginComponent},
+       { path: 'contact', component: ContactComponent },
+       { path: 'about', component: AboutComponent },
+       {path:'signup',component:SignupComponent}
 
-    // //For dev Tshifura
-    // {  path: 'account', component: AccountComponent },
-    // // {  path: 'home', component: HomeComponent },
-    // // otherwise redirect to home
-    { path: 'student', component: StudentComponent },
+
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
