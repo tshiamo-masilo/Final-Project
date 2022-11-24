@@ -56,12 +56,10 @@ export class RequirementsComponent implements OnInit {
   onSubmit() {
     if (this.selectedStream.length > 0 && this.selectedSubject.length > 0 && this.form.value.level.length > 0) {
       //sending form to database   
-      alert("Subject Successfully submitted")
       this.form.get('streamId')?.setValue(this.selectedStream.substring(0, 1));
       this.form.get('subjectId')?.setValue(this.selectedSubject.substring(0, 1));
-      console.log(this.form.value)
       this.service.submittingRequirements(this.form.value).subscribe((data: any) => {
-        alert("Subject Successfully submitted")
+        alert("Requirement successfully submitted")
         this.form.reset()
       })
     }

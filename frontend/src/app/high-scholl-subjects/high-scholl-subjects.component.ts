@@ -27,9 +27,9 @@ export class HighSchollSubjectsComponent implements OnInit {
   onSubmit() {
     //sending form to database
     if (this.form.value.subjectDescription.length === 0 || this.form.value.subjectName.length === 0) {
-      alert("Select all the stream requirements")
+      alert("Fill all the required fields")
     } else {
-      alert("Subject Successfully submitted")
+      alert("Subject successfully submitted")
       console.log(this.form.value);
       this.service.submittingHighSchoolSubjects(this.form.value).subscribe((data: any) => {
         alert("Subject Successfully submitted")

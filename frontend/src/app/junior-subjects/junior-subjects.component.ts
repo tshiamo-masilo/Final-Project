@@ -32,7 +32,7 @@ export class JuniorSubjectsComponent implements OnInit {
     } else {
       console.log(this.form.value);
       this.service.submittingJuniorSubjects(this.form.value).subscribe((data: any) => {
-        alert("Subject Successfully submitted")
+        alert("Subject successfully submitted")
         this.form.reset()
       })
     }
