@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import testing.demo.entities.User;
+import testing.demo.repositories.UserRepository;
 
 import java.util.Optional;
 

@@ -1,19 +1,12 @@
 package testing.demo.security.handler;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class TokenResponse {
-
     private String token;
     private String refreshToken;
-
     public static TokenResponse of(String token, String refreshToken) {
         return new TokenResponse(token, refreshToken);
     }

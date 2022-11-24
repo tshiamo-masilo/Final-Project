@@ -1,30 +1,24 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import testing.demo.services.GuardianService;
 
-import java.util.List;
-import org.springframework.web.bind.annotation.*;
-import testing.demo.Services.GuardianService;
-import testing.demo.model.Guardian;
 
-import java.util.List;
 @RestController
 @RequestMapping("guardian")
 public class GuardianController {
+    
     private GuardianService service;
 
-    @PostMapping("/save")
-    public Guardian saveGuardian(@RequestBody Guardian guardian){
-        return service.saveGuardian(guardian);
-    }
-    @GetMapping("/get/{id}")
-    public Guardian getGuardianById(@PathVariable int id){
-        return service.getGuardianById(id);
-    }
-    @GetMapping("/getAll")
-    public List<Guardian> getAllGuardian(){
-        return service.getAllGuardian();
-    }
+    // @PostMapping("/save")
+    // public GuardianRepoice getGuardianById(id){
+    //     ;
+    // }
+    // @GetMapping("/getAll")
+    // public List<Guardian> getAllGuardian(){
+    //     return service.getAllGuardian();
+    // }
 
     @DeleteMapping("/delete/{id}")
     public String deleteRequirementById(@PathVariable int id){
@@ -34,8 +28,8 @@ public class GuardianController {
     public String deleteAllGuardian(){
         return service.deleteAllGuardian();
     }
-    @PutMapping("/update")
-    public Guardian updateGuardian(Guardian guardian) {
-        return service.updateGuardian(guardian);
-    }
+    // @PutMapping("/update")
+    // public Guardian updateGuardian(Guardian guardian) {
+    //     return service.updateGuardian(guardian);
+    // }
 }

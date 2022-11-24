@@ -1,4 +1,4 @@
-package testing.demo.services;
+package testing.demo.repositories;
 
 import java.util.Optional;
 

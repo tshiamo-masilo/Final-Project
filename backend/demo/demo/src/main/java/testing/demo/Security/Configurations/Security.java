@@ -18,9 +18,10 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import lombok.var;
 import testing.demo.entities.Role;
 import testing.demo.security.filters.AuthorizationFilter;
-import testing.demo.security.filters.JsonObjectAuthenticationFilter;
 import testing.demo.security.handler.AuthSuccesHandler;
 import testing.demo.services.UserDetailService;
+
+import testing.demo.security.filters.JsonObjectAuthenticationFilter;
 
 @Configuration
 public class Security {

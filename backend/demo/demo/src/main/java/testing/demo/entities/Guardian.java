@@ -1,4 +1,4 @@
-package testing.demo.model;
+package testing.demo.entities;
 
 import lombok.Data;
 
@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name="Guardian")
+
 public class Guardian {
     @javax.persistence.Id
     @GeneratedValue()
