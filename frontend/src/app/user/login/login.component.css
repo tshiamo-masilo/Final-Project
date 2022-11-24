@@ -50,3 +50,8 @@
 #links:hover{
     color: grey;
 }
+button{
+    background-color: inherit;
+    border-radius: 30px;
+    border-color: #333;
+}

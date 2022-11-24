@@ -31,33 +31,11 @@ import testing.demo.entities.User;
 
 @RestController
 @RequestMapping("/user")
-public class UserController<ResetPasswordData> {
-
-    
-
-    private static final String  REDIREC_LOGIN = "redirct:/login";
-    private static final String M_STRING = "resetPasswordMsg";
-
+public class UserController {
     @Autowired
     private UserService userService;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @PostMapping("request")
-    public String resetPassword(final ResetPasswordData forgotPasswordForm , RedirectAttributes redirAttr ){
-        return "";
-    }
-    @GetMapping("changeP")
-    public String changePassword(@RequestParam(required = false) String token, final RedirectAttributes redirAttr, final Model model){
-        return "";
-    }
-    @PostMapping("changeP")
-    public String changePassword( final ResetPasswordData data, final Model model){
-        return "";
-    }
-    
-
     /**
      * @return ApiResponse
      */

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     }
 
   login() {
-    this.loginApi.onLogin(this.loginForm.value).subscribe((res:any)=> {
+    return this.loginApi.onLogin(this.loginForm.value).subscribe((res:any)=> {
       console.log(res);
       this.tokenService.setToken(res.token);
       this.loginForm.reset();
