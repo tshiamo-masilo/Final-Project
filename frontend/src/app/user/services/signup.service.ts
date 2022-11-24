@@ -13,7 +13,7 @@ export class SignupService {
   constructor(private http: HttpClient) {}
 
  
-  public addUser(user: UsersInfor): Observable<UsersInfor[]> {
-    return this.http.post<UsersInfor[]>(`${this.api}/user/`, user);
+  public addUser(user: UsersInfor): Observable<any> {
+    return this.http.post<any>(`${this.api}/user/`, user);
   }
 }

@@ -38,9 +38,8 @@ export class AppComponent implements OnInit {
   isLogin() {
     return this.token.getToken();
   }
-  onLogoutClick(){
-    this.token.logout();
+ 
     
-}
+
 
 }
