@@ -14,8 +14,8 @@ export class StreamsComponent implements OnInit {
 
   formBinding() {
     this.form = this.formBuilder.group({
-      streamDescription: ['', Validators.requiredTrue],
-      streamName: ['', Validators.required],
+      streamDescription: [''],
+      streamName: [''],
     })
   }
 
