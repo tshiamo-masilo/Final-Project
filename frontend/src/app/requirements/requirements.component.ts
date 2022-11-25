@@ -55,17 +55,16 @@ export class RequirementsComponent implements OnInit {
   }
   onSubmit() {
     //sending form to database   
-    if (this.form.value.streamId.length != 0 || this.form.value.subjectId.length != 0 || this.form.value.level.length != 0) {
-      alert("Subject Successfully submitted")
+
+    //Validation pending
+   
       this.form.get('streamId')?.setValue(+this.selectedStream.substring(0, 1));
       this.form.get('subjectId')?.setValue(+this.selectedSubject.substring(0, 1));
       this.service.submittingRequirements(this.form.value).subscribe((data: any) => {
         alert("Subject Successfully submitted")
         this.form.reset()
       })
-    } else {
-      alert("Fill all the fields correctly")
-    }
+    
   }
 
 }
