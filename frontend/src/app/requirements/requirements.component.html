@@ -2,17 +2,17 @@
     <h3>Requirements</h3>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="requirements">           
-             <div class="row">
+        <div class="requirements">
+            <div class="row">
                 <div class="col-6" id="stream">
                     <select #stream (change)=" onSelectedStream(stream.value)">
                         <ng-container *ngFor="let stream of streamlist">
-                            <option >{{stream}}</option>
+                            <option>{{stream}}</option>
                         </ng-container>
                     </select>
                 </div>
                 <ng-container *ngIf="num === 1">
-                    <div class="col-4" >
+                    <div class="col-4">
                         <label class="tick">&#10004;</label>
                     </div>
                 </ng-container>
@@ -21,16 +21,18 @@
                         <label>{{stream.value}}</label>
                     </div>
                 </ng-container>
-            </div>  <div class="row">
+            </div>
+
+            <div class="row">
                 <div class="col-6" id="subject">
                     <select #subject (change)=" onSelectedSubject(subject.value)">
                         <ng-container *ngFor="let subject of subjectlist">
-                            <option >{{subject}}</option>
+                            <option>{{subject}}</option>
                         </ng-container>
                     </select>
                 </div>
                 <ng-container *ngIf="num1 === 1">
-                    <div class="col-4" >
+                    <div class="col-4">
                         <label class="tick">&#10004;</label>
                     </div>
                 </ng-container>
@@ -42,7 +44,9 @@
             </div>
             <div class="row">
                 <div class="col-6" id="level">
-                    <input id="level" type="tel" max="7" min="1" maxlength="1"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"  placeholder="Level " formControlName="level" required>
+                    <input id="level" type="tel" max="7" min="1" maxlength="1"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"
+                        placeholder="Level " formControlName="level" required>
                 </div>
                 <ng-container *ngIf="form.value.level !== '' ">
                     <div class="col-2">
