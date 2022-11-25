@@ -10,105 +10,85 @@
 <!-- SEARCH BAR -->
 <div id="cover" style="z-index: 1000">
 
-    <div class="tb">
+  <div class="tb">
 
-      <div class="td">
-        <input type="text" placeholder="Search Schools"
-         id="searchbar" onclick="displayFunction()" 
-         
-         [(ngModel)]="schoolFilter.Institution_Name">
-      </div>
+    <div class="td">
+      <input type="text" placeholder="Search Schools" id="searchbar" onclick="displayFunction()"
+        [(ngModel)]="schoolFilter.Institution_Name">
+    </div>
 
-      <!-- <div class="td" id="s-cover">
+    <!-- <div class="td" id="s-cover">
         <button aria-label="Aria Name" type="submit" return="false">
           <div id="s-circle"></div>
           <span></span>
         </button>
       </div> -->
-    </div>
-  
-    <br/>  
   </div>
-  <!-- /SEARCH BAR -->
 
+  <br />
+</div>
+<!-- /SEARCH BAR -->
 
 
 <!-- FILTER BAR -->
-<div id="filter" style="display: none">
-  <div class="dropdown show" id="filterbuttons">
-    <a class="btn btn-secondary dropdown-toggle w3-animate-top" href="#" role="button" id="dropdownMenuLink2"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Province
-    </a>
+<div id="filter" style="display:none ;">
+  <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
+    <select>
+      <option value="">Gauteng</option>
 
-    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink" id="dropdownmenu">
-      <a class="dropdown-item">Gauteng</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Eastern Cape</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Kwa-Zulu Natal</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Limpopo</a>
-      <hr>
-      <a class="dropdown-item isDisabled" aria-disabled="true">Free State</a>
-    </div>
+      <option value="">Eastern Cape</option>
+      <option value="">Kwa-Zulu Natal</option>
+      <option value="">Limpopo</option>
+      <option value="">Free State</option>
+    </select>
   </div>
 
-  <div class="dropdown show " id="filterbuttons">
-    <a class="btn btn-secondary dropdown-toggle w3-animate-top" role="button" id="dropdownMenuLink"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      City/Town
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownmenu">
-      <a value="secretariaat" class="dropdown-item">Johannesburg</a>
-      <hr>
-      <a class="dropdown-item" >Pretoria</a>
-      <hr>
-      <a class="dropdown-item" >Benoni</a>
-      <hr>
-      <a class="dropdown-item" >Soweto </a>
-      <hr>
-      <a class="dropdown-item" >Alberton</a>
-      <hr>
-      <a class="dropdown-item" >Randburg</a>
-    </div>
-
+  <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
+    <select [(ngModel)]="suburbFilter.Suburb">
+      <option value="">City/Town</option>
+      <option value="Johannesburg">Johannesburg</option>
+      <option value="Pretoria">Pretoria</option>
+      <option value="Benoni">Benoni</option>
+      <option value="Soweto">Soweto</option>
+      <option value="Alberton">Alberton</option>
+      <option value="Randburg">Randburg</option>
+      <br>
+    </select>
   </div>
+
 </div>
 
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
 <div id="sections" style="display: none;" class=" w3-animate-bottom">
-  <div class="row" >
+  <div class="row">
 
-    <div class="card schools blogBox moreBox" *ngFor="let name of schools | filterBy: schoolFilter
+    <div class="card schools" *ngFor="let name of schools | filterBy: schoolFilter | filterBy: suburbFilter
         | paginate: {
           itemsPerPage: tableSize,
           currentPage: page,
           totalItems: count};
           let i = index
-          ">
-        <div class="card-body" >
-          <h5 class="card-title ">{{ name.Institution_Name }}</h5>
-          <hr><br>
-          <div class="card-text ">
-            <div class="item "></div>{{ name.Sector }}
-            {{ name.Phase }}<br>
-            Address: {{ name.StreetAddress }}<br>
-            Email: {{name.E_Mail}}<br>
-            Mobile No: {{ name.cellno }}<br>
-            National Emis No: {{ name.NatEmis }}<br>
-            <a class="btn btn-primary" href="application">Apply</a>
-          </div>
+         ">
+      <div class="card-body">
+        <h5 class="card-title ">{{ name.Institution_Name }}</h5>
+        <hr><br>
+        <div class="card-text ">
+          <div class="item "></div>{{ name.Sector }}
+          {{ name.Phase }}<br>
+          Address: {{ name.StreetAddress }}<br>
+          Email: {{name.E_Mail}}<br>
+          Mobile No: {{ name.cellno }}<br>
+          National Emis No: {{ name.NatEmis }}<br>
+          {{name.Suburb}}
+          <a class="btn btn-primary" href="application">Apply</a>
         </div>
-
-
-
+      </div>
     </div>
 
   </div>
+  
 </div>
 <!-- /SCHOOL CARDS -->
 

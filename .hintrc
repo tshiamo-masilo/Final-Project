@@ -4,11 +4,30 @@
   ],
   "hints": {
     "no-inline-styles": "off",
-    "axe/forms": [
+    "axe/forms": "off",
+    "axe/aria": [
       "default",
       {
-        "label": "off"
+        "aria-command-name": "off"
+      }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id": "off"
+      }
+    ],
+    "axe/keyboard": [
+      "default",
+      {
+        "nested-interactive": "off"
       }
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not ios_saf <= 16.1",
+    "not safari <= 16.1"
+  ]
 }
