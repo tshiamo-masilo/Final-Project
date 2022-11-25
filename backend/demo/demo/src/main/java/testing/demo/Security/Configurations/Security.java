@@ -11,13 +11,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import lombok.var;
+import testing.demo.entities.Role;
 import testing.demo.security.filters.AuthorizationFilter;
 import testing.demo.security.filters.JsonObjectAuthenticationFilter;
 import testing.demo.security.handler.AuthSuccesHandler;
 import testing.demo.services.UserDetailService;
-import testing.demo.entities.Role;
 
 @Configuration
 public class Security {
@@ -69,5 +72,12 @@ public class Security {
         filter.setAuthenticationManager(authenticationManager);
         filter.setAuthenticationSuccessHandler(authSuccesHandler);
         return filter;
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
     }
 }

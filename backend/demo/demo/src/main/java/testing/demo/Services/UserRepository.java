@@ -3,6 +3,7 @@ package testing.demo.services;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
 
 import testing.demo.entities.User;
@@ -13,4 +14,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findUserByEmail(String username);
 
+    
+
+    
 }

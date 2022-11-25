@@ -2,8 +2,9 @@ package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.services.StudentService;
+
 import testing.demo.entities.Student;
+import testing.demo.services.StudentService;
 
 import java.util.List;
 

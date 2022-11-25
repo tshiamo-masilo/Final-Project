@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.services.StreamService;
+
 import testing.demo.entities.Stream;
+import testing.demo.services.StreamService;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class StreamController {
     @Autowired
     private StreamService repository;
-
+    
     @PostMapping("/save")
     public ResponseEntity<Stream> saveStream(Stream requirements) {
         return new ResponseEntity<>(repository.saveStream(requirements), HttpStatus.CREATED);
