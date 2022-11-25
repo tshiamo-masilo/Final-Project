@@ -10,12 +10,12 @@ import { RequirementsServicesService } from './services/requirements-services.se
 export class RequirementsComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  streamlist: any[] = ["Select a stream", "1.Science", "2.Commerce", "3.General", "4.Mix1", "5.Mix2"]
+  streamlist: any[] = ["Select a stream"]
   stream: any;
   selectedStream: any = '';
   num1: any = 0;
 
-  subjectlist: any[] = ["Select a subject", "1.Maths", "2.English", "3.Xhosa", "4.EMS", "5.Tech"]
+  subjectlist: any[] = ["Select a subject"]
   subject: any;
   selectedSubject: any = '';
   num: any = 0;
@@ -51,6 +51,7 @@ export class RequirementsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.formBinding()
+    
 
   }
   onSubmit() {

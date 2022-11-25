@@ -13,8 +13,8 @@ export class RequirementsServicesService {
   getStreams(){
     return this.http.get(this.BaseUrl + '/streams/getAll');    
   }
-  getRequirements(){
-    return this.http.get(this.BaseUrl + '/requirements/getAll');    
+  getRequirementsSubjects(){
+    return this.http.get(this.BaseUrl + '/junior/getAll');    
   }
   constructor(private http: HttpClient) { }
 }

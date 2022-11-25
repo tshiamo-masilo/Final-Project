@@ -21,9 +21,6 @@ public class Stream {
     private String description;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fkStreamId",referencedColumnName = "streamId")
-    private List<Requirements> requirements;
-
+    c
 
 }
