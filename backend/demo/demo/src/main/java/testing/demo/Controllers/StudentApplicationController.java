@@ -3,9 +3,7 @@ package testing.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.Repository.StudentApplicationRepo;
 import testing.demo.services.ApplicationService;
-import testing.demo.entities.Requirements;
 import testing.demo.entities.StudentApplication;
 
 import java.util.List;
@@ -28,21 +26,21 @@ public class StudentApplicationController {
 
     @GetMapping("/getAll")
     public List<StudentApplication> getAllStudentApplication() {
-        return applicationService.getAllStudentApplication();
+        return applicationService.getAllStudents();
     }
 
     @GetMapping("/delete/{Id}")
     public String deleteStudentApplicationById(@PathVariable Long Id) {
-        return applicationService.deleteStudentApplicationById(Id);
+        return applicationService.deleteStudentById(Id);
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/deleteAll")
     public String deleteAllStudentApplication() {
-        return applicationService.deleteStudentApplication();
+        return applicationService.deleteAll(null);
     }
 
     @PutMapping("/update")
     public ResponseEntity<StudentApplication> updateRequirement(@RequestBody StudentApplication studentApplicatio) {
-        return ResponseEntity.ok(applicationService.updateStudentApplication(studentApplicatio));
+        return ResponseEntity.ok(applicationService.updateStudent(studentApplicatio));
     }
 }
