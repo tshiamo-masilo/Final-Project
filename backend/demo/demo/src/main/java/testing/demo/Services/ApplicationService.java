@@ -1,6 +1,5 @@
 package testing.demo.services;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -8,6 +7,8 @@ import com.opsgenie.core.layer.Service;
 
 import testing.demo.repositories.StudentApplicationRepo;
 import testing.demo.entities.StudentApplication;
+
+import java.util.List;
 
 @Service
 public class ApplicationService {
