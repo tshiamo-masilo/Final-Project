@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StreamServiceService } from './services/stream-service.service';
 
 @Component({
@@ -15,35 +15,22 @@ export class StreamsComponent implements OnInit {
   formBinding() {
     this.form = this.formBuilder.group({
       streamDescription: [''],
-      streamName: ['']
+      streamName: [''],
     })
   }
 
   ngOnInit(): void {
     this.formBinding()
-    // getting school list to get school IDs
-    // this.streamService.getSchool()
-    //   .subscribe((data: any) => {
-    //     console.log(data)
-    //     this.schoolList = data;
-    //     this.SchoolIds.push(this.schoolList)
-    //     this.SchoolIds.forEach(result => {
-    //       result.forEach((res: any) => {
-    //         this.schoolIds.push(res.id);
-    //       })
-    //     })
-
-
-    //   })
   }
+  
   onSubmit() {
-    //sending form to database
+    
     if (this.form.value.streamDescription.length === 0 || this.form.value.streamName.length === 0) {
-      alert("Select all the stream requirements")
+      alert("Fill all the required fields")
     } else {
-      alert("Stream Successfully submitted")
+      //sending form to database
       this.streamService.submittingStreams(this.form.value).subscribe((data: any) => {
-        alert("Stream Successfully submitted")
+        alert("Stream successfully submitted")
         this.form.reset()
       })
     }

@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Subject {
+public class JSubject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
