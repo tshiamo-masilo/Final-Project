@@ -15,11 +15,11 @@ public class HSubjectsService {
     HighSchoolSubjectsRepository repository;
 
 
-    public HSubject saveSubject(JSubject JSubject) {
+    public HSubject saveSubject(HSubject JSubject) {
         return repository.save(JSubject);
     }
 
-    public JSubject getSubjectById(Long id) {
+    public HSubject getSubjectById(Long id) {
         return repository.findById(id).get();
     }
 
