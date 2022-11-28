@@ -1,11 +1,11 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.Services.GuardianService;
-import testing.demo.model.Guardian;
+import testing.demo.services.GuardianService;
+import testing.demo.entities.*;
 
 import java.util.List;
 @RestController
