@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.services.StreamService;
-import testing.demo.services.JSubjectService;
+
 import testing.demo.entities.Stream;
-import testing.demo.entities.JSubject;
+import testing.demo.services.StreamService;
 
 import java.util.List;
 
@@ -15,42 +14,35 @@ import java.util.List;
 @RequestMapping("/stream")
 public class StreamController {
     @Autowired
-    private StreamService streamService;
-    @Autowired
-    private JSubjectService JSubjectService;
-
+    private StreamService repository;
+    
     @PostMapping("/save")
-    public ResponseEntity<Stream> saveStream(@RequestBody Stream requirements) {
-        return new ResponseEntity<>(streamService.saveStream(requirements), HttpStatus.CREATED);
+    public ResponseEntity<Stream> saveStream(Stream requirements) {
+        return new ResponseEntity<>(repository.saveStream(requirements), HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Stream> getStreamById(@PathVariable Long id) {
-        return ResponseEntity.ok(streamService.getStreamById(id));
+        return ResponseEntity.ok(repository.getStreamById(id));
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List> getAllStreams() {
-        return ResponseEntity.ok(streamService.getAllStreams());
+    public ResponseEntity<List> getUser() {
+        return ResponseEntity.ok(repository.getAllStreams());
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteRequirementById(@PathVariable Long id) {
-        return ResponseEntity.ok(streamService.deleteStreamById(id));
+        return ResponseEntity.ok(repository.deleteStreamById(id));
     }
 
     @DeleteMapping("/deleteAll")
     public ResponseEntity<String> deleteStream() {
-        return ResponseEntity.ok(streamService.deleteAllStream());
+        return ResponseEntity.ok(repository.deleteAllStream());
     }
 
-    @PutMapping("/{subjectId}/streams/{streamId}")
-    public JSubject enrolledStreamToSubject(@PathVariable Long subjectId,
-                                            @PathVariable Long streamId) {
-        JSubject JSubject = JSubjectService.getSubjectById(subjectId);
-        Stream stream = streamService.getStreamById(streamId);
-        //subject.enrolledStream(stream);
-        return JSubjectService.saveSubject(JSubject);
+    @PutMapping("/update")
+    public ResponseEntity<Stream> updateRequirement(@RequestBody Stream requirements) {
+        return ResponseEntity.ok(repository.updateStream(requirements));
     }
-
 }

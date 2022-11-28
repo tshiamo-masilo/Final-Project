@@ -14,7 +14,7 @@ export class RequirementsServicesService {
     return this.http.get(this.BaseUrl + '/streams/getAll');    
   }
   getRequirementsSubjects(){
-    return this.http.get(this.BaseUrl + '/junior/getAll');    
+    return this.http.get(this.BaseUrl + '/junior/subjects/getAll');    
   }
   constructor(private http: HttpClient) { }
 }

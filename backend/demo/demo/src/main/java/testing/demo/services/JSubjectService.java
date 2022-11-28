@@ -2,25 +2,25 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.entities.JSubject;
-import testing.demo.repositories.JSubjectRepository;
+import testing.demo.entities.JuniorSchoolSubject;
+import testing.demo.repositories.JuniorSubjectsRepository;
 
 import java.util.List;
 
 @Service
 public class JSubjectService {
     @Autowired
-    JSubjectRepository repository;
+    JuniorSubjectsRepository repository;
 
-    public JSubject saveSubject(JSubject JSubject) {
-        return repository.save(JSubject);
+    public JuniorSchoolSubject saveSubject(JuniorSchoolSubject Subject) {
+        return repository.save(Subject);
     }
 
-    public JSubject getSubjectById(Long id) {
+    public JuniorSchoolSubject getSubjectById(Long id) {
         return repository.findById(id).get();
     }
 
-    public List<JSubject> getSubjects() {
+    public List<JuniorSchoolSubject> getSubjects() {
         return repository.findAll();
     }
 

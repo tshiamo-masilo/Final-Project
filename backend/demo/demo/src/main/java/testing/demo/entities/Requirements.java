@@ -15,6 +15,4 @@ public class Requirements {
     @Column(name="requirementId")
     private Long id;
     private String level;
-
-
 }

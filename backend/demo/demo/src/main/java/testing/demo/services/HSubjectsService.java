@@ -2,7 +2,6 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.entities.HSubject;
 import testing.demo.repositories.HighSchoolSubjectsRepository;
 import java.util.List;
 
@@ -12,15 +11,15 @@ public class HSubjectsService {
     HighSchoolSubjectsRepository repository;
 
 
-    public HSubject saveSubject(HSubject JSubject) {
-        return repository.save(JSubject);
+    public HighSchoolSubject saveSubject(HighSchoolSubject Subject) {
+        return repository.save(Subject);
     }
 
-    public HSubject getSubjectById(Long id) {
+    public HighSchoolSubject getSubjectById(Long id) {
         return repository.findById(id).get();
     }
 
-    public List<HSubject> getSubjects() {
+    public List<HighSchoolSubject> getSubjects() {
         return repository.findAll();
     }
 

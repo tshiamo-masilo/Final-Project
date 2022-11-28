@@ -1,21 +1,31 @@
 package testing.demo.services;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import testing.demo.entities.User;
-import testing.demo.repositories.UserRepository;
+import testing.demo.security.handler.TokenResponse;
 
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
 
+  
+   
+    
+
+   
+    
     public User createUser(User user) {
         return userRepository.save(user);
     }

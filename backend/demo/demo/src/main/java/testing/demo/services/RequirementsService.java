@@ -2,8 +2,9 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import testing.demo.entities.Requirements;
-import testing.demo.repositories.RequirementsRepo;
+import testing.demo.repositories.RequirementsRepository;
 
 import java.util.List;
 
@@ -11,28 +12,31 @@ import java.util.List;
 public class RequirementsService {
 
     @Autowired
-    private RequirementsRepo requirementsRepo;
+    private RequirementsRepository requirementsRepository;
 
     public Requirements saveRequirements(Requirements requirements) {
-        return requirementsRepo.save(requirements);
+        return requirementsRepository.save(requirements);
     }
 
     public List<Requirements> getAllRequirements() {
-        return requirementsRepo.findAll();
+        return requirementsRepository.findAll();
     }
 
     public Requirements getRequirementsById(Long id) {
-        return requirementsRepo.findById(id).get();
+        return requirementsRepository.findById(id).get();
     }
 
     public String deleteRequirementsById(Long id) {
-        requirementsRepo.deleteById(id);
+        requirementsRepository.deleteById(id);
         return "Requirement with Id:" + id + " is deleted";
     }
 
     public String deleteAllRequirements() {
-        requirementsRepo.deleteAll();
+        requirementsRepository.deleteAll();
         return "All Requirements are deleted";
     }
 
+    public Requirements updateRequirements(Requirements requirements) {
+        return requirements;
+    }
 }
