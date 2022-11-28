@@ -24,9 +24,5 @@ public class Stream {
     @JoinColumn(name = "fkStreamId",referencedColumnName = "streamId")
     private List<Requirements> requirements;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 80e66423a6f57b3be1cb0f12345700285d60493b
 
 }

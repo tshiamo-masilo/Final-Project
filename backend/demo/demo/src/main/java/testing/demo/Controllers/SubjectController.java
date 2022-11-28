@@ -3,7 +3,7 @@ package testing.demo.controllers;
 import org.springframework.web.bind.annotation.*;
 
 import testing.demo.services.JSubjectService;
-import testing.demo.entities.JSubject;
+import testing.demo.entities.JuniorSchoolSubject;
 
 import java.util.List;
 
@@ -18,17 +18,17 @@ public class SubjectController {
     }
 
     @PostMapping("/save")
-    public JSubject saveSubject(@RequestBody JSubject JSubject) {
+    public JuniorSchoolSubject saveSubject(@RequestBody JuniorSchoolSubject JSubject) {
         return service.saveSubject(JSubject);
     }
 
     @GetMapping("/get/{id}")
-    public JSubject getSubjectById(@PathVariable Long id) {
+    public JuniorSchoolSubject getSubjectById(@PathVariable Long id) {
         return service.getSubjectById(id);
     }
 
     @GetMapping("/getAll")
-    public List<JSubject> getAllSubject() {
+    public List<JuniorSchoolSubject> getAllSubject() {
         return service.getSubjects();
     }
 
