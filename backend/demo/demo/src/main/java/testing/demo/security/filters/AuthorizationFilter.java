@@ -29,7 +29,7 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
     private final String secretKey;
 
     public AuthorizationFilter(AuthenticationManager authenticationManager,
-                               UserDetailService userDetailsService, String secretKey) {
+            UserDetailService userDetailsService, String secretKey) {
         super(authenticationManager);
         this.userDetailService = userDetailsService;
         this.secretKey = secretKey;
@@ -56,15 +56,15 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
             return null;
         }
 
-        var email = JWT.require(Algorithm.HMAC256(secretKey))
+        var username = JWT.require(Algorithm.HMAC256(secretKey))
                 .build()
                 .verify(token.replace(TOKEN_PREFIX, ""))
                 .getSubject();
 
-        if (email == null)
+        if (username == null)
             return null;
 
-        var userDetail = userDetailService.loadUserByUsername(email);
+        var userDetail = userDetailService.loadUserByUsername(username);
 
         return new UsernamePasswordAuthenticationToken(userDetail.getUsername(), null, userDetail.getAuthorities());
     }

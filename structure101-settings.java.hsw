@@ -13,16 +13,16 @@
   <property name="project-type" value="classpath" />
   <property name="hide-externals" value="true" />
   <classpath>
-    <classpathentry kind="lib" path="demo/demo/target/classes" module="demo" displaymodule="demo" />
+    <classpathentry kind="lib" path="backend/demo/demo/target/classes" module="demo" displaymodule="demo" />
   </classpath>
   <pom-root-files />
   <modules>
+    <module name="Final-Project-School-Registration-System" kind="ide-project" />
     <module name="demo" kind="ide-project" />
-    <module name="backend" kind="ide-project" />
   </modules>
   <modules-in-scope>
     <module name="demo" />
-    <module name="backend" />
+    <module name="Final-Project-School-Registration-System" />
   </modules-in-scope>
   <excludes>
     <exclude expression="*.*&amp;amp;*" active="true" />

@@ -1,17 +1,16 @@
-package testing.demo.Controllers;
+package testing.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import testing.demo.services.StudentService;
 import testing.demo.entities.Student;
+import testing.demo.services.StudentService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-
     @Autowired
     private StudentService studentService;
 
@@ -21,7 +20,7 @@ public class StudentController {
     }
 
     @GetMapping("/get/{id}")
-    public Student getStudentById(@PathVariable Long id) {
+    public Student getStudentById(Long id) {
         return studentService.getStudentById(id);
     }
 
@@ -31,7 +30,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteStudentById(@PathVariable Long id) {
+    public String deleteStudentById(Long id) {
         return studentService.deleteStudentById(id);
     }
 

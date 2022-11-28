@@ -12,8 +12,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class JSubject {
+@Entity(name="HighSchoolSubjects")
+public class HighSchoolSubject {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +25,5 @@ public class JSubject {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fkSubjectId",referencedColumnName = "subjectId")
-    private List<Requirements> requirements;
-
+    private List<Stream> stream;
 }

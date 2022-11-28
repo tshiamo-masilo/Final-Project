@@ -1,6 +1,7 @@
 package testing.demo.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,21 +9,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Entity
-@Table(name = "streams")
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
-public class Stream {
+@AllArgsConstructor
+@Entity(name="JuniorSchoolSubjects")
+public class JuniorSchoolSubject {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="streamId")
+    @Column(name="subjectId")
     private Long id;
-    private String streamName;
-    private String description;
+    private String Name;
+    private String Description;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fkStreamId",referencedColumnName = "streamId")
+    @JoinColumn(name = "fkSubjectId",referencedColumnName = "subjectId")
     private List<Requirements> requirements;
-
 
 }
