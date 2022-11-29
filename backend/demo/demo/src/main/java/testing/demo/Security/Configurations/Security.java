@@ -49,7 +49,7 @@ public class Security {
                     try {
                         auth
                                 .antMatchers("user").hasAnyRole(Role.ADMIN.name(), Role.USER.name())
-                                .antMatchers("admin").hasRole(Role.ADMIN.name())
+                                .antMatchers("user/addUser").permitAll()
                                 .anyRequest().permitAll()
                                 .and()
                                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

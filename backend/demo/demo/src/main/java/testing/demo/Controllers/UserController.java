@@ -15,6 +15,7 @@ import testing.demo.entities.ApiResponse;
 import testing.demo.entities.Role;
 import testing.demo.entities.User;
 
+@CrossOrigin (origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -44,8 +45,7 @@ public class UserController {
      * @param user
      * @return ApiResponse<User>
      */
-    @PostMapping("")
- 
+    @PostMapping("/addUser")
     public ApiResponse<User> registerUser(@RequestBody RegistrationDto registerationDto) {
         var user = userService.createUser(User.builder()
                 .name(registerationDto.getName())
