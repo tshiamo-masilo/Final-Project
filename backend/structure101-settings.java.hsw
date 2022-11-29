@@ -21,8 +21,8 @@
     <module name="backend" kind="ide-project" />
   </modules>
   <modules-in-scope>
-    <module name="backend" />
     <module name="demo" />
+    <module name="backend" />
   </modules-in-scope>
   <excludes>
     <exclude expression="*.*&amp;amp;*" active="true" />
