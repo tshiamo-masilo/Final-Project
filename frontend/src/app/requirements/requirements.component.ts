@@ -7,20 +7,23 @@ import { RequirementsServicesService } from './services/requirements-services.se
   templateUrl: './requirements.component.html',
   styleUrls: ['./requirements.component.css']
 })
+// Declarations and injections 
 export class RequirementsComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
   streamlist: any[] = ["Select a stream"]
+  streamlist2: any[] = []
   stream: any;
   selectedStream: any = '';
   num1: any = 0;
 
   subjectlist: any[] = ["Select a subject"]
+  subjectlist2: any[] = []
   subject: any;
   selectedSubject: any = '';
   num: any = 0;
   constructor(private formBuilder: FormBuilder, private service: RequirementsServicesService) { }
-
+// function that buids a form
   formBinding() {
     this.form = this.formBuilder.group({
       streamId: [''],
@@ -29,6 +32,7 @@ export class RequirementsComponent implements OnInit {
 
     })
   }
+  // get value of selected subject from formBinding
   onSelectedSubject(value: any) {
     this.subject = value;
     this.selectedSubject = value
@@ -39,6 +43,7 @@ export class RequirementsComponent implements OnInit {
       this.num1 = 1;
     }
   }
+  //getting value of selected stream from formBinding
   onSelectedStream(value: any) {
     this.stream = value;
     this.selectedStream = value
@@ -50,11 +55,26 @@ export class RequirementsComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    //creating form 
     this.formBinding()
-    
+    // Getting Subjects from the database 
+    this.service.getRequirementsSubjects().subscribe((res:any) => {
+      this.subjectlist2 = res
+      this.subjectlist2.forEach(res => {
+        this.subjectlist.push(res.id+"."+res.name)
+      })
+    })
+    // Getting Streams from the database
+    this.service.getStreams().subscribe((data:any) =>{
+      this.streamlist2 = data;
+      this.streamlist2.forEach(res =>{
+      this.streamlist.push(res.id+"."+res.name)
+      })
+    })
 
   }
-  onSubmit() {
+  onSubmit() {   
+    // Validation of form
     if (this.selectedStream.length > 0 && this.selectedSubject.length > 0 && this.form.value.level.length > 0) {
       //sending form to database   
       this.form.get('streamId')?.setValue(this.selectedStream.substring(0, 1));

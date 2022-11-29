@@ -11,10 +11,10 @@ export class RequirementsServicesService {
     return this.http.post(this.BaseUrl + '/requirements/save', value);
   }
   getStreams(){
-    return this.http.get(this.BaseUrl + '/streams/getAll');    
+    return this.http.get(this.BaseUrl + '/stream/getAll');    
   }
   getRequirementsSubjects(){
-    return this.http.get(this.BaseUrl + '/junior/subjects/getAll');    
+    return this.http.get(this.BaseUrl + '/junior/getAll');    
   }
   constructor(private http: HttpClient) { }
 }

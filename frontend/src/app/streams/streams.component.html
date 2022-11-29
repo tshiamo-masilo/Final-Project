@@ -35,7 +35,25 @@
                     </div>
                 </ng-container>
             </div>
-
+            <div class="row">
+                <div class="col-6" id="subject">
+                    <select #subject (change)=" onSelectedSubject(subject.value)">
+                        <ng-container *ngFor="let subject of subjectlist">
+                            <option>{{subject}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <ng-container *ngIf="num === 1">
+                    <div class="col-4">
+                        <label class="tick">&#10004;</label>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="num == 0">
+                    <div class="col-4">
+                        <label >{{subject.value}}</label>
+                    </div>
+                </ng-container>
+            </div>
             <hr>
 
         </div>

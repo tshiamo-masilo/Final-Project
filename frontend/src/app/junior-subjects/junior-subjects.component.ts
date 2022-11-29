@@ -30,7 +30,6 @@ export class JuniorSubjectsComponent implements OnInit {
     if (this.form.value.subjectDescription.length === 0 || this.form.value.subjectName.length === 0) {
       alert("Fill all the required fields")
     } else {
-      console.log(this.form.value);
       this.service.submittingJuniorSubjects(this.form.value).subscribe((data: any) => {
         alert("Subject successfully submitted")
         this.form.reset()
