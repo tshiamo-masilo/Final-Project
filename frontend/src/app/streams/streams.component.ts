@@ -9,8 +9,7 @@ import { StreamServiceService } from './services/stream-service.service';
 })
 export class StreamsComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-
-  subjectlist: any[] = ["Select a subject"]
+  subjectlist: any[] = ["Select a subject","g"]
   subjects: any[] = []
   subject: any;
   selectedSubject: any = '';

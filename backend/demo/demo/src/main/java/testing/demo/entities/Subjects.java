@@ -12,8 +12,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="HighSchoolSubjects")
-public class HighSchoolSubject {
+@Entity(name="Subjects")
+public class Subjects {
 
 
     @Id

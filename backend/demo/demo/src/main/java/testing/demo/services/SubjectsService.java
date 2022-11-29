@@ -2,25 +2,25 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.entities.HighSchoolSubject;
-import testing.demo.repositories.HighSchoolSubjectsRepository;
+import testing.demo.entities.Subjects;
+import testing.demo.repositories.SubjectsRepository;
 
 import java.util.List;
 
 @Service
-public class HighSchoolSubjectsService {
+public class SubjectsService {
     @Autowired
-    private HighSchoolSubjectsRepository repository;
+    private SubjectsRepository repository;
 
-    public HighSchoolSubject saveSubject(HighSchoolSubject subject){
+    public Subjects saveSubject(Subjects subject){
         return  repository.save(subject);
     }
 
-    public HighSchoolSubject getSubjectById(Long id ){
+    public Subjects getSubjectById(Long id ){
         return repository.findById(id).get();
     }
 
-    public List<HighSchoolSubject> getAllSubjects(){
+    public List<Subjects> getAllSubjects(){
         return repository.findAll();
     }
 

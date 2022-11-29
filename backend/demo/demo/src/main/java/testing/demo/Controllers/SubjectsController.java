@@ -4,24 +4,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testing.demo.entities.JuniorSchoolSubject;
-import testing.demo.services.JuniorSchoolSubjectsService;
+import testing.demo.entities.Subjects;
+import testing.demo.services.SubjectsService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/junior")
-public class JuniorSchoolSubjectsController {
+@RequestMapping("/subject")
+public class SubjectsController {
     @Autowired
-    private JuniorSchoolSubjectsService repository;
+    private SubjectsService repository;
 
     @PostMapping("/save")
-    public ResponseEntity<JuniorSchoolSubject> saveJSubject(@RequestBody JuniorSchoolSubject subject) {
+    public ResponseEntity<Subjects> saveHSubject(@RequestBody Subjects subject) {
         return new ResponseEntity<>(repository.saveSubject(subject), HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<JuniorSchoolSubject> getJSubjectById(@PathVariable Long id) {
+    public ResponseEntity<Subjects> getHSubjectById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.getSubjectById(id));
     }
 
@@ -36,7 +36,9 @@ public class JuniorSchoolSubjectsController {
     }
 
     @DeleteMapping("/deleteAll")
-    public ResponseEntity<String> deleteJSubject() {
+    public ResponseEntity<String> deleteHSubject() {
         return ResponseEntity.ok(repository.deleteAllSubjects());
     }
+
+
 }
