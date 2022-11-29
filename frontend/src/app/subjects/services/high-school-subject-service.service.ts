@@ -9,7 +9,7 @@ export class HighSchoolSubjectServiceService {
   //saving Stream to stream table in database
   submittingHighSchoolSubjects(value: any) {
     console.log(value)
-    return this.http.post(this.BaseUrl + '/high/save', value);
+    return this.http.post(this.BaseUrl + '/subject/save', value);
   }
 
   constructor(private http: HttpClient) { }
