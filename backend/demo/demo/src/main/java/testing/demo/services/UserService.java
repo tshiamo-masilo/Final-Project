@@ -3,14 +3,10 @@ package testing.demo.services;
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import lombok.*;
 import testing.demo.entities.User;
-import testing.demo.security.handler.TokenResponse;
-
 import java.util.Optional;
 
 @Service
