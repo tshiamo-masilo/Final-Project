@@ -46,10 +46,13 @@
                 <span id='message'></span>
               </div>
               <small *ngIf= "signupForm.controls['confirmPassword'].dirty && signupForm.hasError('required', 'confirmPassword')" class="text-danger">*onfirmation of Password is required</small>
-              <button (click)="onSignUp()"ype="submit" class="btn btn-primary btn-lg btn-block" >
+              <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-lg btn-block" >
                 SIGNUP
               </button>
               <br><br>
+              <div class="alert alert-success" *ngIf="isSuccessful">
+                Your registration is successful!
+              </div>
               <div class="header__center">OR</div>
 
               <div class="social-links">

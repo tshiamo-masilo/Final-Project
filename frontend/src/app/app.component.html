@@ -42,8 +42,10 @@
           <a class="nav-link text-light" routerLink="./about">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="!isLogin()"class="nav-link text-light" routerLink="./signIn">LOG IN</a>
-          <a *ngIf="isLogin()" class="nav-link text-light" >LOGOUT</a>
+          <a class="nav-link text-light" routerLink="./signIn">LOG IN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" (click)="onLogout()" routerLink="./signIn">LOGOUT</a>
         </li>
         
       </ul>
