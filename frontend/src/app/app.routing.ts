@@ -1,5 +1,4 @@
 import { LearnerComponent } from './dashboard/learner/learner.component';
-import { HighSchollSubjectsComponent } from './subjects/high-scholl-subjects.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
@@ -16,6 +15,7 @@ import { NavbarComponent } from './dashboard/navbar';
 import { StreamsComponent } from './streams';
 import { RequirementsComponent } from './requirements';
 import { SubjectComponent } from './subject/subject.component';
+import { LoginGuard } from './user/guards/login.guard';
 
 
 
@@ -31,7 +31,7 @@ const routes: Routes = [
     { path: 'learner', component: LearnerComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'account', component: AccountComponent },
+    { path: 'account', component: AccountComponent, canActivate: [LoginGuard], },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },

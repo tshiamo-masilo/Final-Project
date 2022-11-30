@@ -43,6 +43,7 @@ secrets.yml
 backend/demo/demo/target
 backend/.idea/
 <<<<<<< HEAD
+<<<<<<< HEAD
 frontend/dist/
 =======
 <<<<<<< HEAD
@@ -55,3 +56,6 @@ backend/.idea/jpa-buddy.xml
 >>>>>>> db9abb4a47de7be7c0cc363c5cf5ab39f622ccc7
 >>>>>>> c7a88bc1827aed0a794608f53aa93a4269b9d588
 backend/demo/demo/src/main/java/testing/demo/Controllers/RequirementsController.java
+=======
+frontend/dist/
+>>>>>>> f722765197b12232f60b745a303a389dcd5aa915

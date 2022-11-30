@@ -5,8 +5,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import lombok.*;
+import lombok.RequiredArgsConstructor;
 import testing.demo.entities.User;
+
 import java.util.Optional;
 
 @Service

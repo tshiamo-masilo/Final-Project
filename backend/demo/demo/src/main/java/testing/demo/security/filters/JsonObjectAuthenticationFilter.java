@@ -11,9 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testing.demo.dtos.LoginCredentialsDto;
-
-
+import testing.demo.entities.LoginCredentials;
 
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
