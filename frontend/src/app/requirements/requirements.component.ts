@@ -65,7 +65,7 @@ export class RequirementsComponent implements OnInit {
       })
     })
     // Getting Streams from the database
-    this.service.getStreams().subscribe((data:any) =>{
+    this.service.getStreams().subscribe((data:any) =>{ 
       this.streamlist2 = data;
       this.streamlist2.forEach(res =>{
       this.streamlist.push(res.id+"."+res.name)

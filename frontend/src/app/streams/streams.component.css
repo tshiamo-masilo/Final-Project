@@ -5,7 +5,8 @@
     color: WHITE;
     align-items: center;
     border-radius: 5px;
-    width: 70vw;
+    width: 100vw;
+    padding: 20px;
 }
 input {
     margin-bottom: 5%;

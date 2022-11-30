@@ -37,7 +37,7 @@ const routes: Routes = [
     { path: 'forgot', component: ForgotComponent },
     { path: 'application', component: ApplicationComponent }, 
     { path: 'streams', component: StreamsComponent },
-    { path: 'requirements', component: RequirementsComponent },
+    { path: 'xms', component: RequirementsComponent },
     { path: 'subjects', component: SubjectComponent },
     {
         path: 'navbar', component: NavbarComponent, children: [
