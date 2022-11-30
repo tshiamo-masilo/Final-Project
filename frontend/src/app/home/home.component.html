@@ -35,17 +35,16 @@
   <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
     <select>
       <option value="">Gauteng</option>
-
-      <option value="">Eastern Cape</option>
-      <option value="">Kwa-Zulu Natal</option>
-      <option value="">Limpopo</option>
-      <option value="">Free State</option>
+      <option value="" disabled>Eastern Cape(TBD)</option>
+      <option value="" disabled>Kwa-Zulu Natal(TBD)</option>
+      <option value="" disabled>Limpopo(TBD)</option>
+      <option value="" disabled>Free State(TBD)</option>
     </select>
   </div>
 
   <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
     <select [(ngModel)]="suburbFilter.Suburb">
-      <option value="">City/Town</option>
+      <option value="" label="Select a City/Town">City/Town</option>
       <option value="Johannesburg">Johannesburg</option>
       <option value="Pretoria">Pretoria</option>
       <option value="Benoni">Benoni</option>

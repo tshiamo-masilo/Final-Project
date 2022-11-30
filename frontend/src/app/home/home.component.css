@@ -123,6 +123,7 @@ select:focus {
 #filter {
   margin: auto;
   width: 50%;
+
 }
 
 
@@ -332,5 +333,14 @@ button span:after {
   visibility: hidden;
 }
 
-
-
+select {
+  background: #d9d9d9;
+  width: 75%;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: none;
+  font-weight: 400;
+  border-radius: 120px;
+  color: black;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+}
