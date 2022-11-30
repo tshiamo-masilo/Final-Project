@@ -4,55 +4,63 @@
       <div class="col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <form>
+            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
               <h3>SIGN UP</h3>
 
               <hr class="my-4 mb-4" />
-              <!--<form action="weblink" method="post">   post method-->
-              <div class="form-outline mb-4">
+            
+              <div class="form-outline mb-4"  [class.error]="signupForm.controls['name'].dirty && signupForm.hasError('required', 'name')">
                 <label class="form-label" for="firstname">First Name</label>
-                <input type="fname" id="firstname" class="form-control form-control-lg" />
+                <input formControlName="name" type="fname" id="firstname" class="form-control form-control-lg" />
               </div>
+              <small *ngIf= "signupForm.controls['name'].dirty && signupForm.hasError('required', 'name')" class="text-danger">*Firstname is required</small>
 
-              <div class="form-outline mb-4">
+              <div class="form-outline mb-4" [class.error]="signupForm.controls['surname'].dirty && signupForm.hasError('required', 'surname')">
                 <label class="form-label" for="lastname">Last Name</label>
-                <input type="lname" id="lastname" class="form-control form-control-lg" />
+                <input formControlName="surname" type="lname" id="lastname" class="form-control form-control-lg" />
               </div>
+              <small *ngIf= "signupForm.controls['surname'].dirty && signupForm.hasError('required', 'surname')" class="text-danger">*Lastname is required</small>
 
-              <div class="form-outline mb-4">
+              <div class="form-outline mb-4" [class.error]="signupForm.controls['email'].dirty && signupForm.hasError('required', 'email')">
                 <label class="form-label" for="typeEmailX-2">Email</label>
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg"
-                  placeholder="example@email.com" /><br>
-
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="security">Security Question</label>
-                    <input type="security" id="security" class="form-control form-control-lg" placeholder="What is your favourite pet?" />
-                  </div>
-
+                <input formControlName="email" id="typeEmailX-2" class="form-control form-control-lg"
+                  placeholder="example@email.com" type="email" /><br>
               </div>
-              <div class="form-outline mb-4">
-                <label class="form-label" for="typePassword2">Password</label>
-                <input type="password" id="typePassword2" class="form-control form-control-lg" />
+              <small *ngIf= "signupForm.controls['email'].dirty && signupForm.hasError('pattern', 'email')" class="text-danger">*Correct email patter  is required</small>
+              <small *ngIf= "signupForm.controls['email'].dirty && signupForm.hasError('required','email')" class="text-danger">*Email is required</small>
+
+              <div class="form-outline mb-4" [class.error]="signupForm.controls['username'].dirty && signupForm.hasError('required', 'username')">
+                <label class="form-label" for="username">Username</label>
+                <input formControlName="username" type="text" id="username" class="form-control form-control-lg" placeholder="username" />
               </div>
-              <div class="form-outline mb-4">
-                <label class="form-label" for="typePassword3">Confirm Password</label>
-                <input type="password" id="typePassword3" class="form-control form-control-lg" />
+              <small *ngIf= "signupForm.controls['username'].dirty && signupForm.hasError('required', 'username')" class="text-danger">*Username is required</small>
+
+              <div class="form-outline mb-4" [class.error]= "signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')">
+                <label class="form-label" for="password">Password</label>
+                <input formControlName="password" type="password" id="password" class="form-control form-control-lg" />
+              </div>
+              <small *ngIf= "signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
+              <div class="form-outline mb-4" [class.error]="signupForm.controls['confirmPassword'].dirty && signupForm.hasError('required', 'confirmPassword')">
+                <label class="form-label" for="confirmPassword">Confirm Password</label>
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" class="form-control form-control-lg" />
                 <span id='message'></span>
               </div>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">
+              <small *ngIf= "signupForm.controls['confirmPassword'].dirty && signupForm.hasError('required', 'confirmPassword')" class="text-danger">*onfirmation of Password is required</small>
+              <button (click)="onSignUp()"ype="submit" class="btn btn-primary btn-lg btn-block" >
                 SIGNUP
               </button>
               <br><br>
               <div class="header__center">OR</div>
 
               <div class="social-links">
-                <i class="fa fa-twitter" style="font-size:36px"></i>
-                <i class="fa fa-envelope" style="font-size:36px"></i>
-                <i class="fa fa-linkedin-square" style="font-size:36px"></i>
-              </div>
+                <!-- <i class="fa fa-twitter" style="font-size:36px"></i> -->
+                <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=support@SchoolLog.com" target="_blank"><i class="fa fa-envelope" style="font-size:36px"></i></a>
+                <!-- <i class="fa fa-linkedin-square" style="font-size:36px"></i> -->
+                </div>
+
               <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" href="login">LOGIN</a>
             </form>
-            <!--</form> -->
+       
           </div>
         </div>
       </div>

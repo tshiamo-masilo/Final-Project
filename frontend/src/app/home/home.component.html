@@ -1,103 +1,104 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
 <!-- ICON -->
-<div class="image" id="icon" style="display: block"></div>
+<div class="image w3-animate-top" id="icon" style="display: block"></div>
 <!-- /ICON -->
+
 
 <!-- SEARCH BAR -->
 <div id="cover" style="z-index: 1000">
-  <form method="get" action="">
-    <div class="tb">
-      <div class="td">
-        <input type="text" placeholder="Search Schools" required />
-      </div>
-      <div onclick="myFunction()" class="td" id="s-cover">
-        <button aria-label="Aria Name" type="submit">
+
+  <div class="tb">
+
+    <div class="td">
+      <input type="text" placeholder="Search Schools" id="searchbar" onclick="displayFunction()"
+        [(ngModel)]="schoolFilter.Institution_Name">
+    </div>
+
+    <!-- <div class="td" id="s-cover">
+        <button aria-label="Aria Name" type="submit" return="false">
           <div id="s-circle"></div>
           <span></span>
         </button>
-      </div>
-    </div>
-  </form>
+      </div> -->
+  </div>
+
   <br />
 </div>
 <!-- /SEARCH BAR -->
 
+
 <!-- FILTER BAR -->
-<div id="filter" style="display: none">
-  <div class="dropdown show" id="filterbuttons">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink2"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Province
-    </a>
-
-    <div
-      class="dropdown-menu"
-      aria-labelledby="dropdownMenuLink"
-      id="dropdownmenu"
-    >
-      <a class="dropdown-item" href="#">Gauteng</a>
-      <a class="dropdown-item" href="#">Eastern Cape</a>
-      <a class="dropdown-item" href="#">Kwa-Zulu Natal</a>
-      <a class="dropdown-item" href="#">Limpopo</a>
-      <a class="dropdown-item" href="#">Free State</a>
-    </div>
+<div id="filter" style="display:none ;">
+  <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
+    <select>
+      <option value="">Province</option>
+      <option value="">Gauteng</option>
+      <option value="">Eastern Cape</option>
+      <option value="">Kwa-Zulu Natal</option>
+      <option value="">Limpopo</option>
+      <option value="">Free State</option>
+    </select>
   </div>
 
-  <div class="dropdown show" id="filterbuttons">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      City/Town
-    </a>
-
-    <div
-      class="dropdown-menu"
-      aria-labelledby="dropdownMenuLink"
-      id="dropdownmenu"
-    >
-      <a class="dropdown-item" href="#">Johannesburg</a>
-      <a class="dropdown-item" href="#">Pretoria</a>
-      <a class="dropdown-item" href="#">City of Tshwane</a>
-      <a class="dropdown-item" href="#">Soweto </a>
-      <a class="dropdown-item" href="#">Alberton</a>
-    </div>
-  </div>
-  <div class="dropdown show" id="filtergeo">
-    <a
-      class="btn btn-secondary"
-      href="#"
-      role="button"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Check My <br />
-      Location
-    </a>
+  <div class="w3-animate-top custom-select" role="button" id="dropdownLink" style="width: 300px">
+    <select [(ngModel)]="suburbFilter.Suburb">
+      <option value="">City/Town</option>
+      <option value="Johannesburg">Johannesburg</option>
+      <option value="Pretoria">Pretoria</option>
+      <option value="Benoni">Benoni</option>
+      <option value="Soweto">Soweto</option>
+      <option value="Alberton">Alberton</option>
+      <option value="Randburg">Randburg</option>
+      <br>
+    </select>
   </div>
 </div>
+
 <!-- /FILTER BAR -->
 
 <!-- SCHOOL CARDS -->
-<div id="sections" style="display: none;" >
-  <div class="col">
-    <div class="card" *ngFor="let school of schools">
-      <div class="card-body">
+<div id="sections" style="display: none;" class=" w3-animate-bottom">
+  <div class="row">
 
+    <div class="card schools" *ngFor="let name of schools | filterBy: schoolFilter | filterBy: suburbFilter
+        | paginate: {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count};
+          let i = index
+         ">
+      <div class="card-body">
+        <h5 class="card-title ">{{ name.Institution_Name }}</h5>
+        <hr><br>
+        <div class="card-text ">
+          <div class="item "></div>{{ name.Sector }}
+          {{ name.Phase }}<br>
+          Address: {{ name.StreetAddress }}<br>
+          Email: {{name.E_Mail}}<br>
+          Mobile No: {{ name.cellno }}<br>
+          National Emis No: {{ name.NatEmis }}<br>
+          {{name.Suburb}}
+          <a class="btn btn-primary" href="application">Apply</a>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 <!-- /SCHOOL CARDS -->
+
+
+
+
+<div class="d-flex justify-content-center" id="paginate">
+
+  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+  </pagination-controls>
+
+</div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

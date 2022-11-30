@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: "https://localhost:8080/",
-  defaultPassword:"p@ssword1"
-};
+  apiUrl: 'http://localhost:8080',
+
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
