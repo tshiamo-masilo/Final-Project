@@ -20,7 +20,7 @@ public class StreamController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Stream> getStreamById(@PathVariable int id) {
+    public ResponseEntity<Stream> getStreamById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.getStreamById(id));
     }
 
@@ -30,17 +30,14 @@ public class StreamController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteRequirementById(@PathVariable int id) {
+    public ResponseEntity<String> deleteRequirementById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.deleteStreamById(id));
     }
 
     @DeleteMapping("/deleteAll")
     public ResponseEntity<String> deleteStream() {
-        return ResponseEntity.ok(repository.deleteAllStream());
+        return ResponseEntity.ok(repository.deleteAllStreams());
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Stream> updateRequirement(@RequestBody Stream requirements) {
-        return ResponseEntity.ok(repository.updateStream(requirements));
-    }
+
 }

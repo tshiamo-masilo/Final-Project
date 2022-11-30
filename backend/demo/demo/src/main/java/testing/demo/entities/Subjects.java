@@ -25,5 +25,5 @@ public class Subjects {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fkSubjectId",referencedColumnName = "subjectId")
-    private List<Stream> stream;
+    private List<Requirements> Requirements;
 }
