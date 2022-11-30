@@ -8,8 +8,6 @@ function displayFunction() {
   document.getElementById("paginate").style.visibility="visible";
 }
 
-
-
 let mybutton = document.getElementById("myBtn");
 
 function topFunction() {

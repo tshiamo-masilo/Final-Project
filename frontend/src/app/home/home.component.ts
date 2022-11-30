@@ -50,6 +50,18 @@ export class HomeComponent implements OnInit {
 
   }
 
+  displayFunction() { 
+    this.getElement("icon").style.display ="none";
+    this.getElement("icon").style.display ="block";
+    this.getElement("sections").style.display ="block";
+    this.getElement("myBtn").style.display ="block";
+    this.getElement("paginate").style.visibility="visible";
+  }
+
+  getElement(id: string): (any | null) {
+    return document.getElementById(id);
+}
+
   //  --/PAGINATE--
 }
 

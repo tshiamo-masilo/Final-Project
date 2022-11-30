@@ -34,7 +34,6 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./user/token.interceptor";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
