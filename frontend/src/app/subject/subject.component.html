@@ -1,7 +1,7 @@
-<div class="container">
-    <h3>High School Subject</h3>
+<div class="container" id="contain">
+    <h3>Add Subjects</h3>
 
-    <form  (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="requirements">
 
             <div class="row">

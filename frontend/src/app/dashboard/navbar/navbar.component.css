@@ -1,4 +1,4 @@
-.header{
+.header {
     background: url("http://a.top4top.net/p_397znzmu1.png") center center fixed;
     color: #FFF;
     height: 100vh;
@@ -10,18 +10,18 @@
     background-size: cover;
 }
 
-a{
+a {
     color: #FFF;
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: rgb(0, 217, 255);
-    
+
 }
 
 
-#navbar ul{
+#navbar ul {
     background-color: #2E3542;
     height: 100vh;
     left: 0;
@@ -29,24 +29,21 @@ a:hover{
     justify-content: space-between;
     color: white;
     text-align: center;
+    margin-top: 0px;
 }
 
-.logout{
+.logout {
     text-decoration: underline;
     color: red;
-    
+
 }
 
-.admin i{
-    font-size:40px ;
+.admin i {
+    font-size: 40px;
     float: center;
-    margin:auto;
+    margin: auto;
 }
 
-.admin{
+.admin {
     padding-top: 40px;
 }
-
-
-
-  

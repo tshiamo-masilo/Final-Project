@@ -11,13 +11,13 @@ import { RequirementsServicesService } from './services/requirements-services.se
 export class RequirementsComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  streamlist: any[] = ["Select a stream"]
+  streamlist: any[] = ["Select a stream","html"]
   streamlist2: any[] = []
   stream: any;
   selectedStream: any = '';
   num1: any = 0;
 
-  subjectlist: any[] = ["Select a subject"]
+  subjectlist: any[] = ["Select a subject","css"]
   subjectlist2: any[] = []
   subject: any;
   selectedSubject: any = '';

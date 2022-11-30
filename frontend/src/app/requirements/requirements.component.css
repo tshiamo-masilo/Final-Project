@@ -5,6 +5,7 @@
     color: WHITE;
     align-items: center;
     border-radius: 5px;
+    width: 70vw;
 }
 input {
     margin-bottom: 5%;
