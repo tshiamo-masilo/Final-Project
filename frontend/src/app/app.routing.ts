@@ -1,3 +1,4 @@
+import { LearnerComponent } from './dashboard/learner/learner.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
@@ -11,6 +12,10 @@ import { SignupComponent } from './user/signup';
 import { ForgotComponent } from './user/forgot';
 import { ApplicationComponent } from './application';
 import { NavbarComponent } from './dashboard/navbar';
+import { StreamsComponent } from './streams';
+import { RequirementsComponent } from './requirements';
+import { SubjectComponent } from './subject/subject.component';
+import { LoginGuard } from './user/guards/login.guard';
 
 
 
@@ -23,14 +28,22 @@ import { NavbarComponent } from './dashboard/navbar';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'learner', component: LearnerComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'account', component: AccountComponent },
+    { path: 'account', component: AccountComponent, canActivate: [LoginGuard], },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
-    { path: 'application', component: ApplicationComponent },
-    { path: 'navbar', component: NavbarComponent },
+    { path: 'application', component: ApplicationComponent }, 
+    { path: 'streams', component: StreamsComponent },
+    { path: 'xms', component: RequirementsComponent },
+    { path: 'subjects', component: SubjectComponent },
+    {
+        path: 'navbar', component: NavbarComponent, children: [
+
+        ]
+    },
 
 
     // otherwise redirect to home

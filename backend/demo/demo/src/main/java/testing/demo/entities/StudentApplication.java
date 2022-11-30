@@ -1,20 +1,36 @@
 package testing.demo.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "Students_Application")
+@Table(name = "StudentsApplication")
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class StudentApplication {
     @Id
-    @GeneratedValue()
-    @Column()
-    private Long ApplicationId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "StudentId")
+    private Long Id;
     private Status status;
+    private String FullName;
+    private String Identification;
+    private String Gender;
+    private Date DateOfBirth;
+    private String Nationality;
+    private String HomeLanguage;
+    private String MobileNumber;
+    private String GuardianFullName;
+    private String GuardianEmail;
+    private String GuardianPhoneNumber;
+    private String Address;
+    private String code;
+
 }

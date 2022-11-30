@@ -52,26 +52,73 @@ select:focus {
   outline: none;
 }
 
-button {
+/* -------------BUTTON STYLES---------------- */
+
+.custom-select {
   position: relative;
-  display: block;
-  width: 84px;
-  height: 96px;
-  cursor: pointer;
+  display: inline-block;
 }
 
-button span {
-  position: absolute;
-  top: 54px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
+
+
+.select-selected {
+  background-color: #d9d9d9;
 }
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: black;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #d9d9d9;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+    border-radius: 5px;
+  margin: 2px;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* /CUSTOM */
+
+
 
 #filter {
   margin: auto;
@@ -79,8 +126,7 @@ button span {
 }
 
 
-#dropdownMenuLink,
-#dropdownMenuLink2 {
+/* #dropdownLink {
   width: 200px;
   margin: 5px;
   background-color: #D9D9D9;
@@ -90,56 +136,13 @@ button span {
   padding: 10px;
   font-weight: 600;
   align-items: center;
-}
-
-
-
-#filterbuttons {
   display: inline-block;
-  font-weight: 600;
-
-}
-
-#filtergeo {
-  display: inline-block;
-}
-
-#filtergeo a {
-  width: 200px;
-  margin: 5px;
-  background-color: #D9D9D9;
-  color: black;
-  font-size: 15px;
-  border-radius: 30px;
-  padding: 0px;
-  font-weight: 600
-}
+  border: 0px;
+} */
 
 
-.dropdown-item {
-  font-weight: 600;
-}
 
-.dropdown-item:hover {
-  color: #314e83;
-  background-color: #D9D9D9;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  font-size: 15px;
-  width: 200px;
-  border-radius: 30px;
-  background-color: #D9D9D9;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  --bs-dropdown-link-hover-bg: #D9D9D9;
-  font-weight: 600;
-}
-
-
+/* -------------/BUTTON STYLES---------------- */
 
 
 ::placeholder {
@@ -248,6 +251,7 @@ button span:after {
   background-color:#D9D9D9;
   border-radius: 15px;
   width: 40%;
+  box-shadow: 5px 9px 8px rgba(46, 53, 66, 0.5);
 }
 
 .card-text{
@@ -263,9 +267,10 @@ button span:after {
   width: 30%;
   background-color: #2E3542;
   border-radius: 30px;
-  border-color: #D9D9D9;
+  border-color: #2E3542;
   color: white;
   float: right;
+  box-shadow: 3px 7px 8px rgba(46, 53, 66, 0.4);
 }
 
 .isDisabled {

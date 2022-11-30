@@ -2,15 +2,7 @@ import { Component,OnInit, } from '@angular/core';
 import schoolsData from '../schools.json';
 
 
-interface School {
-  NatEmis: Number;
-  Institution_Name: String;
-  Sector: String;
-  Phase: String;
-  StreetAddress: String;
-  cellno: String;
-  E_Mail: String;
-}
+
 
 @Component({
   selector: 'app-home',
@@ -20,21 +12,18 @@ interface School {
 
 
 
-
 export class HomeComponent implements OnInit {
-
 
   schools: any[] = schoolsData;
   schoolFilter: any = { Institution_Name: '' };
- 
-
+  suburbFilter: any = {Suburb: ''};
 
   //  --PAGINATE--
   
   POSTS: any;
   page: number = 1;
   count: number = 0;
-  tableSize: number = 4;
+  tableSize: number = 20;
   tableSizes: any = [3, 6, 9, 12];
 
   ngOnInit(): void {
@@ -63,5 +52,14 @@ export class HomeComponent implements OnInit {
 }
 
   //  --/PAGINATE--
+
+  transform(list: any[], value: string) {
+  
+
+    return value ? list.filter(file => file.Suburb === value) : list;
+  }
+
+
+
 }
 
