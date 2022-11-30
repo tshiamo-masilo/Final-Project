@@ -1,1 +1,0 @@
-export * from './high-scholl-subjects.component'
