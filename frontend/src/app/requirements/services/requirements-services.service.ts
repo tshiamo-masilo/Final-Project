@@ -8,6 +8,7 @@ export class RequirementsServicesService {
   BaseUrl = 'http://localhost:8080'
   //saving requirement to requirements table in database
   submittingRequirements(value: any) {
+    console.log(value)
     return this.http.post(this.BaseUrl + '/requirements/save', value);
   }
   getStreams(){

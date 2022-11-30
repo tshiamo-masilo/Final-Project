@@ -1,3 +1,5 @@
+import { LearnerComponent } from './dashboard/learner/learner.component';
+import { HighSchollSubjectsComponent } from './subjects/high-scholl-subjects.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
@@ -13,8 +15,7 @@ import { ApplicationComponent } from './application';
 import { NavbarComponent } from './dashboard/navbar';
 import { StreamsComponent } from './streams';
 import { RequirementsComponent } from './requirements';
-import { JuniorSubjectsComponent } from './junior-subjects';
-import { HighSchollSubjectsComponent } from './high-scholl-subjects';
+import { SubjectComponent } from './subject/subject.component';
 
 
 
@@ -27,18 +28,22 @@ import { HighSchollSubjectsComponent } from './high-scholl-subjects';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'learner', component: LearnerComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'account', component: AccountComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'forgot', component: ForgotComponent },
-    { path: 'application', component: ApplicationComponent },
-    { path: 'navbar', component: NavbarComponent },
-    {path:'streams', component:StreamsComponent },
-    {path:'requirements', component: RequirementsComponent},
-    {path:'jsubjects',component:JuniorSubjectsComponent},
-    {path:'hsubjects',component:HighSchollSubjectsComponent},
+    { path: 'application', component: ApplicationComponent }, 
+    { path: 'streams', component: StreamsComponent },
+    { path: 'requirements', component: RequirementsComponent },
+    { path: 'subjects', component: SubjectComponent },
+    {
+        path: 'navbar', component: NavbarComponent, children: [
+
+        ]
+    },
 
 
     // otherwise redirect to home
