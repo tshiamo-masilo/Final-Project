@@ -5,12 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opsgenie.core.layer.Service;
 
+import org.springframework.stereotype.Component;
 import testing.demo.repositories.StudentApplicationRepo;
 import testing.demo.entities.StudentApplication;
 
 import java.util.List;
 
 @Service
+@Component
 public class ApplicationService {
     @Autowired
     StudentApplicationRepo repository;
@@ -40,8 +42,21 @@ public class ApplicationService {
     public StudentApplication updateStudent(StudentApplication student) {
 
         StudentApplication existing = repository.findById(student.getId()).get();
-        // updation pending
+        existing.setFullName(student.getFullName());
+        existing.setIdentification(student.getIdentification());
+        existing.setGender(student.getGender());
+        existing.setDateOfBirth(student.getDateOfBirth());
+        existing.setNationality(student.getNationality());
+        existing.setHomeLanguage(student.getHomeLanguage());
+        existing.setMobileNumber(student.getMobileNumber());
+        existing.setGuardianFullName(student.getGuardianFullName());
+        existing.setGuardianEmail(student.getGuardianEmail());
+        existing.setGuardianPhoneNumber(student.getGuardianPhoneNumber());
+        existing.setAddress(student.getAddress());
+        existing.setCode(student.getCode());
+
         return existing;
+
     }
 
 }
