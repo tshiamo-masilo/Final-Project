@@ -36,9 +36,14 @@ export class AppComponent implements OnInit {
   }
 
   isLogin() {
+    console.log(this.token.getToken());
     return this.token.getToken();
   }
- 
+
+  onlogout(){
+    sessionStorage.clear();
+    location.reload();
+  }
     
 
 

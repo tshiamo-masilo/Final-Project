@@ -17,6 +17,7 @@ export class TokenService {
   }
 
   getToken() {
+    this.getFromSessionStorage();
     return this.jwtToken;
   }
 
