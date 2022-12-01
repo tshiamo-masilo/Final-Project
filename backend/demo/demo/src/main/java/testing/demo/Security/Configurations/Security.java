@@ -38,6 +38,11 @@ public class Security {
         this.secretKey = secretKey;
     }
 
+    /**
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -61,8 +66,8 @@ public class Security {
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-                })
-                .httpBasic(Customizer.withDefaults());
+                })               
+                    .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 
