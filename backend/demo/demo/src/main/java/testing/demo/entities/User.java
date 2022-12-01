@@ -37,8 +37,6 @@ public class User implements UserDetails {
 
     private String password;
 
-
-
     // Defining the roles
     @Column
     @Enumerated(EnumType.STRING)

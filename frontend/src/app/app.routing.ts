@@ -13,13 +13,24 @@ import { SignupComponent } from './user/signup';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'learner', component: LearnerComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
-    {path:'signup', component:SignupComponent},
+    { path: 'signup', component:SignupComponent},
     { path: 'account', component: AccountComponent, canActivate: [LoginGuard], },
     { path: 'login', component: LoginComponent },
-  
-    { path: 'userdetails', component: UserDetailsComponent },
+    { path: 'forgot', component: ForgotComponent },
+    { path: 'application', component: ApplicationComponent },
+    { path: 'streams', component: StreamsComponent },
+    { path: 'xms', component: RequirementsComponent },
+    { path: 'subjects', component: SubjectComponent },
+// What are we doing here?
+//     {
+//         path: 'navbar', component: NavbarComponent, children: [
+//
+//         ]
+//     },
+
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch: "full" }

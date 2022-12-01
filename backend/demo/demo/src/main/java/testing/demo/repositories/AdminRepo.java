@@ -7,5 +7,5 @@ import testing.demo.entities.Admin;
 import java.util.Optional;
 
 public interface AdminRepo extends JpaRepository<Admin, Long> {
-    Optional<Object> findById(Admin admin);
+    Optional<Admin> findById(Long id);
 }

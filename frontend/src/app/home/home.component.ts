@@ -1,29 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit, } from '@angular/core';
 import schoolsData from '../schools.json';
 
-interface School {  
-        NatEmis: Number ;
-        Institution_Name: String ;
-        Status: String ;
-        Sector: String ;
-        Phase: String ;
-        EIRegion: String ;
-        EIDistrict: String;
-        Addressee: String;
-        Town_City: String;
-        StreetAddress: String ;
-        PostalAddress: String;
-        // GIS_Longitude: Number;
-        // GIS_Latitude: Number ;
-        // Telephone: String;
-        // Facsimile: String ;
-        cellno: String ;
-        E_Mail: String ;
-        // RegistrationDate: String ;
-        Urban_Rural: String;
-        Full_Service_School: String;
-        School_Prototype_size: String ;
-}  
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -31,12 +11,43 @@ interface School {
 })
 
 
+
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  schools: any[] = schoolsData;
+  schoolFilter: any = { Institution_Name: '' };
+  suburbFilter: any = {Suburb: ''};
+
+  //  --PAGINATE--
+  
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 20;
+  tableSizes: any = [3, 6, 9, 12];
+
   ngOnInit(): void {
   }
 
-  schools:School[] = schoolsData;  
+  onTableDataChange(event: any) {
+    this.page = event;
+
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+
+  }
+
+  //  --/PAGINATE--
+
+  transform(list: any[], value: string) {
+  
+
+    return value ? list.filter(file => file.Suburb === value) : list;
+  }
+
+
 
 }
+

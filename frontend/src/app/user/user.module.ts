@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { ForgotComponent } from './forgot/forgot.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

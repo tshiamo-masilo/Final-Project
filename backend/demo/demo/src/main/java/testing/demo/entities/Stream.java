@@ -4,24 +4,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "streams")
+@Table(name = "Streams")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stream {
     @Id
-    @GeneratedValue()
-    @Column()
-    private int id;
-    private String StreamId;
-    private String StreamName;
-    private String SchoolId;
-    private String Subject1;
-    private String Subject2;
-    private String Subject3;
-    private String Subject4;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="streamId")
+    private Long id;
+    private String streamName;
+    private String description;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fkStreamId",referencedColumnName = "streamId")
+    private List<Requirements> requirements;
+
 
 }

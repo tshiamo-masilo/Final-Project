@@ -1,4 +1,4 @@
-package testing.demo.entities;
+package testing.demo.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

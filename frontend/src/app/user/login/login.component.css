@@ -55,3 +55,12 @@ button{
     border-radius: 30px;
     border-color: #333;
 }
+
+.social-links a{
+    color: white;
+    margin: auto;
+}
+
+.social-links a:hover{
+    color: rgb(0, 150, 142);
+}
