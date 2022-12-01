@@ -23,7 +23,7 @@ public class User implements UserDetails {
     private Long id;
 
     private String name;
-    
+
     private String surname;
 
     @Builder.Default
@@ -36,8 +36,6 @@ public class User implements UserDetails {
     private String username;
 
     private String password;
-
-    
 
     // Defining the roles
     @Column
@@ -80,5 +78,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.enabled;
     }
-
 }

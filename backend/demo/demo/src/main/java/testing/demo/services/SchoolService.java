@@ -2,7 +2,7 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.demo.Repository.SchoolRepo;
+import testing.demo.repositories.SchoolRepo;
 import testing.demo.entities.School;
 
 import java.util.List;

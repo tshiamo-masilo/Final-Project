@@ -1,9 +1,5 @@
 package testing.demo.dtos;
 
-
-
-
-
 import lombok.*;
 
 @Data

@@ -16,6 +16,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import lombok.var;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import testing.demo.security.filters.AuthorizationFilter;
 import testing.demo.security.filters.JsonObjectAuthenticationFilter;
 import testing.demo.security.handler.AuthSuccesHandler;
@@ -49,7 +52,7 @@ public class Security {
                     try {
                         auth
                                 .antMatchers("user").hasAnyRole(Role.ADMIN.name(), Role.USER.name())
-                                .antMatchers("admin").hasRole(Role.ADMIN.name())
+                                .antMatchers("user/addUser").permitAll()
                                 .anyRequest().permitAll()
                                 .and()
                                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

@@ -15,4 +15,7 @@ export class UserService {
   login(loginCredentials: LoginCredentials): Observable<TokenResponse> {
     return this.http.post<TokenResponse>(`${environment.apiUrl}/login`, loginCredentials);
   }
+  userLogout(): Observable<TokenResponse> {
+    return this.http.get<TokenResponse>(`${environment.apiUrl}` + 'logout');
+  }
 }

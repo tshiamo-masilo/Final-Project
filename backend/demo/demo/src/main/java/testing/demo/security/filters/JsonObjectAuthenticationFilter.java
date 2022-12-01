@@ -10,8 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import testing.demo.dtos.LoginCredentialsDto;
 
-import testing.demo.entities.LoginCredentials;
 
 public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -40,5 +40,4 @@ public class JsonObjectAuthenticationFilter extends UsernamePasswordAuthenticati
             throw new RuntimeException("String msg :" + e.getMessage(), e);
         }
     }
-
 }

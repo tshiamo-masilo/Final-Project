@@ -3,7 +3,7 @@ package testing.demo.services;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import testing.demo.entities.RefreshToken;
+import testing.demo.dtos.RefreshToken;
 
 import java.util.Optional;
 

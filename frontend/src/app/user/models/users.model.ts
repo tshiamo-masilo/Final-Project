@@ -1,9 +1,8 @@
-export interface UsersInfor{
-    firstname :string;
-    lastname :string;
-    username:string;
+export interface UsersInfo {
+    name :string;
+    surname :string;
     email : string ;
-    securityquesction  :string;
+    username:string;
     password :string;
     confirmpassword : string;
 

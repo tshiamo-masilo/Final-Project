@@ -1,6 +1,7 @@
-package testing.demo.entities;
+package testing.demo.dtos;
 
 import lombok.*;
+import testing.demo.entities.User;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;

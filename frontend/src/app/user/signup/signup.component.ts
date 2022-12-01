@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../services/signup.service';
-import { UsersInfor } from '../models/users.model';
-import ValidateForm from '../Validation/validation';
+
 
 @Component({
   selector: 'app-signup',
@@ -13,10 +12,12 @@ import ValidateForm from '../Validation/validation';
 })
 export class SignupComponent implements OnInit {
 
-  users !: UsersInfor[];
+
   
    
   public signupForm !: FormGroup;
+  isSuccessful = false;
+  isSignUpFailed = false;
 
   constructor( private formbuilder : FormBuilder, private router :Router, private apiSignUp :SignupService){}
   
@@ -41,16 +42,12 @@ export class SignupComponent implements OnInit {
 
     this.apiSignUp.addUser(this.signupForm.value).subscribe((res: any) => {
        this.signupForm = res;
-       this.signupForm.reset();
+       console.log(res);
+       this.isSuccessful=true;
+       this.isSignUpFailed = false;
        this.router.navigate(['signIn']);
+    }, error=>{
+      this.isSignUpFailed = true
     });
-  }
-  onSignUp(){
-    if(this.signupForm.valid){
-      alert("You have successfuly Registered As A School Log User!")
-    }else{
-      ValidateForm.validateAllformfields(this.signupForm);
-      alert("Something went wrong please !!")
-    }
   }
 }
