@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import testing.demo.entities.Requirements;
 
-public interface RequirementsRepo extends JpaRepository<Requirements, Integer> {
-    Requirements findById(int id);
+import java.util.Optional;
+
+public interface RequirementsRepo extends JpaRepository<Requirements, Long> {
+    Optional<Requirements> findById(Long id);
 }

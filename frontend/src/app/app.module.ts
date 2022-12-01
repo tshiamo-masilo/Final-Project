@@ -10,9 +10,6 @@ import { AppComponent } from './app.component';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-
-
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -22,15 +19,16 @@ import { AccountComponent } from './account/account.component';
 import { ApplicationComponent } from './application/application.component';
 import { SchoolComponent } from './school/school.component';
 
-// import { LoginComponent } from './user/login/login.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { DashboardComponent } from '../app/admin-dashboard/dashboard/dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+import { SubjectComponent } from './subject/subject.component';
+import { RequirementsComponent } from './requirements';
+import { StreamsComponent } from './streams';
+import { NavbarComponent } from './navbar';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -42,18 +40,15 @@ import { HttpClientModule } from '@angular/common/http';
     AccountComponent,
     ApplicationComponent,
     SchoolComponent,
-    NavbarComponent,
-    SignupComponent,
-    LoginComponent,
     StreamsComponent,
     RequirementsComponent,
     SubjectComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MdbCollapseModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     HttpClientModule,
@@ -61,7 +56,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     UserModule,
     AdminDashboardModule,
-    // FilterPipeModule,
+    DashboardModule,
+    FilterPipeModule,
+    MdbCollapseModule,
     appRoutingModule,
   ],
   bootstrap: [AppComponent]

@@ -1,15 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { Token } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
 } from "@angular/forms";
 import { environment } from "environments/environment";
-import { LoginService } from "./user/services/login.service";
-import { TokenService } from "./user/services/token.service";
 
 @Component({
   selector: "app-root",
@@ -24,7 +18,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     public http: HttpClient,
-    private token: TokenService,
     private formBuilder: FormBuilder
   ) {}
   ngOnInit(): void {}
@@ -34,17 +27,4 @@ export class AppComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
-  isLogin() {
-    console.log(this.token.getToken());
-    return this.token.getToken();
-  }
-
-  onlogout(){
-    sessionStorage.clear();
-    location.reload();
-  }
-
-
-
 }
