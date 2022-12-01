@@ -10,11 +10,10 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
+import testing.demo.dtos.ApiResponse;
 import testing.demo.dtos.RegistrationDto;
-import testing.demo.entities.ApiResponse;
 import testing.demo.entities.Role;
 import testing.demo.services.UserService;
-import testing.demo.entities.ApiResponse;
 import testing.demo.entities.User;
 
 @RestController

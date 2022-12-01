@@ -26,11 +26,11 @@ public class RequirementsService {
         return requirementsRepo.findAll();
     }
 
-    public Requirements getRequirementsById(int id) {
-        return requirementsRepo.findById(id);
+    public Requirements getRequirementsById(Long id) {
+        return requirementsRepo.findById(id).get();
     }
 
-    public String deleteRequirementsById(int id) {
+    public String deleteRequirementsById(Long id) {
         requirementsRepo.deleteById(id);
         return "Requirement with Id:" + id + " is deleted";
     }
@@ -41,15 +41,16 @@ public class RequirementsService {
     }
 
     public Requirements updateRequirements(Requirements requirements) {
-        Requirements existing = requirementsRepo.findById(requirements.getId());
-        existing.setRequirementsId(requirements.getRequirementsId());
-        existing.setStreamId(requirements.getStreamId());
-        existing.setMaths(requirements.getMaths());
-        existing.setNaturalScience(requirements.getNaturalScience());
-        existing.setTechnology(requirements.getTechnology());
-        existing.setEconomicManagementScience(requirements.getEconomicManagementScience());
-        existing.setArtAndCulture(requirements.getArtAndCulture());
-        existing.setSocialScience(requirements.getSocialScience());
-        return existing;
+        // Requirements existing = requirementsRepo.findById(requirements.getId());
+        // existing.setRequirementsId(requirements.getRequirementsId());
+        // existing.setStreamId(requirements.getStreamId());
+        // existing.setMaths(requirements.getMaths());
+        // existing.setNaturalScience(requirements.getNaturalScience());
+        // existing.setTechnology(requirements.getTechnology());
+        // existing.setEconomicManagementScience(requirements.getEconomicManagementScience());
+        // existing.setArtAndCulture(requirements.getArtAndCulture());
+        // existing.setSocialScience(requirements.getSocialScience());
+        // return existing;
+        return null;
     }
 }

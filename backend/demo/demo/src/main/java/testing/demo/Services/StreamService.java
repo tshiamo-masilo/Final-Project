@@ -39,14 +39,15 @@ public class StreamService {
     }
 
     public Stream updateStream(Stream stream) {
-        Stream existing = streamsRepo.findById(stream.getId());
-        existing.setStreamName(stream.getStreamName());
-        existing.setStreamId(stream.getStreamId());
-        existing.setSchoolId(stream.getSchoolId());
-        existing.setSubject1(stream.getSubject1());
-        existing.setSubject2(stream.getSubject2());
-        existing.setSubject3(stream.getSubject3());
-        existing.setSubject4(stream.getSubject4());
-        return existing;
+        // Stream existing = streamsRepo.findById(stream.getId());
+        // existing.setStreamName(stream.getStreamName());
+        // existing.setStreamId(stream.getStreamId());
+        // existing.setSchoolId(stream.getSchoolId());
+        // existing.setSubject1(stream.getSubject1());
+        // existing.setSubject2(stream.getSubject2());
+        // existing.setSubject3(stream.getSubject3());
+        // existing.setSubject4(stream.getSubject4());
+        // return existing;
+        return null;
     }
 }

@@ -21,7 +21,7 @@ public class RequirementsController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Requirements> getRequirementsById(@PathVariable int id) {
+    public ResponseEntity<Requirements> getRequirementsById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.getRequirementsById(id));
     }
 
@@ -31,7 +31,7 @@ public class RequirementsController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteRequirementById(@PathVariable int id) {
+    public ResponseEntity<String> deleteRequirementById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.deleteRequirementsById(id));
     }
 
