@@ -7,6 +7,7 @@ body {
     background-attachment: fixed;
     height: 100vh;
   }
-.error input{ 
-    border: 1px solid red; 
+
+  .error{
+    border-radius:red ;
   }

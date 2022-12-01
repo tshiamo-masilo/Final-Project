@@ -20,7 +20,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.var;
 import testing.demo.services.UserService;
-
 import org.springframework.beans.factory.annotation.Value;
 
 @Component

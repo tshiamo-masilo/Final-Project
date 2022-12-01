@@ -38,7 +38,6 @@ export class TokenService {
     this.decodeToken();
     return this.decodedToken ? this.decodedToken.exp : null;
   }
- 
 
   isTokenExpired(): boolean {
     const expiryTime: number = this.getExpiryTime();

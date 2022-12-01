@@ -46,7 +46,7 @@
                 <span id='message'></span>
               </div>
               <small *ngIf= "signupForm.controls['confirmPassword'].dirty && signupForm.hasError('required', 'confirmPassword')" class="text-danger">*onfirmation of Password is required</small>
-              <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-lg btn-block" >
+              <button  type="submit" class="btn btn-primary btn-lg btn-block" >
                 SIGNUP
               </button>
               <br><br>
@@ -60,7 +60,7 @@
                 <i class="fa fa-envelope" style="font-size:36px"></i>
                 <i class="fa fa-linkedin-square" style="font-size:36px"></i>
               </div>
-              <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" routerLink="/signIn">LOGIN</a>
+              <p class="mt-3">Already a user?</p> <a class="mt-3" id="links" routerLink="/login">LOGIN</a>
             </form>
        
           </div>

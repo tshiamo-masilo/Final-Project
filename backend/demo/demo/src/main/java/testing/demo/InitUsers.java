@@ -24,7 +24,7 @@ public class InitUsers implements CommandLineRunner {
         if (!userService.findUserByEmail("admin@test.com").isPresent()) {
             var u = userService.createUser(User.builder()
                     .name("Admin")
-                    .surname("Mgwatyu")
+                    .surname("Admin")
                     .username("admin")
                     .email("admin@test.com")
                     .password(passwordEncoder.encode("test123"))
@@ -36,7 +36,7 @@ public class InitUsers implements CommandLineRunner {
         if (!userService.findUserByEmail("user@test.com").isPresent()) {
             var u = userService.createUser(User.builder()
                     .name("User")
-                    .surname("tenza")
+                    .surname("User")
                     .username("user")
                     .email("user@test.com")
                     .password(passwordEncoder.encode("test123"))

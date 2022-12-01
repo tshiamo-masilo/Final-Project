@@ -2,20 +2,24 @@ package testing.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import testing.demo.entities.Requirements;
 import testing.demo.repositories.RequirementsRepo;
+import testing.demo.entities.Requirements;
 
 import java.util.List;
 
 @Service
 public class RequirementsService {
-
     @Autowired
     private RequirementsRepo requirementsRepo;
 
     public Requirements saveRequirements(Requirements requirements) {
         return requirementsRepo.save(requirements);
+        // Requirements requirements1 = requirements.build(requirements.getId(),
+        // requirements.getStreamId(),requirements.getRequirementsId(),
+        // requirements.getMaths(),requirements.getNaturalScience(),
+        // requirements.getTechnology(),requirements.getEconomicManagementScience(),
+        // requirements.getArtAndCulture(),requirements.getSocialScience());
+
     }
 
     public List<Requirements> getAllRequirements() {

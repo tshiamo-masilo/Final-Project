@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../services/signup.service';
-import { UsersInfor } from '../models/users.model';
-import ValidateForm from '../Validation/validation';
+
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +12,7 @@ import ValidateForm from '../Validation/validation';
 })
 export class SignupComponent implements OnInit {
 
-  users !: UsersInfor[];
+
   
    
   public signupForm !: FormGroup;
@@ -50,13 +49,5 @@ export class SignupComponent implements OnInit {
     }, error=>{
       this.isSignUpFailed = true
     });
-  }
-  onSignUp(){
-    if(this.signupForm.valid){
-    
-    }else{
-      ValidateForm.validateAllformfields(this.signupForm);
-      
-    }
   }
 }

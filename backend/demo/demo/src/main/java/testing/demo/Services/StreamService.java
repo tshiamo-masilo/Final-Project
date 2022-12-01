@@ -1,15 +1,15 @@
 package testing.demo.services;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import testing.demo.entities.Stream;
 import testing.demo.repositories.StreamRepo;
+import testing.demo.entities.Stream;
 
 import java.util.List;
 
 @Service
 public class StreamService {
+    @Autowired
     private StreamRepo streamsRepo;
 
     public Stream saveStream(Stream stream) {
@@ -20,6 +20,9 @@ public class StreamService {
 
         return streamsRepo.findAll();
     }
+    // public List<Stream> getStream(String id){
+    // return streamsRepo.
+    // }
 
     public Stream getStreamById(int id) {
         return streamsRepo.findById(id);

@@ -1,6 +1,4 @@
-package testing.demo.dtos;
-
-import javax.persistence.Entity;
+package testing.demo.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class LoginCredentialsDto {
+public class LoginCredentials {
     private String username;
     private String password;
 }

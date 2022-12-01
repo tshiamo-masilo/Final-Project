@@ -1,4 +1,4 @@
-export interface UsersInfor{
+export interface UsersInfo {
     name :string;
     surname :string;
     email : string ;
