@@ -11,7 +11,7 @@ public class Admin implements Serializable {
     @Id
     @GeneratedValue()
     @Column()
-    private int id;
+    private Long id;
     private String Full_names;
     private int School_id;
     private String Email;
@@ -35,11 +35,11 @@ public class Admin implements Serializable {
         Employee_no = employee_no;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

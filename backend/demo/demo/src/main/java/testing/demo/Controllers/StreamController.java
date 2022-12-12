@@ -9,19 +9,21 @@ import testing.demo.entities.Stream;
 import testing.demo.services.StreamService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/stream")
 public class StreamController {
     @Autowired
     private StreamService repository;
+    
     @PostMapping("/save")
     public ResponseEntity<Stream> saveStream(Stream requirements) {
         return new ResponseEntity<>(repository.saveStream(requirements), HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Stream> getStreamById(@PathVariable int id) {
+    public ResponseEntity<Optional<Stream>> getStreamById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.getStreamById(id));
     }
 
@@ -31,7 +33,7 @@ public class StreamController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteRequirementById(@PathVariable int id) {
+    public ResponseEntity<String> deleteRequirementById(@PathVariable Long id) {
         return ResponseEntity.ok(repository.deleteStreamById(id));
     }
 
@@ -40,8 +42,5 @@ public class StreamController {
         return ResponseEntity.ok(repository.deleteAllStream());
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Stream> updateRequirement(@RequestBody Stream requirements) {
-        return ResponseEntity.ok(repository.updateStream(requirements));
-    }
+    
 }

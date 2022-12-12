@@ -4,15 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import testing.demo.entities.Requirements;
-import testing.demo.repositories.RequirementsRepo;
+import testing.demo.repositories.RequirementsRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RequirementsService {
 
     @Autowired
-    private RequirementsRepo requirementsRepo;
+    private RequirementsRepository requirementsRepo;
 
     public Requirements saveRequirements(Requirements requirements) {
         return requirementsRepo.save(requirements);
@@ -22,11 +23,11 @@ public class RequirementsService {
         return requirementsRepo.findAll();
     }
 
-    public Requirements getRequirementsById(int id) {
+    public Optional<Requirements> getRequirementsById(Long id) {
         return requirementsRepo.findById(id);
     }
 
-    public String deleteRequirementsById(int id) {
+    public String deleteRequirementsById(Long id) {
         requirementsRepo.deleteById(id);
         return "Requirement with Id:" + id + " is deleted";
     }
@@ -36,16 +37,5 @@ public class RequirementsService {
         return "All Requirements are deleted";
     }
 
-    public Requirements updateRequirements(Requirements requirements) {
-        Requirements existing = requirementsRepo.findById(requirements.getId());
-        existing.setRequirementsId(requirements.getRequirementsId());
-        existing.setStreamId(requirements.getStreamId());
-        existing.setMaths(requirements.getMaths());
-        existing.setNaturalScience(requirements.getNaturalScience());
-        existing.setTechnology(requirements.getTechnology());
-        existing.setEconomicManagementScience(requirements.getEconomicManagementScience());
-        existing.setArtAndCulture(requirements.getArtAndCulture());
-        existing.setSocialScience(requirements.getSocialScience());
-        return existing;
-    }
+    
 }

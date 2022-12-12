@@ -4,46 +4,37 @@ package testing.demo.services;
 import org.springframework.stereotype.Service;
 
 import testing.demo.entities.Stream;
-import testing.demo.repositories.StreamRepo;
+import testing.demo.repositories.StreamRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StreamService {
-    private StreamRepo streamsRepo;
+    private StreamRepository streamsRepository;
 
     public Stream saveStream(Stream stream) {
-        return streamsRepo.save(stream);
+        return streamsRepository.save(stream);
     }
 
     public List<Stream> getAllStreams() {
 
-        return streamsRepo.findAll();
+        return streamsRepository.findAll();
     }
 
-    public Stream getStreamById(int id) {
-        return streamsRepo.findById(id);
+    public Optional<Stream> getStreamById(Long id) {
+        return streamsRepository.findById(id);
     }
 
-    public String deleteStreamById(int id) {
-        streamsRepo.deleteById(id);
+    public String deleteStreamById( Long id) {
+        streamsRepository.deleteById(id);
         return "Stream with Id:" + id + " is deleted";
     }
 
     public String deleteAllStream() {
-        streamsRepo.deleteAll();
+        streamsRepository.deleteAll();
         return "All Stream are deleted";
     }
 
-    public Stream updateStream(Stream stream) {
-        Stream existing = streamsRepo.findById(stream.getId());
-        existing.setStreamName(stream.getStreamName());
-        existing.setStreamId(stream.getStreamId());
-        existing.setSchoolId(stream.getSchoolId());
-        existing.setSubject1(stream.getSubject1());
-        existing.setSubject2(stream.getSubject2());
-        existing.setSubject3(stream.getSubject3());
-        existing.setSubject4(stream.getSubject4());
-        return existing;
-    }
+   
 }
