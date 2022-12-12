@@ -1,0 +1,31 @@
+
+  .col-6 {
+    padding:  15px;
+    stroke-width: 10px;
+    font-size: 18px;
+  }
+  h1 {
+    text-decoration: underline;
+    color: white;
+    font-size: 25px;
+  }
+  label {
+    color: white;
+    text-transform: capitalize;
+  }
+  input{
+    height:30px;
+    width: 80%;
+    border-radius:5px;
+    color: black;
+    border: none;
+    margin-top: 2%;
+    text-decoration: none;
+    padding-left: 10px;
+  }
+  .btn {
+    width: 60%;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+  }

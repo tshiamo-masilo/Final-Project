@@ -24,47 +24,52 @@ import { TokenInterceptor } from "./user/token.interceptor";
 import { StreamsComponent } from './streams/streams.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { SubjectComponent } from './subject/subject.component';
+import { AdminDashboardModule } from "./admin-dashboard/admin-dashboard.module";
+import { TestingComponent } from './testing/testing.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ApplicationComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    AccountComponent,
-    ApplicationComponent,
-    SchoolComponent,
-    NavbarComponent,
-    SignupComponent,
-    LoginComponent,
-    StreamsComponent,
-    RequirementsComponent,
-    SubjectComponent,
-  ],
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MdbCollapseModule,
-    NgxPaginationModule,
-    HttpClientModule,
-    FormsModule,
-    FilterPipeModule,
-    ReactiveFormsModule,
-    appRoutingModule,
-  ],
- 
-  bootstrap: [AppComponent],
-  providers:[
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:TokenInterceptor,
-      multi:true
-    }
-  ]
+    declarations: [
+        AppComponent,
+        ApplicationComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        AccountComponent,
+        ApplicationComponent,
+        SchoolComponent,
+        NavbarComponent,
+        SignupComponent,
+        LoginComponent,
+        StreamsComponent,
+        RequirementsComponent,
+        SubjectComponent,
+        TestingComponent,
+        DetailsComponent,
+    ],
+    bootstrap: [AppComponent],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+        }
+    ],
+    imports: [
+        BrowserModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MdbCollapseModule,
+        NgxPaginationModule,
+        HttpClientModule,
+        FormsModule,
+        FilterPipeModule,
+        ReactiveFormsModule,
+        appRoutingModule,
+        AdminDashboardModule,
+    ]
 })
 export class AppModule {}
 

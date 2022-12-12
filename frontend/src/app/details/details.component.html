@@ -1,0 +1,64 @@
+<div class="container">
+    <form class="form">
+        <h1 class="text-uppercase text-center mb-5">PERSONAL INFORMATION</h1>
+        <ng-form *ngFor="let applicant of applicantions">
+            <div class="row">
+                <div class="col-6"><label for="">Name</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Name}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Surname</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Surname}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Gender</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Gender}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Grade</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Grade}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Phone</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Phone}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Email</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Email}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"><label for="">Term</label></div>
+                <div class="col-6">
+                    <input type="text" value="{{applicant.Term}}">
+                </div>
+            </div>
+
+        </ng-form>
+
+
+        <!-- update button -->
+        <section class="row">
+            <div class="col-6"></div>
+
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6"><button type="button" class="btn accept">Accept</button></div>
+                    <div class="col-6"><button type="button" class="btn decline">Decline</button></div>
+                </div>
+                
+            </div>
+        </section>
+    </form>
+</div>

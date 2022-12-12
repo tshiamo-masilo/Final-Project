@@ -16,6 +16,8 @@ import { StreamsComponent } from './streams';
 import { RequirementsComponent } from './requirements';
 import { SubjectComponent } from './subject/subject.component';
 import { LoginGuard } from './user/guards/login.guard';
+import { TestingComponent } from './testing/testing.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
@@ -39,11 +41,9 @@ const routes: Routes = [
     { path: 'streams', component: StreamsComponent },
     { path: 'xms', component: RequirementsComponent },
     { path: 'subjects', component: SubjectComponent },
-    {
-        path: 'navbar', component: NavbarComponent, children: [
-
-        ]
-    },
+    {path:'details', component:DetailsComponent},
+    {path: 'navbar', component: NavbarComponent},
+    {path: 'test', component:TestingComponent },
 
 
     // otherwise redirect to home

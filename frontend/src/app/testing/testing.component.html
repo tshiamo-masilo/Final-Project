@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="details mb-5">
+            <div class="row">
+                <div class="col-md-4">Name</div>
+                <div class="col-md-2">Grade</div>
+                <div class="col-md-2">Term</div>
+                <div class="col-md-2">Status</div>
+                <div class="col-md-2">More</div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="row ">
+                <ng-container *ngFor="let applicant of applications" class="applicants mb-5">
+                    <div class="col-md-4">{{applicant.Name+" "+applicant.Surname}}</div>
+                    <div class="col-md-2">{{applicant.Grade}}</div>
+                    <div class="col-md-2">{{applicant.Term}}</div>
+                    <div class="col-md-2 status">{{applicant.Status}}</div>
+                    <div class="col-md-2"><a href="###">More</a></div>
+                    <br>   <br>
+                </ng-container>
+                
+            </div>
+        </div>
+        
+    </form>
+</div>
