@@ -1,6 +1,20 @@
-<div class="container">
 
+<div class="container">
+    <div class="row  mb-5" id="header" >
+        <!-- gap-5 mx-5 -->
+        <div class="col-md-4 ">        
+            <input class="status" type="button"value="Accepted" (click)="click()"/>
+        </div>
+        <div class="col-md-4 ">
+            <input class="status" type="button"value="Rejected" />
+        </div>
+        <div class="col-md-4 ">
+            <input class="status" type="button"value="Pending" />
+        </div>
+    </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
         <div class="details mb-5">
             <div class="row">
                 <div class="col-md-4">Name</div>
@@ -16,13 +30,13 @@
                     <div class="col-md-4">{{applicant.Name+" "+applicant.Surname}}</div>
                     <div class="col-md-2">{{applicant.Grade}}</div>
                     <div class="col-md-2">{{applicant.Term}}</div>
-                    <div class="col-md-2 status">{{applicant.Status}}</div>
-                    <div class="col-md-2"><a href="###">More</a></div>
-                    <br>   <br>
+                    <div class="col-md-2 " [class]="getStatus(applicant.Status)">{{applicant.Status}}</div>
+                    <div class="col-md-2"><a routerLink="./details">More</a></div>
+                    <br> <br>
                 </ng-container>
-                
+
             </div>
         </div>
-        
+
     </form>
 </div>

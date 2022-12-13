@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TestingServiceService } from './service/testing-service.service';
+import { ApplicationStatus } from './shared/application-status';
 
 @Component({
   selector: 'app-testing',
@@ -29,7 +30,7 @@ export class TestingComponent implements OnInit {
       "Gender": "male",
       "Grade": "10",
       "Term": "2",
-      "Status": "pending"
+      "Status": "Pending"
     }, {
       "Name": "Zintle",
       "Surname": "Luzipho",
@@ -38,7 +39,7 @@ export class TestingComponent implements OnInit {
       "Gender": "female",
       "Grade": "12",
       "Term": "2",
-      "Status": "pending"
+      "Status": "Rejected"
     }, {
       "Name": "Lwando",
       "Surname": "Qwayede",
@@ -47,7 +48,7 @@ export class TestingComponent implements OnInit {
       "Gender": "male",
       "Grade": "11",
       "Term": "1",
-      "Status": "pending"
+      "Status": "Accepted"
     }, {
       "Name": "Philasande",
       "Surname": "Mgwatyu",
@@ -56,7 +57,7 @@ export class TestingComponent implements OnInit {
       "Gender": "male",
       "Grade": "12",
       "Term": "2",
-      "Status": "pending"
+      "Status": "Pending"
     }, {
       "Name": "Nontle",
       "Surname": "Makwara",
@@ -65,7 +66,7 @@ export class TestingComponent implements OnInit {
       "Gender": "female",
       "Grade": "12",
       "Term": "2",
-      "Status": "pending"
+      "Status": "Rejected"
     }
   ]
   subjectlist: any[] = ["Select a subject", "g"]
@@ -82,6 +83,7 @@ export class TestingComponent implements OnInit {
       subjectId: ['']
     })
   }
+ 
   onSelectedSubject(value: any) {
     this.subject = value;
     this.selectedSubject = value
@@ -92,10 +94,24 @@ export class TestingComponent implements OnInit {
       this.num = 1;
     }
   }
+  click(){
+    console.log("female")
+  }
   ngOnInit(): void {
 
   }
-
+  getStatus(status: string) {
+    switch (status) {
+      case ApplicationStatus.APPROVED:
+        return 'green';
+      case ApplicationStatus.REJECTED:
+        return 'red';
+      case ApplicationStatus.PENDING:
+        return 'yellow';
+      default:
+        return undefined;
+    }
+  }
   onSubmit() {
 
 
