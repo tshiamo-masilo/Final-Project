@@ -1,3 +1,4 @@
+import { ApplicationComponent } from './application/application.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserModule } from './user/user.module';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'learner', component: LearnerComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
+<<<<<<< Updated upstream
     { path: 'signup', component:SignupComponent},
     { path: 'account', component: AccountComponent, canActivate: [LoginGuard], },
     { path: 'login', component: LoginComponent },
@@ -31,6 +33,14 @@ const routes: Routes = [
 //         ]
 //     },
 
+=======
+    { path: 'account', component: AccountComponent },
+    {path: 'application', component: ApplicationComponent},
+    
+    // { path: 'admin', component: AdminComponent },
+    // { path: 'learner', component: LearnerComponent },
+    
+>>>>>>> Stashed changes
 
     // otherwise redirect to home
     { path: '**', redirectTo: 'home', pathMatch: "full" }
