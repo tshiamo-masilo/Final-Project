@@ -9,11 +9,13 @@ export class TokenInterceptor implements HttpInterceptor {
     constructor( public auth:TokenService){}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.auth.getFromSessionStorage();
+        
         request = request.clone({
             setHeaders:{
                 Authorization : `Bearer ${this.auth.getToken()}`
             }
         });
+        
         return next.handle(request);
     }
 }
